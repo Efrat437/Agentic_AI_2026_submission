@@ -1,0 +1,11 @@
+{
+  "list_name": "automated_underwriting_flags",
+  "description": "Distribution channels or segments that always require manual underwriting review in the lab.",
+  "items": [
+    "aggregator_high_touch",
+    "broker_api_legacy",
+    "comparison_site_scrape",
+    "paper_mail_inbound",
+    "call_center_manual"
+  ]
+}

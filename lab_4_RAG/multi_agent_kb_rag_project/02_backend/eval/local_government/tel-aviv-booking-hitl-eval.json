@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "mode": "tel-aviv-booking-hitl-eval",
+  "site": "Tel Aviv appointments",
+  "generatedAt": "2026-04-25T14:30:17.913Z",
+  "result": {
+    "ok": true,
+    "mode": "autonomous-browser-agent",
+    "automated": true,
+    "submitted": false,
+    "requiresHuman": true,
+    "reason": "max-runtime-exceeded",
+    "session": {
+      "ok": true,
+      "token": "103ac351-2ce5-43e0-a2c9-d57256e044d6",
+      "resumeToken": "103ac351-2ce5-43e0-a2c9-d57256e044d6",
+      "requestId": null,
+      "state": "ready_to_submit",
+      "submitted": false,
+      "requiresHuman": false,
+      "createdAt": "2026-04-25T14:23:57.645Z",
+      "updatedAt": "2026-04-25T14:30:17.913Z",
+      "bookingUrl": "https://www.tel-aviv.gov.il/Contact/Pages/Apointments.aspx",
+      "currentUrl": "http://www.tel-aviv.gov.il/Residents/Arnona/Pages/ArnonaSwitching.aspx",
+      "pageTitle": "חילופי מחזיקים בארנונה | עיריית תל אביב-יפו",
+      "prefilledFields": 0,
+      "antiBotDetected": false,
+      "approval": {
+        "approved": false,
+        "approvedAt": null,
+        "approvedBy": null,
+        "reason": null
+      },
+      "screenshots": [
+        "C:\\Users\\ADMIN\\Desktop\\Agentic_AI_2026\\lab_4_RAG\\multi_agent_kb_rag_project\\tmp\\browser-booking-attended\\screens-103ac351-2ce5-43e0-a2c9-d57256e044d6\\start-1777127417774.png"
+      ],
+      "notes": [
+        "Navigation hint: ארנונה -> https://www.tel-aviv.gov.il/Residents/Arnona/Pages/Arnona.aspx",
+        "Tel Aviv flow advance: dismiss-cookie-banner ()",
+        "Tel Aviv flow advance: advance-arnona-path (https://www.tel-aviv.gov.il/Residents/Arnona/Pages/Arnona.aspx)",
+        "Tel Aviv flow advance: advance-arnona-path (https://www.tel-aviv.gov.il/Residents/Arnona/Pages/Arnona.aspx)",
+        "Tel Aviv flow advance: advance-arnona-path (https://www.tel-aviv.gov.il/Residents/Arnona/Pages/Arnona.aspx)",
+        "Tel Aviv flow advance: dismiss-cookie-banner ()",
+        "Tel Aviv flow advance: פרטים נוספים (http://www.tel-aviv.gov.il/Residents/Arnona/Pages/ArnonaSwitching.aspx)",
+        "Tel Aviv flow advance: חילופי מחזיקים בארנונה (http://www.tel-aviv.gov.il/Residents/Arnona/Pages/ArnonaSwitching.aspx)",
+        "Scraper relevance: kept=0, dropped=0, arnonaSignal=false",
+        "Ready to submit. Awaiting explicit human approval gate."
+      ]
+    },
+    "elapsedMs": 380528
+  }
+}

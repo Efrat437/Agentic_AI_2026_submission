@@ -1,0 +1,174 @@
+{
+  "ok": true,
+  "mode": "mock-booking-validation",
+  "baseUrl": "http://127.0.0.1:57121",
+  "iterations": 2,
+  "generatedAt": "2026-04-25T12:54:12.230Z",
+  "logs": {
+    "summaryPath": "./02_backend/eval/local_government/mock-booking-validation-report.post-atomic.json",
+    "eventLogPath": "./02_backend/eval/local_government/mock-booking-validation-log.post-atomic.jsonl",
+    "eventCount": 8
+  },
+  "scenarios": [
+    {
+      "scenario": "stable",
+      "totalRuns": 2,
+      "bookingSuccessPercent": 100,
+      "bookingSuccessCount": 2,
+      "falsePositiveCount": 0,
+      "falsePositivePercent": 0,
+      "averageSlotIdentificationMs": 2597,
+      "averageRetries": 0,
+      "maxRetries": 0,
+      "reservationBookingCount": 2,
+      "runs": [
+        {
+          "run": 1,
+          "success": true,
+          "bookingStatus": "booked",
+          "slotIdentificationMs": 2475,
+          "retries": 0,
+          "totalElapsedMs": 2705,
+          "falsePositives": 0,
+          "reservationBookings": 1,
+          "reservationsIssued": 3,
+          "discoveredApis": 3,
+          "dynamicToolsCreated": 3
+        },
+        {
+          "run": 2,
+          "success": true,
+          "bookingStatus": "booked",
+          "slotIdentificationMs": 2718,
+          "retries": 0,
+          "totalElapsedMs": 2900,
+          "falsePositives": 0,
+          "reservationBookings": 1,
+          "reservationsIssued": 4,
+          "discoveredApis": 3,
+          "dynamicToolsCreated": 3
+        }
+      ]
+    },
+    {
+      "scenario": "disappearing-slots",
+      "totalRuns": 2,
+      "bookingSuccessPercent": 100,
+      "bookingSuccessCount": 2,
+      "falsePositiveCount": 0,
+      "falsePositivePercent": 0,
+      "averageSlotIdentificationMs": 2342,
+      "averageRetries": 0,
+      "maxRetries": 0,
+      "reservationBookingCount": 2,
+      "runs": [
+        {
+          "run": 1,
+          "success": true,
+          "bookingStatus": "booked",
+          "slotIdentificationMs": 2363,
+          "retries": 0,
+          "totalElapsedMs": 2591,
+          "falsePositives": 0,
+          "reservationBookings": 1,
+          "reservationsIssued": 5,
+          "discoveredApis": 3,
+          "dynamicToolsCreated": 3
+        },
+        {
+          "run": 2,
+          "success": true,
+          "bookingStatus": "booked",
+          "slotIdentificationMs": 2320,
+          "retries": 0,
+          "totalElapsedMs": 2569,
+          "falsePositives": 0,
+          "reservationBookings": 1,
+          "reservationsIssued": 4,
+          "discoveredApis": 3,
+          "dynamicToolsCreated": 3
+        }
+      ]
+    },
+    {
+      "scenario": "flaky-api",
+      "totalRuns": 2,
+      "bookingSuccessPercent": 100,
+      "bookingSuccessCount": 2,
+      "falsePositiveCount": 0,
+      "falsePositivePercent": 0,
+      "averageSlotIdentificationMs": 3275,
+      "averageRetries": 1,
+      "maxRetries": 1,
+      "reservationBookingCount": 2,
+      "runs": [
+        {
+          "run": 1,
+          "success": true,
+          "bookingStatus": "booked",
+          "slotIdentificationMs": 4082,
+          "retries": 1,
+          "totalElapsedMs": 4366,
+          "falsePositives": 0,
+          "reservationBookings": 1,
+          "reservationsIssued": 11,
+          "discoveredApis": 3,
+          "dynamicToolsCreated": 3
+        },
+        {
+          "run": 2,
+          "success": true,
+          "bookingStatus": "booked",
+          "slotIdentificationMs": 2468,
+          "retries": 0,
+          "totalElapsedMs": 2796,
+          "falsePositives": 0,
+          "reservationBookings": 1,
+          "reservationsIssued": 6,
+          "discoveredApis": 3,
+          "dynamicToolsCreated": 3
+        }
+      ]
+    },
+    {
+      "scenario": "high-latency",
+      "totalRuns": 2,
+      "bookingSuccessPercent": 100,
+      "bookingSuccessCount": 2,
+      "falsePositiveCount": 0,
+      "falsePositivePercent": 0,
+      "averageSlotIdentificationMs": 3288,
+      "averageRetries": 0,
+      "maxRetries": 0,
+      "reservationBookingCount": 2,
+      "runs": [
+        {
+          "run": 1,
+          "success": true,
+          "bookingStatus": "booked",
+          "slotIdentificationMs": 3336,
+          "retries": 0,
+          "totalElapsedMs": 6058,
+          "falsePositives": 0,
+          "reservationBookings": 1,
+          "reservationsIssued": 3,
+          "discoveredApis": 2,
+          "dynamicToolsCreated": 2
+        },
+        {
+          "run": 2,
+          "success": true,
+          "bookingStatus": "booked",
+          "slotIdentificationMs": 3239,
+          "retries": 0,
+          "totalElapsedMs": 6943,
+          "falsePositives": 0,
+          "reservationBookings": 1,
+          "reservationsIssued": 5,
+          "discoveredApis": 3,
+          "dynamicToolsCreated": 3
+        }
+      ]
+    }
+  ]
+}

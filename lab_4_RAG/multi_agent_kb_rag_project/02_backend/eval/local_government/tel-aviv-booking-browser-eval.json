@@ -1,0 +1,108 @@
+{
+  "ok": true,
+  "mode": "tel-aviv-booking-dry-run-eval",
+  "site": "Tel Aviv appointments",
+  "generatedAt": "2026-04-25T13:34:34.070Z",
+  "result": {
+    "ok": true,
+    "stage": "prefill-complete",
+    "submitted": false,
+    "requiresHuman": true,
+    "reason": "dry-run",
+    "bookingUrl": "https://www.tel-aviv.gov.il/Contact/Pages/Apointments.aspx",
+    "finalUrl": "https://www.tel-aviv.gov.il/Residents/Arnona/Pages/ArnonaSwitching.aspx",
+    "pageTitle": "חילופי מחזיקים בארנונה | עיריית תל אביב-יפו",
+    "formsDiscovered": 1,
+    "prefilledFields": 0,
+    "navigationHint": {
+      "moved": true,
+      "url": "https://www.tel-aviv.gov.il/Residents/Arnona/Pages/ArnonaSwitching.aspx",
+      "text": "חילופי מחזיקים בארנונה",
+      "score": 64
+    },
+    "scrapeSignals": {
+      "keptItems": 0,
+      "droppedItems": 0,
+      "hasAppointmentSignal": false,
+      "hasArnonaSignal": false
+    },
+    "screenshots": [
+      "C:\\Users\\ADMIN\\Desktop\\Agentic_AI_2026\\lab_4_RAG\\multi_agent_kb_rag_project\\tmp\\browser-booking\\landing-1777124069831.png",
+      "C:\\Users\\ADMIN\\Desktop\\Agentic_AI_2026\\lab_4_RAG\\multi_agent_kb_rag_project\\tmp\\browser-booking\\prefilled-1777124073077.png"
+    ],
+    "formModel": [
+      {
+        "formIndex": 0,
+        "synthetic": false,
+        "id": "aspnetForm",
+        "name": "",
+        "action": "/Residents/Arnona/Pages/ArnonaSwitching.aspx",
+        "method": "post",
+        "fields": [
+          {
+            "tag": "input",
+            "type": "text",
+            "id": "ctl00_ctl56_ctl02_txtSearchGlobal",
+            "name": "ctl00$ctl56$ctl02$txtSearchGlobal",
+            "placeholder": "חיפוש באתר",
+            "required": false,
+            "ariaLabel": "הקלד שתי אותיות לפחות. כאשר תוצאות השלמה אוטומטית זמינות השתמש במקשי החצים למעלה ולמטה כדי לבחור אפשרות מתוך הרשימה. משתמשי מסך מגע, הקישו על מסך מחוץ למקלדת והשתמשו במחוות כדי להגיע לרשימת האפשרויות ולבחור ממנה.",
+            "label": "",
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "submit",
+            "id": "ctl00_ctl56_ctl02_btnSubmit",
+            "name": "ctl00$ctl56$ctl02$btnSubmit",
+            "placeholder": "",
+            "required": false,
+            "ariaLabel": "חפש:",
+            "label": "",
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "id": "feedback-input-txt",
+            "name": "GBmask_feedback-input-txt",
+            "placeholder": "עוד משהו להגיד לנו?",
+            "required": false,
+            "ariaLabel": "",
+            "label": "נשמח אם תפרט/י:",
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "id": "",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "ariaLabel": "תוים שנותרו",
+            "label": "",
+            "options": []
+          }
+        ],
+        "submitButtons": [
+          {
+            "tag": "input",
+            "type": "submit",
+            "id": "ctl00_ctl56_ctl02_btnSubmit",
+            "name": "ctl00$ctl56$ctl02$btnSubmit",
+            "text": ""
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "id": "",
+            "name": "",
+            "text": "שלח"
+          }
+        ],
+        "intentScore": -22
+      }
+    ],
+    "elapsedMs": 9558
+  }
+}

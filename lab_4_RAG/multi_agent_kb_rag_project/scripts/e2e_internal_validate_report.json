@@ -1,0 +1,13 @@
+{
+  "ok": false,
+  "query": "How many nodes are there?",
+  "decision": {
+    "route": "sql_query",
+    "reason": "fallback: upstream-rate-limited"
+  },
+  "planSteps": 0,
+  "resultItems": 0,
+  "resultPreview": null,
+  "reflectionQuality": null,
+  "error": "fetch failed"
+}

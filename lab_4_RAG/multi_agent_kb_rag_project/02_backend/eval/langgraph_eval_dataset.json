@@ -1,0 +1,729 @@
+[
+  {
+    "id": "lookup-001",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for e_8600_526?",
+    "ground_truth_answer": "The population_approx for e_8600_526 is 2920.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_526 has population_approx 2920."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-002",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for e_8600_217?",
+    "ground_truth_answer": "The population_approx for e_8600_217 is 3490.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_217 has population_approx 3490."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-003",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for e_8600_412?",
+    "ground_truth_answer": "The population_approx for e_8600_412 is 4460.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_412 has population_approx 4460."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-004",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for e_70_424?",
+    "ground_truth_answer": "The population_approx for e_70_424 is 6080.",
+    "ground_truth_context": [
+      "attributes.sql: e_70_424 has population_approx 6080."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-005",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for e_8500_51?",
+    "ground_truth_answer": "The population_approx for e_8500_51 is 4290.",
+    "ground_truth_context": [
+      "attributes.sql: e_8500_51 has population_approx 4290."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-006",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for e_8500_13?",
+    "ground_truth_answer": "The population_approx for e_8500_13 is 5290.",
+    "ground_truth_context": [
+      "attributes.sql: e_8500_13 has population_approx 5290."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-007",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for statistical_5000_221?",
+    "ground_truth_answer": "The population_approx for statistical_5000_221 is 5240.",
+    "ground_truth_context": [
+      "attributes.sql: statistical_5000_221 has population_approx 5240."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-008",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for statistical_5000_411?",
+    "ground_truth_answer": "The population_approx for statistical_5000_411 is 5300.",
+    "ground_truth_context": [
+      "attributes.sql: statistical_5000_411 has population_approx 5300."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-009",
+    "category": "simple_lookup",
+    "query": "What is the population_approx for statistical_8300_614?",
+    "ground_truth_answer": "The population_approx for statistical_8300_614 is 5620.",
+    "ground_truth_context": [
+      "attributes.sql: statistical_8300_614 has population_approx 5620."
+    ],
+    "notes": "Direct attribute lookup from verified SQL rows."
+  },
+  {
+    "id": "lookup-010",
+    "category": "simple_lookup",
+    "query": "What is the employeesAnnual_medWage for e_70?",
+    "ground_truth_answer": "The employeesAnnual_medWage for e_70 is 98400.",
+    "ground_truth_context": [
+      "attributes.sql: e_70 has employeesAnnual_medWage 98400."
+    ],
+    "notes": "Direct parent-level attribute lookup."
+  },
+  {
+    "id": "lookup-011",
+    "category": "simple_lookup",
+    "query": "What is the rent_pcnt for e_8600?",
+    "ground_truth_answer": "The rent_pcnt for e_8600 is 48.4.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600 has rent_pcnt 48.4."
+    ],
+    "notes": "Direct parent-level attribute lookup."
+  },
+  {
+    "id": "lookup-012",
+    "category": "simple_lookup",
+    "query": "What is the age_median for e_70?",
+    "ground_truth_answer": "The age_median for e_70 is 33.",
+    "ground_truth_context": [
+      "attributes.sql: e_70 has age_median 33."
+    ],
+    "notes": "Direct parent-level attribute lookup."
+  },
+  {
+    "id": "lookup-013",
+    "category": "simple_lookup",
+    "query": "What is the age_pct_20_64 for e_8600?",
+    "ground_truth_answer": "The age_pct_20_64 for e_8600 is 58.1.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600 has age_pct_20_64 58.1."
+    ],
+    "notes": "Direct parent-level attribute lookup."
+  },
+  {
+    "id": "graph-001",
+    "category": "graph_traversal",
+    "query": "Which parent does e_8600_526 belong to?",
+    "ground_truth_answer": "e_8600_526 belongs to e_8600.",
+    "ground_truth_context": [
+      "relationships.sql: e_8600_526 belongs_to e_8600."
+    ],
+    "notes": "Single-edge graph traversal."
+  },
+  {
+    "id": "graph-002",
+    "category": "graph_traversal",
+    "query": "Which parent does e_8600_412 belong to?",
+    "ground_truth_answer": "e_8600_412 belongs to e_8600.",
+    "ground_truth_context": [
+      "relationships.sql: e_8600_412 belongs_to e_8600."
+    ],
+    "notes": "Single-edge graph traversal."
+  },
+  {
+    "id": "graph-003",
+    "category": "graph_traversal",
+    "query": "Which parent does e_8500_51 belong to?",
+    "ground_truth_answer": "e_8500_51 belongs to e_8500.",
+    "ground_truth_context": [
+      "relationships.sql: e_8500_51 belongs_to e_8500."
+    ],
+    "notes": "Single-edge graph traversal."
+  },
+  {
+    "id": "graph-004",
+    "category": "graph_traversal",
+    "query": "Which parent does e_8700_44 belong to?",
+    "ground_truth_answer": "e_8700_44 belongs to e_8700.",
+    "ground_truth_context": [
+      "relationships.sql: e_8700_44 belongs_to e_8700."
+    ],
+    "notes": "Single-edge graph traversal."
+  },
+  {
+    "id": "graph-005",
+    "category": "graph_traversal",
+    "query": "Which parent does statistical_5000_221 belong to?",
+    "ground_truth_answer": "statistical_5000_221 belongs to e_5000.",
+    "ground_truth_context": [
+      "relationships.sql: statistical_5000_221 belongs_to e_5000."
+    ],
+    "notes": "Single-edge graph traversal."
+  },
+  {
+    "id": "graph-006",
+    "category": "graph_traversal",
+    "query": "Which parent does statistical_5000_411 belong to?",
+    "ground_truth_answer": "statistical_5000_411 belongs to e_5000.",
+    "ground_truth_context": [
+      "relationships.sql: statistical_5000_411 belongs_to e_5000."
+    ],
+    "notes": "Single-edge graph traversal."
+  },
+  {
+    "id": "graph-007",
+    "category": "graph_traversal",
+    "query": "Which parent does statistical_8300_614 belong to?",
+    "ground_truth_answer": "statistical_8300_614 belongs to e_8300.",
+    "ground_truth_context": [
+      "relationships.sql: statistical_8300_614 belongs_to e_8300."
+    ],
+    "notes": "Single-edge graph traversal."
+  },
+  {
+    "id": "graph-008",
+    "category": "graph_traversal",
+    "query": "Which parent does statistical_8300_223 belong to?",
+    "ground_truth_answer": "statistical_8300_223 belongs to e_8300.",
+    "ground_truth_context": [
+      "relationships.sql: statistical_8300_223 belongs_to e_8300."
+    ],
+    "notes": "Single-edge graph traversal."
+  },
+  {
+    "id": "graph-009",
+    "category": "graph_traversal",
+    "query": "What entities are connected to statistical_5000_221 and what relationship types link them through the graph?",
+    "ground_truth_answer": "statistical_5000_221 is connected to e_5000 via belongs_to.",
+    "ground_truth_context": [
+      "relationships.sql: statistical_5000_221 belongs_to e_5000."
+    ],
+    "notes": "Single-hop adjacency query over the grounded relationship graph."
+  },
+  {
+    "id": "graph-010",
+    "category": "graph_traversal",
+    "query": "What entities are connected to e_8600_526 and what relationship types link them through the graph?",
+    "ground_truth_answer": "e_8600_526 is connected to e_8600 via belongs_to.",
+    "ground_truth_context": [
+      "relationships.sql: e_8600_526 belongs_to e_8600."
+    ],
+    "notes": "Single-hop adjacency query over the grounded relationship graph."
+  },
+  {
+    "id": "graph-011",
+    "category": "graph_traversal",
+    "query": "What path connects statistical_5000_221 and e_5000?",
+    "ground_truth_answer": "The path from statistical_5000_221 to e_5000 is statistical_5000_221 -> e_5000 via belongs_to.",
+    "ground_truth_context": [
+      "relationships.sql: statistical_5000_221 belongs_to e_5000."
+    ],
+    "notes": "Single-hop path query over the grounded relationship graph."
+  },
+  {
+    "id": "graph-012",
+    "category": "graph_traversal",
+    "query": "What path connects statistical_5000_221 and statistical_5000_411?",
+    "ground_truth_answer": "The path from statistical_5000_221 to statistical_5000_411 is statistical_5000_221 -> e_5000 -> statistical_5000_411 via belongs_to -> belongs_to.",
+    "ground_truth_context": [
+      "relationships.sql: statistical_5000_221 belongs_to e_5000.",
+      "relationships.sql: statistical_5000_411 belongs_to e_5000."
+    ],
+    "notes": "Two-hop path query over siblings connected through a shared parent."
+  },
+  {
+    "id": "hybrid-001",
+    "category": "hybrid",
+    "query": "Which parent does e_8600_526 belong to, and what is that parent's rent_pcnt?",
+    "ground_truth_answer": "e_8600_526 belongs to e_8600, and e_8600 has rent_pcnt 48.4.",
+    "ground_truth_context": [
+      "relationships.sql: e_8600_526 belongs_to e_8600.",
+      "attributes.sql: e_8600 has rent_pcnt 48.4."
+    ],
+    "notes": "Graph traversal combined with parent attribute lookup."
+  },
+  {
+    "id": "hybrid-002",
+    "category": "hybrid",
+    "query": "Which parent does e_8600_412 belong to, and what is that parent's age_median?",
+    "ground_truth_answer": "e_8600_412 belongs to e_8600, and e_8600 has age_median 36.",
+    "ground_truth_context": [
+      "relationships.sql: e_8600_412 belongs_to e_8600.",
+      "attributes.sql: e_8600 has age_median 36."
+    ],
+    "notes": "Graph traversal combined with parent attribute lookup."
+  },
+  {
+    "id": "hybrid-003",
+    "category": "hybrid",
+    "query": "What is the population_approx of e_8600_412, and which parent does it belong to?",
+    "ground_truth_answer": "e_8600_412 has population_approx 4460 and belongs to e_8600.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_412 has population_approx 4460.",
+      "relationships.sql: e_8600_412 belongs_to e_8600."
+    ],
+    "notes": "Child attribute plus graph edge."
+  },
+  {
+    "id": "hybrid-004",
+    "category": "hybrid",
+    "query": "Which verified e_5000 child has the larger population_approx, and what parent does it belong to?",
+    "ground_truth_answer": "statistical_5000_411 has the larger population_approx at 5300, and it belongs to e_5000.",
+    "ground_truth_context": [
+      "attributes.sql: statistical_5000_221 has population_approx 5240.",
+      "attributes.sql: statistical_5000_411 has population_approx 5300.",
+      "relationships.sql: statistical_5000_411 belongs_to e_5000."
+    ],
+    "notes": "Comparison across siblings plus graph resolution."
+  },
+  {
+    "id": "hybrid-005",
+    "category": "hybrid",
+    "query": "Which verified e_8300 child has population_approx 5620, and what parent does it belong to?",
+    "ground_truth_answer": "statistical_8300_614 has population_approx 5620 and belongs to e_8300.",
+    "ground_truth_context": [
+      "attributes.sql: statistical_8300_614 has population_approx 5620.",
+      "relationships.sql: statistical_8300_614 belongs_to e_8300."
+    ],
+    "notes": "Child attribute plus graph edge."
+  },
+  {
+    "id": "multi-anchor-001",
+    "category": "multi_anchor",
+    "query": "Which has the higher rent_pcnt, e_70 or e_8600?",
+    "ground_truth_answer": "e_8600 has the higher rent_pcnt: 48.4 versus 29.5 for e_70.",
+    "ground_truth_context": [
+      "attributes.sql: e_70 has rent_pcnt 29.5.",
+      "attributes.sql: e_8600 has rent_pcnt 48.4."
+    ],
+    "notes": "Cross-parent comparison using verified parent metrics."
+  },
+  {
+    "id": "multi-anchor-002",
+    "category": "multi_anchor",
+    "query": "Which has the higher age_median, e_70 or e_8600?",
+    "ground_truth_answer": "e_8600 has the higher age_median: 36 versus 33 for e_70.",
+    "ground_truth_context": [
+      "attributes.sql: e_70 has age_median 33.",
+      "attributes.sql: e_8600 has age_median 36."
+    ],
+    "notes": "Cross-parent comparison using verified parent metrics."
+  },
+  {
+    "id": "multi-anchor-003",
+    "category": "multi_anchor",
+    "query": "Which has the higher age_pct_20_64, e_70 or e_8600?",
+    "ground_truth_answer": "e_8600 has the higher age_pct_20_64: 58.1 versus 51.6 for e_70.",
+    "ground_truth_context": [
+      "attributes.sql: e_70 has age_pct_20_64 51.6.",
+      "attributes.sql: e_8600 has age_pct_20_64 58.1."
+    ],
+    "notes": "Cross-parent comparison using verified parent metrics."
+  },
+  {
+    "id": "multi-anchor-004",
+    "category": "multi_anchor",
+    "query": "Which has the higher age_pct_65, e_70 or e_8600?",
+    "ground_truth_answer": "e_70 has the higher age_pct_65: 32.8 versus 24.5 for e_8600.",
+    "ground_truth_context": [
+      "attributes.sql: e_70 has age_pct_65 32.8.",
+      "attributes.sql: e_8600 has age_pct_65 24.5."
+    ],
+    "notes": "Cross-parent comparison using verified parent metrics."
+  },
+  {
+    "id": "multi-anchor-005",
+    "category": "multi_anchor",
+    "query": "Which has the higher Vehicle0_pcnt, e_70 or e_8600?",
+    "ground_truth_answer": "e_8600 has the higher Vehicle0_pcnt: 24.9 versus 21 for e_70.",
+    "ground_truth_context": [
+      "attributes.sql: e_70 has Vehicle0_pcnt 21.",
+      "attributes.sql: e_8600 has Vehicle0_pcnt 24.9."
+    ],
+    "notes": "Cross-parent comparison using verified parent metrics."
+  },
+  {
+    "id": "multi-anchor-006",
+    "category": "multi_anchor",
+    "query": "Do e_70 and e_8600 have the same religion value?",
+    "ground_truth_answer": "Yes. Both e_70 and e_8600 have religion set to judaism.",
+    "ground_truth_context": [
+      "attributes.sql: e_70 has religion judaism.",
+      "attributes.sql: e_8600 has religion judaism."
+    ],
+    "notes": "Cross-parent categorical comparison."
+  },
+  {
+    "id": "multi-anchor-007",
+    "category": "multi_anchor",
+    "query": "Among e_8600_113, e_8600_217, e_8600_412, and e_8600_526, which has the largest population_approx?",
+    "ground_truth_answer": "e_8600_412 has the largest population_approx at 4460.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_113 has population_approx 3220.",
+      "attributes.sql: e_8600_217 has population_approx 3490.",
+      "attributes.sql: e_8600_412 has population_approx 4460.",
+      "attributes.sql: e_8600_526 has population_approx 2920."
+    ],
+    "notes": "Sibling comparison under the same verified parent group."
+  },
+  {
+    "id": "multi-anchor-008",
+    "category": "multi_anchor",
+    "query": "Among e_8600_113, e_8600_217, e_8600_412, and e_8600_526, which has the smallest population_approx?",
+    "ground_truth_answer": "e_8600_526 has the smallest population_approx at 2920.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_113 has population_approx 3220.",
+      "attributes.sql: e_8600_217 has population_approx 3490.",
+      "attributes.sql: e_8600_412 has population_approx 4460.",
+      "attributes.sql: e_8600_526 has population_approx 2920."
+    ],
+    "notes": "Sibling comparison under the same verified parent group."
+  },
+  {
+    "id": "multi-anchor-009",
+    "category": "multi_anchor",
+    "query": "Which has the larger population_approx, statistical_5000_221 or statistical_5000_411?",
+    "ground_truth_answer": "statistical_5000_411 is larger: 5300 versus 5240 for statistical_5000_221.",
+    "ground_truth_context": [
+      "attributes.sql: statistical_5000_221 has population_approx 5240.",
+      "attributes.sql: statistical_5000_411 has population_approx 5300."
+    ],
+    "notes": "Pairwise sibling comparison."
+  },
+  {
+    "id": "multi-anchor-010",
+    "category": "multi_anchor",
+    "query": "Which has the larger population_approx, e_8500_13 or e_8500_51?",
+    "ground_truth_answer": "e_8500_13 is larger: 5290 versus 4290 for e_8500_51.",
+    "ground_truth_context": [
+      "attributes.sql: e_8500_13 has population_approx 5290.",
+      "attributes.sql: e_8500_51 has population_approx 4290."
+    ],
+    "notes": "Pairwise sibling comparison."
+  },
+  {
+    "id": "lookup-014",
+    "category": "simple_lookup",
+    "query": "What is the religion for e_8700?",
+    "ground_truth_answer": "The religion for e_8700 is judaism.",
+    "ground_truth_context": [
+      "attributes.sql: e_8700 has religion judaism."
+    ],
+    "notes": "Direct attribute lookup for a categorical field."
+  },
+  {
+    "id": "lookup-015",
+    "category": "simple_lookup",
+    "query": "What is the AcademicCert_pcnt for e_8700?",
+    "ground_truth_answer": "The AcademicCert_pcnt for e_8700 is 43.3.",
+    "ground_truth_context": [
+      "attributes.sql: e_8700 has AcademicCert_pcnt 43.3."
+    ],
+    "notes": "Direct attribute lookup for an education metric."
+  },
+  {
+    "id": "lookup-016",
+    "category": "simple_lookup",
+    "query": "What is the employeesAnnual_medWage for e_8700?",
+    "ground_truth_answer": "The employeesAnnual_medWage for e_8700 is 148600.",
+    "ground_truth_context": [
+      "attributes.sql: e_8700 has employeesAnnual_medWage 148600."
+    ],
+    "notes": "Direct attribute lookup for a wage metric."
+  },
+  {
+    "id": "lookup-017",
+    "category": "simple_lookup",
+    "query": "What is the Vehicle2up_pcnt for e_9800?",
+    "ground_truth_answer": "The Vehicle2up_pcnt for e_9800 is 10.",
+    "ground_truth_context": [
+      "attributes.sql: e_9800 has Vehicle2up_pcnt 10."
+    ],
+    "notes": "Direct attribute lookup for a mobility metric."
+  },
+  {
+    "id": "lookup-018",
+    "category": "simple_lookup",
+    "query": "What is the rent_pcnt for e_8700?",
+    "ground_truth_answer": "The rent_pcnt for e_8700 is 32.9.",
+    "ground_truth_context": [
+      "attributes.sql: e_8700 has rent_pcnt 32.9."
+    ],
+    "notes": "Direct attribute lookup for a housing metric."
+  },
+  {
+    "id": "lookup-019",
+    "category": "simple_lookup",
+    "query": "What is the age_median for e_8700?",
+    "ground_truth_answer": "The age_median for e_8700 is 39.",
+    "ground_truth_context": [
+      "attributes.sql: e_8700 has age_median 39."
+    ],
+    "notes": "Direct attribute lookup covering the median-age family present in the data."
+  },
+  {
+    "id": "graph-013",
+    "category": "graph_traversal",
+    "query": "What entities are connected to 214-1095249 and what relationship types link them through the graph?",
+    "ground_truth_answer": "214-1095249 is connected to e_152 via applies_to, e_401 via located_at_street, e_501 via affects_land_use, and e_601 via involves_infrastructure.",
+    "ground_truth_context": [
+      "relationships.sql: 214-1095249 APPLIES_TO e_152.",
+      "relationships.sql: 214-1095249 located_at_Street e_401.",
+      "relationships.sql: 214-1095249 affects_Land_Use e_501.",
+      "relationships.sql: 214-1095249 involves_Infrastructure e_601."
+    ],
+    "notes": "Direct adjacency query over a plan node spanning multiple grounded relation families."
+  },
+  {
+    "id": "graph-014",
+    "category": "graph_traversal",
+    "query": "What path connects 214-1095249 and e_152?",
+    "ground_truth_answer": "The path from 214-1095249 to e_152 is 214-1095249 -> e_152 via applies_to.",
+    "ground_truth_context": [
+      "relationships.sql: 214-1095249 APPLIES_TO e_152."
+    ],
+    "notes": "Single-hop path query over the APPLIES_TO relation family."
+  },
+  {
+    "id": "graph-015",
+    "category": "graph_traversal",
+    "query": "What path connects 214-1095249 and e_401?",
+    "ground_truth_answer": "The path from 214-1095249 to e_401 is 214-1095249 -> e_401 via located_at_street.",
+    "ground_truth_context": [
+      "relationships.sql: 214-1095249 located_at_Street e_401."
+    ],
+    "notes": "Single-hop path query over the located_at_Street relation family."
+  },
+  {
+    "id": "graph-016",
+    "category": "graph_traversal",
+    "query": "What path connects 214-1095249 and e_501?",
+    "ground_truth_answer": "The path from 214-1095249 to e_501 is 214-1095249 -> e_501 via affects_land_use.",
+    "ground_truth_context": [
+      "relationships.sql: 214-1095249 affects_Land_Use e_501."
+    ],
+    "notes": "Single-hop path query over the affects_Land_Use relation family."
+  },
+  {
+    "id": "graph-017",
+    "category": "graph_traversal",
+    "query": "What path connects 214-1095249 and e_601?",
+    "ground_truth_answer": "The path from 214-1095249 to e_601 is 214-1095249 -> e_601 via involves_infrastructure.",
+    "ground_truth_context": [
+      "relationships.sql: 214-1095249 involves_Infrastructure e_601."
+    ],
+    "notes": "Single-hop path query over the involves_Infrastructure relation family."
+  },
+  {
+    "id": "complex-001",
+    "category": "complex",
+    "query": "Which has the larger population_approx, e_70_424 or statistical_8300_614?",
+    "ground_truth_answer": "e_70_424 is larger: 6080 versus 5620 for statistical_8300_614.",
+    "ground_truth_context": [
+      "attributes.sql: e_70_424 has population_approx 6080.",
+      "attributes.sql: statistical_8300_614 has population_approx 5620."
+    ],
+    "notes": "Cross-group comparison using verified child populations."
+  },
+  {
+    "id": "complex-002",
+    "category": "complex",
+    "query": "Which verified e_8600 child has population_approx above 4000?",
+    "ground_truth_answer": "Among the verified e_8600 children, only e_8600_412 is above 4000, with population_approx 4460.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_113 has population_approx 3220.",
+      "attributes.sql: e_8600_217 has population_approx 3490.",
+      "attributes.sql: e_8600_412 has population_approx 4460.",
+      "attributes.sql: e_8600_526 has population_approx 2920."
+    ],
+    "notes": "Threshold filtering over a verified sibling set."
+  },
+  {
+    "id": "complex-003",
+    "category": "complex",
+    "query": "Which verified e_8600 children have population_approx below 3500?",
+    "ground_truth_answer": "The verified e_8600 children below 3500 are e_8600_113 at 3220, e_8600_217 at 3490, and e_8600_526 at 2920.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_113 has population_approx 3220.",
+      "attributes.sql: e_8600_217 has population_approx 3490.",
+      "attributes.sql: e_8600_412 has population_approx 4460.",
+      "attributes.sql: e_8600_526 has population_approx 2920."
+    ],
+    "notes": "Threshold filtering over a verified sibling set."
+  },
+  {
+    "id": "complex-004",
+    "category": "complex",
+    "query": "What is the rent_pcnt difference between e_8600 and e_70?",
+    "ground_truth_answer": "The rent_pcnt difference is 18.9 percentage points, with e_8600 at 48.4 and e_70 at 29.5.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600 has rent_pcnt 48.4.",
+      "attributes.sql: e_70 has rent_pcnt 29.5."
+    ],
+    "notes": "Derived comparison from two verified parent attributes."
+  },
+  {
+    "id": "complex-005",
+    "category": "complex",
+    "query": "What is the age_median difference between e_8600 and e_70?",
+    "ground_truth_answer": "The age_median difference is 3, with e_8600 at 36 and e_70 at 33.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600 has age_median 36.",
+      "attributes.sql: e_70 has age_median 33."
+    ],
+    "notes": "Derived comparison from two verified parent attributes."
+  },
+  {
+    "id": "complex-006",
+    "category": "complex",
+    "query": "What is the population_approx difference between e_8600_412 and e_8600_526?",
+    "ground_truth_answer": "The population_approx difference is 1540, with e_8600_412 at 4460 and e_8600_526 at 2920.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_412 has population_approx 4460.",
+      "attributes.sql: e_8600_526 has population_approx 2920."
+    ],
+    "notes": "Derived comparison from two verified child attributes."
+  },
+  {
+    "id": "complex-007",
+    "category": "complex",
+    "query": "What is the total population_approx of the verified e_8600 children e_8600_113, e_8600_217, e_8600_412, and e_8600_526?",
+    "ground_truth_answer": "The total population_approx is 14090.",
+    "ground_truth_context": [
+      "attributes.sql: e_8600_113 has population_approx 3220.",
+      "attributes.sql: e_8600_217 has population_approx 3490.",
+      "attributes.sql: e_8600_412 has population_approx 4460.",
+      "attributes.sql: e_8600_526 has population_approx 2920."
+    ],
+    "notes": "Aggregate over a verified sibling set."
+  },
+  {
+    "id": "complex-008",
+    "category": "complex",
+    "query": "What is the average population_approx of statistical_5000_221 and statistical_5000_411?",
+    "ground_truth_answer": "The average population_approx is 5270.",
+    "ground_truth_context": [
+      "attributes.sql: statistical_5000_221 has population_approx 5240.",
+      "attributes.sql: statistical_5000_411 has population_approx 5300."
+    ],
+    "notes": "Aggregate over two verified siblings."
+  },
+  {
+    "id": "complex-009",
+    "category": "complex",
+    "query": "What is the total population_approx of the verified e_8500 children e_8500_13 and e_8500_51?",
+    "ground_truth_answer": "The total population_approx is 9580.",
+    "ground_truth_context": [
+      "attributes.sql: e_8500_13 has population_approx 5290.",
+      "attributes.sql: e_8500_51 has population_approx 4290."
+    ],
+    "notes": "Aggregate over two verified siblings."
+  },
+  {
+    "id": "oauth-pdf-001",
+    "category": "oauth_pdf",
+    "query": "What is PKCE and why is it important for OAuth?",
+    "ground_truth_answer": "PKCE (Proof Key for Code Exchange) is a security extension to OAuth 2.0 that protects the authorization code grant from interception attacks. It works by having the client generate a random code_verifier, hash it into a code_challenge, and send the challenge with the authorization request. Only the client that initiated the request can exchange the authorization code for tokens because it must supply the original code_verifier. This prevents malicious apps from intercepting the authorization code and exchanging it for tokens.",
+    "ground_truth_context": [
+      "the-modern-guide-to-oauth.pdf page 24: PKCE (Proof Key for Code Exchange) is an extension to the Authorization Code grant that prevents interception attacks.",
+      "the-modern-guide-to-oauth.pdf: The client generates a code_verifier, computes a code_challenge, and sends it with the authorization request. The authorization server verifies the code_verifier at the token endpoint."
+    ],
+    "notes": "OAuth PDF corpus – PKCE definition and security purpose."
+  },
+  {
+    "id": "oauth-pdf-002",
+    "category": "oauth_pdf",
+    "query": "How do refresh tokens work in OAuth 2.0?",
+    "ground_truth_answer": "Refresh tokens are long-lived credentials issued alongside access tokens. When an access token expires, the client sends the refresh token to the token endpoint to obtain a new access token without requiring the user to re-authenticate. Refresh tokens should be stored securely, rotated on each use when possible, and invalidated on logout. They allow applications to maintain sessions without repeatedly prompting users for credentials.",
+    "ground_truth_context": [
+      "the-modern-guide-to-oauth.pdf page 59: The refresh token can be used to obtain a new access token once the existing access token expires.",
+      "the-modern-guide-to-oauth.pdf: Access tokens have a short lifetime; refresh tokens are long-lived and allow silent renewal of sessions."
+    ],
+    "notes": "OAuth PDF corpus – refresh token mechanics."
+  },
+  {
+    "id": "oauth-pdf-003",
+    "category": "oauth_pdf",
+    "query": "Explain the authorization code flow in OAuth",
+    "ground_truth_answer": "The authorization code flow is the most secure and widely-used OAuth 2.0 grant. The client redirects the user to the authorization server. After the user authenticates and consents, the authorization server redirects back to the client with a short-lived authorization code. The client backend then exchanges this code at the token endpoint (using its client secret) for access and refresh tokens. The code is single-use and the tokens never pass through the browser.",
+    "ground_truth_context": [
+      "the-modern-guide-to-oauth.pdf page 24: The Authorization Code grant is the most common and most secure OAuth grant. It relies on a user interacting with a browser and a backend server exchanging the code for tokens.",
+      "the-modern-guide-to-oauth.pdf: The redirect_uri, client_id, state, and scope parameters are sent in the authorization request; the code is exchanged at the token endpoint."
+    ],
+    "notes": "OAuth PDF corpus – authorization code flow steps."
+  },
+  {
+    "id": "oauth-pdf-004",
+    "category": "oauth_pdf",
+    "query": "What are OAuth scopes and how are they used?",
+    "ground_truth_answer": "OAuth scopes define the level of access that a client application is requesting on behalf of a user. They are space-separated strings included in the authorization request. The authorization server presents the requested scopes to the user for consent. The issued access token is limited to the approved scopes, so an API can enforce that a token only grants the permissions that were explicitly granted.",
+    "ground_truth_context": [
+      "the-modern-guide-to-oauth.pdf page 23: Scopes define the permissions being requested; the user consents to the listed scopes during the authorization flow.",
+      "the-modern-guide-to-oauth.pdf: The scope parameter is a space-delimited list of permissions such as read:profile or write:data."
+    ],
+    "notes": "OAuth PDF corpus – OAuth scopes definition and usage."
+  },
+  {
+    "id": "oauth-pdf-005",
+    "category": "oauth_pdf",
+    "query": "How does OAuth prevent CSRF attacks using the state parameter?",
+    "ground_truth_answer": "The state parameter is a random, unguessable value that the client generates and includes in the authorization request. After the user authenticates and the authorization server redirects back, the client verifies that the returned state matches the value it originally sent. This binding between the request and the callback prevents CSRF (cross-site request forgery) attacks where a malicious site could trick a user's browser into completing an OAuth flow initiated by an attacker.",
+    "ground_truth_context": [
+      "the-modern-guide-to-oauth.pdf page 36: The state parameter binds the authorization request to the callback to prevent CSRF attacks.",
+      "the-modern-guide-to-oauth.pdf: The client must validate the state value returned in the redirect_uri callback matches the one it sent."
+    ],
+    "notes": "OAuth PDF corpus – CSRF prevention via state parameter."
+  },
+  {
+    "id": "oauth-pdf-006",
+    "category": "oauth_pdf",
+    "query": "What is the client credentials grant in OAuth?",
+    "ground_truth_answer": "The client credentials grant is an OAuth 2.0 flow for machine-to-machine (M2M) authorization where no user is involved. A client application authenticates directly with the authorization server using its client_id and client_secret and receives an access token scoped to the client itself. This is used for server-to-server communication such as background jobs, microservices, and APIs calling other APIs.",
+    "ground_truth_context": [
+      "the-modern-guide-to-oauth.pdf page 73: The Client Credentials grant allows one client to authorize another client without user interaction.",
+      "the-modern-guide-to-oauth.pdf: This grant is used for machine-to-machine scenarios where the client acts on its own behalf rather than on behalf of a user."
+    ],
+    "notes": "OAuth PDF corpus – client credentials grant for M2M."
+  },
+  {
+    "id": "oauth-pdf-007",
+    "category": "oauth_pdf",
+    "query": "What is a bearer token and how is it used?",
+    "ground_truth_answer": "A bearer token is an access token that any party holding it can use to access a protected resource — there is no additional proof of identity required beyond possession of the token. It is sent in the Authorization header as 'Authorization: Bearer <token>'. Because possession alone grants access, bearer tokens must be kept confidential, transmitted only over HTTPS, and given short expiration times.",
+    "ground_truth_context": [
+      "the-modern-guide-to-oauth.pdf page 44: Bearer tokens are opaque or JWT access tokens sent in the Authorization header; any holder of the token can use it.",
+      "the-modern-guide-to-oauth.pdf: The Authorization: Bearer header is the standard way to send an access token to an API."
+    ],
+    "notes": "OAuth PDF corpus – bearer token definition and security considerations."
+  },
+  {
+    "id": "oauth-pdf-008",
+    "category": "oauth_pdf",
+    "query": "How does the OAuth implicit flow work?",
+    "ground_truth_answer": "In the implicit flow, the access token is returned directly in the URL fragment after user authentication, without an intermediate authorization code exchange. It was designed for browser-based SPAs that could not keep a client secret. However, it is now considered deprecated because it exposes the access token in the browser history and to JavaScript on the page. The authorization code flow with PKCE is the recommended replacement for SPAs.",
+    "ground_truth_context": [
+      "the-modern-guide-to-oauth.pdf page 70: The implicit grant returns an access token directly in the URL fragment, bypassing the code exchange step.",
+      "the-modern-guide-to-oauth.pdf: The implicit flow is deprecated; SPAs should use the authorization code flow with PKCE instead."
+    ],
+    "notes": "OAuth PDF corpus – implicit flow mechanics and deprecation."
+  }
+]

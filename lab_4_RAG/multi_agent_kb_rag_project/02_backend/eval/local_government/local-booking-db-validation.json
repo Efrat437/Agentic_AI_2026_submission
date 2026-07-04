@@ -1,0 +1,246 @@
+{
+  "ok": true,
+  "mode": "local-gov-db-assignment-validation",
+  "generatedAt": "2026-04-26T02:52:55.063Z",
+  "readiness": {
+    "read": {
+      "ok": true,
+      "access": "read",
+      "attempts": 1,
+      "pool": {
+        "access": "read",
+        "max": 10,
+        "idleTimeoutMillis": 30000,
+        "connectionTimeoutMillis": 10000
+      }
+    },
+    "write": {
+      "ok": true,
+      "access": "write",
+      "attempts": 1,
+      "pool": {
+        "access": "write",
+        "max": 10,
+        "idleTimeoutMillis": 30000,
+        "connectionTimeoutMillis": 10000
+      }
+    }
+  },
+  "validations": {
+    "memories": {
+      "inserted": true,
+      "recentCount": 1
+    },
+    "actions": {
+      "actionId": "6",
+      "status": "validated",
+      "executedAt": "2026-04-26T02:52:42.454Z"
+    },
+    "governmentRequests": {
+      "createdId": "46",
+      "updatedStatus": "in_progress",
+      "fetchedStatus": "in_progress",
+      "mergedNotes": {
+        "phase": "updated",
+        "marker": "local-gov-db-validation-1777171962367",
+        "source": "local-gov-db-validation",
+        "loggingVerified": true
+      }
+    },
+    "selfExtendingPersistence": {
+      "persisted": true,
+      "fetchedStatus": "approved",
+      "currentNode": "done",
+      "flowTailCount": 5,
+      "bookingState": {
+        "queue": null,
+        "session": null,
+        "decision": "auto_book",
+        "job_step": "done",
+        "auto_book": true,
+        "scheduler": null,
+        "job_status": "Done",
+        "last_checked": "2026-04-26T02:52:45.665Z",
+        "notification": null,
+        "next_check_at": null,
+        "selected_slot": {
+          "raw": {
+            "id": "slot-1-2026-04-26T02:52:47.433Z",
+            "label": "Appointment 1",
+            "slotId": "slot-1-2026-04-26T02:52:47.433Z",
+            "dateTime": "2026-04-26T03:22:47.433Z",
+            "reservationToken": "rsv-0b1aa93a-99a7-4a52-80a7-8eda24fdff01",
+            "reservationExpiresAt": "2026-04-26T02:57:47.433Z"
+          },
+          "label": "Appointment 1",
+          "value": "slot-1-2026-04-26T02:52:47.433Z"
+        },
+        "booking_status": "booked",
+        "request_status": "approved",
+        "available_slots": [
+          {
+            "raw": {
+              "id": "slot-1-2026-04-26T02:52:47.433Z",
+              "label": "Appointment 1",
+              "slotId": "slot-1-2026-04-26T02:52:47.433Z",
+              "dateTime": "2026-04-26T03:22:47.433Z",
+              "reservationToken": "rsv-0b1aa93a-99a7-4a52-80a7-8eda24fdff01",
+              "reservationExpiresAt": "2026-04-26T02:57:47.433Z"
+            },
+            "label": "Appointment 1",
+            "value": "slot-1-2026-04-26T02:52:47.433Z"
+          }
+        ],
+        "user_confirmation": false,
+        "requires_human_gate": false,
+        "confirmation_granted": false
+      },
+      "resilience": {
+        "metrics": {
+          "transientRecoveryCount": 0,
+          "learnedEndpointsUpdated": 0,
+          "circuitBreakerOpenedCount": 0,
+          "learningBoostedCandidates": 0,
+          "circuitBreakerSkippedCount": 0
+        },
+        "lastFailureKind": null,
+        "circuitBreakerState": {
+          "POST http://127.0.0.1:57602/book": {
+            "halfOpen": false,
+            "openedCount": 0,
+            "openedUntil": 0,
+            "lastFailureKind": null,
+            "consecutiveFailures": 0
+          },
+          "GET http://127.0.0.1:57602/appointments?kind=slots": {
+            "halfOpen": false,
+            "openedCount": 0,
+            "openedUntil": 0,
+            "lastFailureKind": null,
+            "consecutiveFailures": 0
+          }
+        }
+      },
+      "observedTransitionCount": 4,
+      "observedUpdatedAtCount": 4,
+      "observedTransitionNodes": [
+        "discover_api",
+        "decide",
+        "done"
+      ],
+      "observedTransitionStatuses": [
+        "new",
+        "in_progress",
+        "approved"
+      ],
+      "observedTransitions": [
+        {
+          "updatedAt": "2026-04-26T02:52:42.471Z",
+          "status": "new",
+          "currentNode": null,
+          "bookingStatus": "discovering_api"
+        },
+        {
+          "updatedAt": "2026-04-26T02:52:45.659Z",
+          "status": "in_progress",
+          "currentNode": "discover_api",
+          "bookingStatus": "checking_availability"
+        },
+        {
+          "updatedAt": "2026-04-26T02:52:46.565Z",
+          "status": "in_progress",
+          "currentNode": "decide",
+          "bookingStatus": "auto_book_ready"
+        },
+        {
+          "updatedAt": "2026-04-26T02:52:48.324Z",
+          "status": "approved",
+          "currentNode": "done",
+          "bookingStatus": "booked"
+        }
+      ],
+      "incrementalUpdatesVerified": true
+    },
+    "attendedPersistence": {
+      "requestId": "48",
+      "finalStatus": "approved",
+      "finalNotes": {
+        "marker": "local-gov-db-validation-1777171962367",
+        "source": "local-gov-db-validation",
+        "attendedFlow": {
+          "phase": "created"
+        },
+        "attendedEvent": "submit-completed",
+        "attendedApproval": {
+          "reason": "db validation approval",
+          "approved": true,
+          "approvedAt": "2026-04-26T02:52:51.305Z",
+          "approvedBy": "eval-human"
+        },
+        "bookingCheckpoint": "submitted",
+        "attendedCurrentUrl": "http://127.0.0.1:57602/",
+        "attendedSessionToken": "62991421-fcaa-409b-b9f4-be6e04695ed2"
+      },
+      "observedTransitions": [
+        {
+          "label": "started",
+          "updatedAt": "2026-04-26T02:52:50.979Z",
+          "status": "in_progress",
+          "attendedEvent": "session-started",
+          "bookingCheckpoint": "ready_to_submit",
+          "approvalApproved": false
+        },
+        {
+          "label": "resumed",
+          "updatedAt": "2026-04-26T02:52:51.238Z",
+          "status": "in_progress",
+          "attendedEvent": "session-resumed",
+          "bookingCheckpoint": "ready_to_submit",
+          "approvalApproved": false
+        },
+        {
+          "label": "approved",
+          "updatedAt": "2026-04-26T02:52:51.312Z",
+          "status": "in_progress",
+          "attendedEvent": "approval-granted",
+          "bookingCheckpoint": "ready_to_submit",
+          "approvalApproved": true
+        },
+        {
+          "label": "submitted",
+          "updatedAt": "2026-04-26T02:52:54.913Z",
+          "status": "approved",
+          "attendedEvent": "submit-completed",
+          "bookingCheckpoint": "submitted",
+          "approvalApproved": true
+        }
+      ],
+      "observedEventSequence": [
+        "session-started",
+        "session-resumed",
+        "approval-granted",
+        "submit-completed"
+      ],
+      "approvalPersisted": true,
+      "submitPersisted": true,
+      "incrementalUpdatesVerified": true
+    }
+  },
+  "cleanup": {
+    "ok": true,
+    "userIds": [
+      "eval-local-gov-db-validation-1777171962367"
+    ],
+    "markers": [
+      "local-gov-db-validation-1777171962367"
+    ],
+    "deleted": {
+      "memories": 1,
+      "actions": 1,
+      "governmentRequests": 3
+    },
+    "sqlIngestBootstrapReset": {
+      "ok": true
+    }
+  }
+}

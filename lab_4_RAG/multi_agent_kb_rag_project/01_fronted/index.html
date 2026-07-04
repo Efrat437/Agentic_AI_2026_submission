@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RAG Console</title>
+  <style>
+    :root {
+      --bg: #eef2f7;
+      --surface: rgba(255, 255, 255, 0.94);
+      --muted: #607187;
+      --line: rgba(21, 33, 46, 0.12);
+      --accent: #0f766e;
+      --warm: #b45309;
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --font: "Space Grotesk", "Segoe UI", sans-serif;
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(900px 500px at -10% -15%, rgba(29, 78, 216, 0.12), transparent 55%),
+        radial-gradient(700px 360px at 110% 10%, rgba(15, 118, 110, 0.12), transparent 42%),
+    }
+    .shell { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    .hero, .card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    .hero { padding: 24px; margin-bottom: 18px; overflow: hidden; position: relative; }
+    .hero::after {
+      content: "";
+      inset: auto -80px -120px auto;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .eyebrow { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+    .hero p { margin: 10px 0 0; color: var(--muted); max-width: 720px; line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .card { padding: 18px; }
+    .section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .section-title h2 { margin: 0; font-size: 16px; }
+    .section-title small { color: var(--muted); }
+    .field { display: grid; gap: 6px; margin-bottom: 12px; }
+    .field label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    input[type="text"], input[type="password"], input[type="number"], textarea, select {
+      width: 100%; padding: 11px 12px; border-radius: 12px; border: 1px solid var(--line); background: #fff;
+      font: inherit; color: var(--ink);
+    }
+    textarea { min-height: 96px; resize: vertical; }
+    .toggles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; margin-top: 10px; }
+    .toggle { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,0.85); }
+    .toggle input { margin-top: 3px; }
+    .toggle strong { display: block; font-size: 13px; }
+    .toggle span { display: block; font-size: 12px; color: var(--muted); line-height: 1.4; margin-top: 2px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .btn {
+      appearance: none; border: 1px solid var(--line); background: #fff; color: var(--ink);
+      border-radius: 999px; padding: 10px 14px; cursor: pointer; font: inherit; font-weight: 600;
+    }
+    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn.warm { background: var(--warm); color: #fff; border-color: var(--warm); }
+    .output {
+      margin-top: 14px; background: #0f172a; color: #dbeafe; border-radius: 16px; padding: 14px; min-height: 240px;
+      overflow: auto; border: 1px solid rgba(15,23,42,0.08);
+    }
+    .output pre {
+      margin: 0; white-space: pre-wrap; word-break: break-word; font-size: 12px; line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    .placeholder { color: rgba(219,234,254,0.7); }
+    .hint { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    @media (max-width: 900px) { .toggles, .split { grid-template-columns: 1fr; } }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <p class="eyebrow">RAG console</p>
+      <h1>Ask, inspect, and run the core retrieval flows.</h1>
+      <p>Use the controls below for hybrid asks, semantic debug, SQL-RAG, and LangGraph retrieval.</p>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <div class="section-title">
+          <h2>Ask the system</h2>
+          <small>Hybrid retrieval and generation</small>
+        </div>
+        <div class="field">
+          <label for="queryInput">Question</label>
+          <textarea id="queryInput" placeholder="Ask something about the RAG pipeline, SQL grounding, or retrieval layers."></textarea>
+        </div>
+        <div class="split">
+          <div class="field">
+            <label for="userIdInput">User ID</label>
+            <input type="text" id="userIdInput" value="ui-user" />
+          </div>
+          <div class="field">
+            <label for="topKInput">Top K</label>
+            <input type="number" id="topKInput" min="1" max="50" value="8" />
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:12px;">
+          <label for="askStrategy">Query builder strategy</label>
+          <select id="askStrategy">
+            <option value="both" selected>both</option>
+            <option value="replace">replace</option>
+            <option value="preserve">preserve</option>
+          </select>
+        </div>
+
+        <div class="toggles">
+          <label class="toggle"><input type="checkbox" id="useRerank" checked /><span><strong>Use rerank</strong><span>Apply reranking after the ensemble step.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="queryBuilderEnabled" /><span><strong>Query builder</strong><span>Enable rewrite planning before ask.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="sqlRewriterEnabled" checked /><span><strong>SQL rewriter</strong><span>Generate cleaned SQL before execution.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="useGraph" checked /><span><strong>Graph traversal</strong><span>Allow graph-guided expansion in SQL planning.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="multiAnchorEnabled" checked /><span><strong>Multi-anchor</strong><span>Combine multiple anchors for richer grounding.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="recursiveSqlEnabled" /><span><strong>Recursive SQL</strong><span>Allow recursive SQL traversal when needed.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="proxyIndexLayerEnabled" checked /><span><strong>Proxy index</strong><span>Use the proxy index layer for routing.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="semanticSimilarityInferenceEnabled" checked /><span><strong>Semantic inference</strong><span>Use semantic similarity inference in the plan.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="sqlIngestLayerEnabled" /><span><strong>SQL ingest layer</strong><span>Include SQL-backed ingest context.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="sqlRewriteWithGraphTraversal" checked /><span><strong>Rewrite with graph traversal</strong><span>Preserve graph traversal during SQL rewrite.</span></span></label>
+        </div>
+
+        <div class="split" style="margin-top:12px;">
+          <div class="field">
+            <label for="recursiveSqlMaxDepth">Recursive SQL max depth</label>
+            <input type="number" id="recursiveSqlMaxDepth" min="0" max="8" value="2" />
+          </div>
+          <div></div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn primary" id="askBtn">Ask</button>
+          <button class="btn" id="semanticRagBtn">Semantic RAG</button>
+          <button class="btn" id="sqlRagBtn">SQL RAG</button>
+          <button class="btn warm" id="langgraphBtn">LangGraph retrieval</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>Output</h2>
+          <small>Request / response log</small>
+        </div>
+        <div class="output"><pre id="resultBox" class="placeholder">Run one of the actions to see the response here.</pre></div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>Appointment Monitor</h2>
+          <small>Municipal booking monitor with manual HITL fallback</small>
+        </div>
+
+        <div class="split">
+          <div class="field">
+            <label for="monitorProfileSelect">Monitor profile</label>
+            <select id="monitorProfileSelect">
+              <option value="ganey" selected>Ganey Tikva (balanced)</option>
+              <option value="ganey-fast">Ganey Tikva (aggressive)</option>
+              <option value="tel-aviv">Tel Aviv (balanced)</option>
+              <option value="custom">Custom municipality URL</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Execution mode</label>
+            <input type="text" value="Autonomous with optional manual HITL takeover" readonly />
+          </div>
+        </div>
+
+        <div class="split" style="margin-top:12px;">
+          <div class="field">
+            <label for="monitorBookingUrlInput">Municipality booking URL</label>
+            <input type="url" id="monitorBookingUrlInput" placeholder="https://example.gov/appointments" />
+          </div>
+          <div class="field">
+            <label for="monitorIntentInput">Pipeline intent</label>
+            <input type="text" id="monitorIntentInput" placeholder="Municipal appointment - detect slots and complete booking" />
+          </div>
+        </div>
+
+        <div class="toggles" style="margin-top:10px;">
+          <label class="toggle"><input type="checkbox" id="manualHitlMode" checked /><span><strong>Manual HITL takeover</strong><span>Do not auto-continue after HITL start; let me pick date/time myself.</span></span></label>
+        </div>
+
+        <div class="split" style="margin-top:12px;">
+          <div class="field">
+            <label for="apptFirstNameInput">First name</label>
+            <input type="text" id="apptFirstNameInput" placeholder="e.g. Dana" />
+          </div>
+          <div class="field">
+            <label for="apptLastNameInput">Last name</label>
+            <input type="text" id="apptLastNameInput" placeholder="e.g. Levi" />
+          </div>
+        </div>
+
+        <div class="split" style="margin-top:12px;">
+          <div class="field">
+            <label for="apptPhoneInput">Phone</label>
+            <input type="text" id="apptPhoneInput" placeholder="e.g. 0501234567" />
+          </div>
+          <div class="field">
+            <label for="apptEmailInput">Email</label>
+            <input type="email" id="apptEmailInput" placeholder="name@example.com" />
+          </div>
+        </div>
+
+        <div class="split" style="margin-top:12px;">
+          <div class="field">
+            <label for="apptAddressInput">Address</label>
+            <input type="text" id="apptAddressInput" placeholder="Street and number" />
+          </div>
+          <div class="field">
+            <label for="apptIdInput">ID number (optional)</label>
+            <input type="text" id="apptIdInput" placeholder="Teudat Zehut" />
+          </div>
+        </div>
+
+        <div class="split" style="margin-top:12px;">
+          <div class="field">
+            <label for="apptPreferredDateInput">Preferred date (optional)</label>
+            <input type="text" id="apptPreferredDateInput" placeholder="YYYY-MM-DD or DD/MM/YYYY" />
+          </div>
+          <div class="field">
+            <label for="apptPreferredTimeInput">Preferred time (optional)</label>
+            <input type="text" id="apptPreferredTimeInput" placeholder="HH:MM" />
+          </div>
+        </div>
+
+        <div class="split" style="margin-top:12px;">
+          <div class="field">
+            <label for="apptPreferredTimesInput">Preferred times list (optional)</label>
+            <input type="text" id="apptPreferredTimesInput" placeholder="08:00,08:15,08:30" />
+          </div>
+          <div class="field">
+            <label for="apptPreferredTimeWindowInput">Preferred time window (optional)</label>
+            <input type="text" id="apptPreferredTimeWindowInput" placeholder="08:00-11:00" />
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:12px;">
+          <label for="apptSlotSelectionPolicySelect">Slot selection policy</label>
+          <select id="apptSlotSelectionPolicySelect">
+            <option value="score" selected>Score-based (default)</option>
+            <option value="earliest">Earliest available always</option>
+            <option value="exact-only">Exact preferred time only (otherwise do not book)</option>
+            <option value="window-only">Preferred window only (otherwise do not book)</option>
+            <option value="preferred-window-fallback-earliest">Preferred window, else earliest</option>
+          </select>
+        </div>
+
+        <details style="margin-top:10px;">
+          <summary style="cursor:pointer; font-weight:700; color:#fff;">Advanced profile contract</summary>
+          <div class="btn-row" style="margin-top:10px;">
+            <button class="btn" id="refreshProfileContractBtn">Refresh required profile questions</button>
+          </div>
+          <div class="output" style="margin-top:10px;"><pre id="profileContractBox" class="placeholder">Backend required profile questions and missing fields will appear here.</pre></div>
+        </details>
+
+        <div class="btn-row">
+          <button class="btn primary" id="runFullPipelineBtn">Gov booking assignment</button>
+          <button class="btn" id="htmlRagBoosterBtn">RAG-Booking Booster</button>
+        </div>
+
+        <div class="toggles" style="margin-top:10px;">
+          <label class="toggle"><input type="checkbox" id="boosterEnableSqlStage" checked /><span><strong>Booster SQL stage</strong><span>Run SQL_RAG for direct factual/relationship booking queries.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="boosterEnableLangGraphStage" checked /><span><strong>Booster LangGraph stage</strong><span>Run LangGraph retrieval for hybrid/relationship booking questions.</span></span></label>
+          <label class="toggle"><input type="checkbox" id="boosterEnableQualityGate" checked /><span><strong>Booster quality gate</strong><span>Run baseline-vs-langgraph comparison for measurable quality tracking.</span></span></label>
+        </div>
+
+        <details class="card" style="margin-top:12px; padding:14px 16px; border-radius:16px;">
+          <summary style="cursor:pointer; font-weight:700; color:#fff;">Advanced appointment monitor</summary>
+          <div class="hint" style="margin-top:8px;">Kept collapsed by default to reduce noise. Open only if you need manual HITL details or live slot inspection.</div>
+          <div class="split" style="margin-top:12px;">
+            <div class="field">
+              <label for="attendedTokenInput">HITL token</label>
+              <input type="text" id="attendedTokenInput" placeholder="Filled automatically after HITL start" />
+            </div>
+            <div class="field">
+              <label>HITL actions</label>
+              <div class="btn-row" style="margin-top:0;">
+                <button class="btn" id="hitlStatusBtn">Status</button>
+                <button class="btn" id="hitlResumeBtn">Resume</button>
+                <button class="btn" id="hitlApproveBtn">Approve submit</button>
+                <button class="btn warm" id="hitlSubmitBtn">Submit now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="output" style="margin-top:12px;"><pre id="hitlWaitBox" class="placeholder">Waiting state will appear here when the pipeline pauses for your HITL choice.</pre></div>
+          <div class="output" style="margin-top:12px;"><pre id="monitorStepsBox" class="placeholder">Autonomous monitor steps will appear here after monitor actions.</pre></div>
+          <div class="output" style="margin-top:12px;"><pre id="slotCandidateBox" class="placeholder">Top candidate slots considered by the booking engine will appear here in real time.</pre></div>
+        </details>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const el = (id) => document.getElementById(id);
+    const resultBox = el('resultBox');
+    const hitlWaitBox = el('hitlWaitBox');
+    const monitorStepsBox = el('monitorStepsBox');
+    const slotCandidateBox = el('slotCandidateBox');
+    const profileContractBox = el('profileContractBox');
+    const APPLICANT_PROFILE_STORAGE_KEY = 'gov-appointment-applicant-profile';
+    let bookingTokenState = '';
+    let latestMonitorId = '';
+    let latestAttendedToken = '';
+
+    const PROFILE_CONFIGS = {
+      ganey: {
+        category: 'municipal',
+        intentText: 'Ganey Tikva arnona appointment - detect slots and complete booking',
+        bookingUrl: 'https://www.ganeytikva.org.il/appointments/?id=144&select-date=1',
+        intervalMs: 30000,
+        maxAutonomousSteps: 6,
+        autoBridgeChecks: 4,
+        autoBridgePollMs: 15000,
+      },
+      'ganey-fast': {
+        category: 'municipal',
+        intentText: 'Ganey Tikva arnona appointment - detect slots and complete booking',
+        bookingUrl: 'https://www.ganeytikva.org.il/appointments/?id=144&select-date=1',
+        intervalMs: 15000,
+        maxAutonomousSteps: 6,
+        autoBridgeChecks: 6,
+        autoBridgePollMs: 10000,
+      },
+      'tel-aviv': {
+        category: 'municipal',
+        intentText: 'Tel Aviv appointment - detect slots and complete booking',
+        bookingUrl: 'https://www.tel-aviv.gov.il/',
+        intervalMs: 30000,
+        maxAutonomousSteps: 6,
+        autoBridgeChecks: 4,
+        autoBridgePollMs: 15000,
+      },
+      custom: {
+        category: 'municipal',
+        intentText: 'Municipal appointment - detect slots and complete booking',
+        bookingUrl: '',
+        intervalMs: 30000,
+        maxAutonomousSteps: 6,
+        autoBridgeChecks: 4,
+        autoBridgePollMs: 15000,
+      },
+    };
+
+    function getSelectedProfileConfig() {
+      const key = String(el('monitorProfileSelect')?.value || 'ganey').toLowerCase();
+      return PROFILE_CONFIGS[key] || PROFILE_CONFIGS.ganey;
+    }
+
+    function getMonitorBookingUrl() {
+      const fromInput = String(el('monitorBookingUrlInput')?.value || '').trim();
+      if (fromInput) return fromInput;
+      return String(getSelectedProfileConfig()?.bookingUrl || '').trim();
+    }
+
+    function getMonitorIntentText() {
+      const fromInput = String(el('monitorIntentInput')?.value || '').trim();
+      if (fromInput) return fromInput;
+      return String(getSelectedProfileConfig()?.intentText || 'Municipal appointment - detect slots and complete booking').trim();
+    }
+
+    function setAttendedToken(token) {
+      latestAttendedToken = String(token || '').trim();
+      if (el('attendedTokenInput')) {
+        el('attendedTokenInput').value = latestAttendedToken;
+      }
+    }
+
+    function getAttendedToken() {
+      const fromInput = String(el('attendedTokenInput')?.value || '').trim();
+      return fromInput || latestAttendedToken;
+    }
+
+    function setResult(value, isError = false) {
+      resultBox.classList.remove('placeholder');
+      resultBox.style.color = isError ? '#fecaca' : '#dbeafe';
+      resultBox.textContent = typeof value === 'string' ? value : JSON.stringify(value, null, 2);
+    }
+
+    function setBusy(label) {
+      resultBox.textContent = `${label}...`;
+    }
+
+    function setMonitorSteps(value) {
+      if (!monitorStepsBox) return;
+      monitorStepsBox.classList.remove('placeholder');
+      monitorStepsBox.style.color = '#dbeafe';
+      monitorStepsBox.textContent = typeof value === 'string' ? value : JSON.stringify(value, null, 2);
+    }
+
+    function setSlotCandidatePreview(value) {
+      if (!slotCandidateBox) return;
+      slotCandidateBox.classList.remove('placeholder');
+      slotCandidateBox.style.color = '#dbeafe';
+      slotCandidateBox.textContent = typeof value === 'string' ? value : JSON.stringify(value, null, 2);
+    }
+
+    function setHitlWaitState(value, isWaiting = false) {
+      if (!hitlWaitBox) return;
+      hitlWaitBox.classList.remove('placeholder');
+      hitlWaitBox.style.color = isWaiting ? '#fde68a' : '#dbeafe';
+      hitlWaitBox.textContent = typeof value === 'string' ? value : JSON.stringify(value, null, 2);
+    }
+
+    function setProfileContract(value, isError = false) {
+      if (!profileContractBox) return;
+      profileContractBox.classList.remove('placeholder');
+      profileContractBox.style.color = isError ? '#fecaca' : '#dbeafe';
+      profileContractBox.textContent = typeof value === 'string' ? value : JSON.stringify(value, null, 2);
+    }
+
+    function toProfileContractPayload(data = {}) {
+      return {
+        ok: Boolean(data?.ok),
+        applicantProfileComplete: Boolean(data?.applicantProfileComplete),
+        missingApplicantFields: Array.isArray(data?.missingApplicantFields) ? data.missingApplicantFields : [],
+        requiredApplicantQuestions: Array.isArray(data?.requiredApplicantQuestions) ? data.requiredApplicantQuestions : [],
+        persistence: data?.persistence || null,
+        savedAt: data?.savedAt || null,
+      };
+    }
+
+    function renderMonitorStepsFromPayload(data) {
+      const monitor = data?.monitor;
+      if (!monitor || typeof monitor !== 'object') return;
+      const history = Array.isArray(monitor.history) ? monitor.history : [];
+      const appointmentCandidatePreview = Array.isArray(monitor?.bookingState?.appointmentCandidatePreview)
+        ? monitor.bookingState.appointmentCandidatePreview.slice(0, 3)
+        : [];
+      const compact = history.slice(-12).map((entry, index) => ({
+        seq: Math.max(1, history.length - Math.min(11, history.length - 1 - index)),
+        checkedAt: entry?.checkedAt || null,
+        decision: entry?.bookingState?.decision || null,
+        bookingStatus: entry?.bookingState?.booking_status || null,
+        jobStep: entry?.bookingState?.job_step || null,
+        availableSlots: Array.isArray(entry?.bookingState?.available_slots)
+          ? entry.bookingState.available_slots.length
+          : (entry?.slot?.available ? 1 : 0),
+        confidence: Number(entry?.slot?.confidence || 0),
+        networkCount: Number(entry?.networkCount || 0),
+      }));
+
+      setMonitorSteps({
+        monitorId: monitor.id,
+        profile: el('monitorProfileSelect')?.value || null,
+        checksCount: monitor.checksCount,
+        intervalMs: monitor.intervalMs,
+        maxAutonomousSteps: monitor.maxAutonomousSteps,
+        autoBook: monitor.autoBook,
+        allowHumanIntervention: monitor.allowHumanIntervention,
+        current: {
+          bookingStatus: monitor?.bookingState?.booking_status || null,
+          decision: monitor?.bookingState?.decision || null,
+          requiresHumanGate: Boolean(monitor?.bookingState?.requires_human_gate),
+          nextCheckAt: monitor?.bookingState?.next_check_at || null,
+        },
+        appointmentCandidatePreview,
+        recentSteps: compact,
+      });
+      if (appointmentCandidatePreview.length > 0) {
+        setSlotCandidatePreview(appointmentCandidatePreview);
+      }
+      const bookingState = String(monitor?.bookingState?.booking_status || monitor?.bookingState?.state || '').toLowerCase();
+      const requiresHumanGate = Boolean(monitor?.bookingState?.requires_human_gate) || bookingState.includes('hitl') || bookingState.includes('human');
+      const decision = String(monitor?.bookingState?.decision || '').toLowerCase();
+      if (requiresHumanGate || decision.includes('human')) {
+        setHitlWaitState({
+          status: 'waiting-for-human',
+          message: 'The workflow is paused for your HITL choice.',
+          token: latestAttendedToken || null,
+          decision: monitor?.bookingState?.decision || null,
+          bookingState: monitor?.bookingState || null,
+        }, true);
+      }
+    }
+
+    function extractDisplayPayload(data) {
+      if (data == null) return '';
+      if (typeof data === 'string') return data;
+      if (typeof data.answer === 'string' && data.answer.trim()) return data.answer;
+      if (data.result && typeof data.result === 'object') {
+        if (typeof data.result.answer === 'string' && data.result.answer.trim()) return data.result.answer;
+        if (typeof data.result.response === 'string' && data.result.response.trim()) return data.result.response;
+        if (typeof data.result.output === 'string' && data.result.output.trim()) return data.result.output;
+      }
+      if (typeof data.response === 'string' && data.response.trim()) return data.response;
+      if (typeof data.output === 'string' && data.output.trim()) return data.output;
+      if (typeof data.finalAnswer === 'string' && data.finalAnswer.trim()) return data.finalAnswer;
+      if (data.result && typeof data.result === 'object') return data.result;
+      return data;
+    }
+
+    async function api(path, options = {}) {
+      const response = await fetch(path, {
+        ...options,
+        headers: { 'content-type': 'application/json', ...(options.headers || {}) },
+      });
+      const text = await response.text();
+      let data;
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        data = { raw: text };
+      }
+      if (!response.ok) {
+        throw new Error(data?.error || data?.message || `${response.status} ${response.statusText}`);
+      }
+      return data;
+    }
+
+    function getBookingHeaders() {
+      const token = String(bookingTokenState || '').trim();
+      return token ? { 'x-agent-booking-token': token } : {};
+    }
+
+    function getSqlOptions() {
+      return {
+        sqlRewriterEnabled: el('sqlRewriterEnabled').checked,
+        useGraph: el('useGraph').checked,
+        multiAnchorEnabled: el('multiAnchorEnabled').checked,
+        recursiveSqlEnabled: el('recursiveSqlEnabled').checked,
+        recursiveSqlMaxDepth: Number(el('recursiveSqlMaxDepth').value || 0),
+        proxyIndexLayerEnabled: el('proxyIndexLayerEnabled').checked,
+        semanticSimilarityInferenceEnabled: el('semanticSimilarityInferenceEnabled').checked,
+        sqlIngestLayerEnabled: el('sqlIngestLayerEnabled').checked,
+        sqlRewriteWithGraphTraversal: el('sqlRewriteWithGraphTraversal').checked,
+      };
+    }
+
+    function getCommonPayload() {
+      return {
+        query: el('queryInput').value.trim(),
+        userId: el('userIdInput').value.trim() || 'ui-user',
+        topK: Number(el('topKInput').value || 8),
+        sqlOptions: getSqlOptions(),
+      };
+    }
+
+    async function askEndpoint(path, body, label) {
+      try {
+        setBusy(label);
+        const data = await api(path, { method: 'POST', body: JSON.stringify(body) });
+        setResult(extractDisplayPayload(data));
+      } catch (error) {
+        setResult(error.message, true);
+      }
+    }
+
+    async function runHtmlRagBooster() {
+      try {
+        setBusy('Running RAG-Booking Booster (HTML ingest + multi-stage retrieval)');
+        const query = String(el('queryInput')?.value || '').trim() || 'Ganey Tikva appointment booking flow and required steps';
+        const monitorUrl = String(getMonitorBookingUrl() || '').trim();
+        const urls = [
+          'https://www.ganeytikva.org.il/appointments/?id=15',
+          'https://www.ganeytikva.org.il/appointments/?id=144&select-date=1',
+          monitorUrl,
+        ].map((u) => String(u || '').trim()).filter(Boolean);
+        const dedupedUrls = Array.from(new Set(urls));
+        const payload = {
+          query,
+          topK: Number(el('topKInput')?.value || 8),
+          replaceExisting: true,
+          urls: dedupedUrls,
+          enableSqlStage: Boolean(el('boosterEnableSqlStage')?.checked),
+          enableLangGraphStage: Boolean(el('boosterEnableLangGraphStage')?.checked),
+          enableQualityGate: Boolean(el('boosterEnableQualityGate')?.checked),
+        };
+        const data = await api('/api/pipeline/rag-html-booking-booster', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+        });
+        const result = data?.result || {};
+        const winner = result?.retrieval?.winner?.winner || null;
+        setResult({
+          ok: Boolean(data?.ok),
+          mode: result?.mode || 'rag-booking-booster',
+          query: result?.query || query,
+          urls: result?.urls || dedupedUrls,
+          ingest: result?.ingest || null,
+          winner,
+          stageRanking: result?.retrieval?.winner?.ranking || [],
+          qualityGate: result?.retrieval?.qualityGate || null,
+          retrieval: {
+            docsRetrieved: result?.retrieval?.docsRetrieved || 0,
+            warnings: result?.retrieval?.warnings || [],
+            topDocs: result?.retrieval?.topDocs || [],
+            stages: result?.retrieval?.stages || {},
+          },
+          efficiency: result?.efficiency || {},
+        });
+      } catch (error) {
+        setResult(error.message, true);
+      }
+    }
+
+    async function callBookingEndpoint(path, { method = 'POST', body = null, label = 'Running booking operation' } = {}) {
+      try {
+        setBusy(label);
+        const options = {
+          method,
+          headers: getBookingHeaders(),
+        };
+        if (body != null && method !== 'GET') {
+          options.body = JSON.stringify(body);
+        }
+        const data = await api(path, options);
+        if (data?.monitor?.id) {
+          latestMonitorId = String(data.monitor.id || '').trim();
+        }
+        if (data?.session?.token) {
+          setAttendedToken(data.session.token);
+        }
+        if (data?.permission?.token) {
+          bookingTokenState = String(data.permission.token || '').trim();
+        }
+        renderMonitorStepsFromPayload(data);
+        setResult(data);
+      } catch (error) {
+        const needsToken = String(error?.message || '').toLowerCase().includes('agent permission token required');
+        if (needsToken && path.startsWith('/api/government/appointments/')) {
+          try {
+            await ensureBookingToken();
+            const retryOptions = {
+              method,
+              headers: getBookingHeaders(),
+            };
+            if (body != null && method !== 'GET') retryOptions.body = JSON.stringify(body);
+            const retried = await api(path, retryOptions);
+            renderMonitorStepsFromPayload(retried);
+            setResult(retried);
+            return;
+          } catch (retryError) {
+            setResult(retryError.message, true);
+            return;
+          }
+        }
+        setResult(error.message, true);
+      }
+    }
+
+    async function bookingApiRaw(path, { method = 'POST', body = null } = {}) {
+      const options = {
+        method,
+        headers: getBookingHeaders(),
+      };
+      if (body != null && method !== 'GET') {
+        options.body = JSON.stringify(body);
+      }
+      const data = await api(path, options);
+      if (data?.monitor?.id) {
+        latestMonitorId = String(data.monitor.id || '').trim();
+      }
+      if (data?.session?.token) {
+        setAttendedToken(data.session.token);
+      }
+      if (data?.permission?.token) {
+        bookingTokenState = String(data.permission.token || '').trim();
+      }
+      renderMonitorStepsFromPayload(data);
+      return data;
+    }
+
+    function collectApplicantProfileFromUi() {
+      const firstName = String(el('apptFirstNameInput')?.value || '').trim();
+      const lastName = String(el('apptLastNameInput')?.value || '').trim();
+      const phone = String(el('apptPhoneInput')?.value || '').trim();
+      const email = String(el('apptEmailInput')?.value || '').trim();
+      const address = String(el('apptAddressInput')?.value || '').trim();
+      const idNumber = String(el('apptIdInput')?.value || '').trim();
+      const preferredDate = String(el('apptPreferredDateInput')?.value || '').trim();
+      const preferredTime = String(el('apptPreferredTimeInput')?.value || '').trim();
+      const preferredTimes = String(el('apptPreferredTimesInput')?.value || '').trim();
+      const preferredTimeWindow = String(el('apptPreferredTimeWindowInput')?.value || '').trim();
+      const slotSelectionPolicy = String(el('apptSlotSelectionPolicySelect')?.value || 'score').trim().toLowerCase();
+      return {
+        firstName,
+        lastName,
+        fullName: [firstName, lastName].filter(Boolean).join(' ').trim(),
+        phone,
+        email,
+        address,
+        idNumber,
+        preferredDate,
+        preferredTime,
+        preferredTimes,
+        preferredTimeWindow,
+        slotSelectionPolicy,
+      };
+    }
+
+    function getMissingApplicantFields(profile = {}) {
+      const required = ['firstName', 'lastName', 'phone', 'email', 'address'];
+      return required.filter((field) => !String(profile?.[field] || '').trim());
+    }
+
+    function validateApplicantProfileInputs(profile = {}) {
+      const errors = [];
+      const checks = [
+        ['firstName', /^[A-Za-z\u0590-\u05FF][A-Za-z\u0590-\u05FF' -]{1,}$/u, 'First name must use letters only and be at least 2 characters.'],
+        ['lastName', /^[A-Za-z\u0590-\u05FF][A-Za-z\u0590-\u05FF' -]{1,}$/u, 'Last name must use letters only and be at least 2 characters.'],
+        ['phone', /^\+?[0-9][0-9\s\-]{6,}$/, 'Phone must look like 05xxxxxxxx or +972....'],
+        ['email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Email must be a valid email address.'],
+        ['address', /^.{5,}$/, 'Address must be at least 5 characters and include the full address.'],
+        ['idNumber', /^$|^[0-9]{6,9}$/, 'ID number, if provided, must be 6 to 9 digits.'],
+        ['preferredDate', /^$|^(\d{4}[-\\/.]\d{1,2}[-\\/.]\d{1,2}|\d{1,2}[-\\/.]\d{1,2}[-\\/.]\d{2,4})$/, 'Preferred date must be YYYY-MM-DD or DD/MM/YYYY.'],
+        ['preferredTime', /^$|^([01]\d|2[0-3]):[0-5]\d$/, 'Preferred time must be HH:MM in 24-hour format.'],
+        ['preferredTimes', /^$|^([01]\d|2[0-3]):[0-5]\d(\s*,\s*([01]\d|2[0-3]):[0-5]\d)*$/, 'Preferred times must be a comma-separated list of HH:MM values.'],
+        ['preferredTimeWindow', /^$|^([01]\d|2[0-3]):[0-5]\d\s*[-–]\s*([01]\d|2[0-3]):[0-5]\d$/, 'Preferred time window must be HH:MM-HH:MM.'],
+      ];
+
+      for (const [field, pattern, message] of checks) {
+        const value = String(profile?.[field] || '').trim();
+        if (!value) continue;
+        if (!pattern.test(value)) {
+          errors.push(message);
+        }
+      }
+
+      const policy = String(profile?.slotSelectionPolicy || 'score').trim().toLowerCase();
+      const allowed = ['score', 'earliest', 'exact-only', 'window-only', 'preferred-window-fallback-earliest'];
+      if (!allowed.includes(policy)) {
+        errors.push('Slot selection policy must be one of score, earliest, exact-only, window-only, or preferred-window-fallback-earliest.');
+      }
+
+      return errors;
+    }
+
+    function showInputValidationErrors(errors = []) {
+      if (!Array.isArray(errors) || errors.length === 0) return;
+      setResult({ ok: false, validationErrors: errors }, true);
+    }
+
+    async function ensureApplicantProfileComplete() {
+      const profile = collectApplicantProfileFromUi();
+      const errors = validateApplicantProfileInputs(profile);
+      if (errors.length > 0) {
+        showInputValidationErrors(errors);
+        throw new Error(errors[0]);
+      }
+      const missing = getMissingApplicantFields(profile);
+      saveApplicantProfileLocally(profile);
+      const persisted = await persistApplicantProfileToServer(profile).catch(() => null);
+      if (persisted && typeof persisted === 'object') {
+        setProfileContract(toProfileContractPayload(persisted));
+      } else {
+        await fetchProfileContractFromBackend().catch(() => null);
+      }
+      return {
+        profile,
+        missing,
+        complete: missing.length === 0,
+      };
+    }
+
+    function saveApplicantProfileLocally(profile) {
+      try {
+        localStorage.setItem(APPLICANT_PROFILE_STORAGE_KEY, JSON.stringify(profile || {}));
+      } catch {
+      }
+    }
+
+    function loadApplicantProfileLocally() {
+      try {
+        const raw = localStorage.getItem(APPLICANT_PROFILE_STORAGE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        return parsed && typeof parsed === 'object' ? parsed : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function hydrateApplicantProfileInputs(profile) {
+      const src = profile && typeof profile === 'object' ? profile : {};
+      if (el('apptFirstNameInput')) el('apptFirstNameInput').value = String(src.firstName || '');
+      if (el('apptLastNameInput')) el('apptLastNameInput').value = String(src.lastName || '');
+      if (el('apptPhoneInput')) el('apptPhoneInput').value = String(src.phone || '');
+      if (el('apptEmailInput')) el('apptEmailInput').value = String(src.email || '');
+      if (el('apptAddressInput')) el('apptAddressInput').value = String(src.address || '');
+      if (el('apptIdInput')) el('apptIdInput').value = String(src.idNumber || '');
+      if (el('apptPreferredDateInput')) el('apptPreferredDateInput').value = String(src.preferredDate || '');
+      if (el('apptPreferredTimeInput')) el('apptPreferredTimeInput').value = String(src.preferredTime || '');
+      if (el('apptPreferredTimesInput')) el('apptPreferredTimesInput').value = String(src.preferredTimes || '');
+      if (el('apptPreferredTimeWindowInput')) el('apptPreferredTimeWindowInput').value = String(src.preferredTimeWindow || '');
+      if (el('apptSlotSelectionPolicySelect')) el('apptSlotSelectionPolicySelect').value = String(src.slotSelectionPolicy || 'score');
+    }
+
+    async function persistApplicantProfileToServer(profile) {
+      const hasProfileData = Object.values(profile || {}).some((value) => String(value || '').trim());
+      if (!hasProfileData) return null;
+      return bookingApiRaw('/api/government/appointments/credentials/save', {
+        method: 'POST',
+        body: {
+          userId: el('userIdInput')?.value?.trim() || 'ui-user',
+          applicantProfile: profile,
+        },
+      });
+    }
+
+    async function fetchProfileContractFromBackend() {
+      const uiUserId = encodeURIComponent(el('userIdInput')?.value?.trim() || 'ui-user');
+      const status = await bookingApiRaw(`/api/government/appointments/credentials/status?userId=${uiUserId}`, { method: 'GET' });
+      const payload = toProfileContractPayload(status);
+      setProfileContract(payload);
+      return payload;
+    }
+
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    async function ensureBookingToken() {
+      const existing = String(bookingTokenState || '').trim();
+      if (existing) return existing;
+      const grant = await bookingApiRaw('/api/government/agent-permission/grant', {
+        method: 'POST',
+        body: {
+          userId: el('userIdInput').value.trim() || 'ui-user',
+          approvedBy: 'ui-user',
+          scopes: ['bookings'],
+        },
+      });
+      return grant?.permission?.token || '';
+    }
+
+    function hasSlotsInMonitorStatus(payload) {
+      const monitor = payload?.monitor || {};
+      const slots = monitor?.bookingState?.available_slots;
+      return Array.isArray(slots) && slots.length > 0;
+    }
+
+    async function fetchAttendedStatus() {
+      const token = getAttendedToken();
+      if (!token) throw new Error('No HITL token available yet. Run pipeline first or paste a token.');
+      const status = await bookingApiRaw(`/api/government/appointments/attended/${encodeURIComponent(token)}/status`, { method: 'GET' });
+      const session = status?.session || null;
+      const bookingState = String(session?.state || session?.bookingState?.booking_status || '').toLowerCase();
+      const requiresHumanGate = Boolean(session?.requiresHumanGate || session?.bookingState?.requires_human_gate) || bookingState.includes('hitl') || bookingState.includes('human');
+      setHitlWaitState({
+        status: requiresHumanGate ? 'waiting-for-human' : 'not-waiting',
+        token,
+        sessionState: session?.state || null,
+        bookingState: session?.bookingState || null,
+        message: requiresHumanGate ? 'The workflow is waiting for your HITL choice.' : 'No human wait is active right now.',
+      }, requiresHumanGate);
+      setResult({
+        ok: true,
+        action: 'attended-status',
+        token,
+        formRequirements: Array.isArray(status?.session?.formRequirements) ? status.session.formRequirements : [],
+        appointmentCandidatePreview: Array.isArray(status?.session?.appointmentCandidatePreview) ? status.session.appointmentCandidatePreview : [],
+        session: status?.session || null,
+      });
+      if (Array.isArray(status?.session?.appointmentCandidatePreview)) {
+        setSlotCandidatePreview(status.session.appointmentCandidatePreview.slice(0, 3));
+      }
+      return status;
+    }
+
+    async function resumeAttended() {
+      const token = getAttendedToken();
+      if (!token) throw new Error('No HITL token available yet.');
+      const applicantStatus = await ensureApplicantProfileComplete();
+      const resumed = await bookingApiRaw(`/api/government/appointments/attended/${encodeURIComponent(token)}/resume`, {
+        method: 'POST',
+        body: { applicant: applicantStatus.profile },
+      });
+      setHitlWaitState({
+        status: 'resumed',
+        token,
+        message: 'HITL session resumed and waiting for the next step.',
+        session: resumed?.session || null,
+      }, false);
+      setResult({
+        ok: true,
+        action: 'attended-resume',
+        token,
+        missingApplicantFields: applicantStatus.missing,
+        formRequirements: Array.isArray(resumed?.session?.formRequirements) ? resumed.session.formRequirements : [],
+        appointmentCandidatePreview: Array.isArray(resumed?.session?.appointmentCandidatePreview) ? resumed.session.appointmentCandidatePreview : [],
+        session: resumed?.session || null,
+      });
+      if (Array.isArray(resumed?.session?.appointmentCandidatePreview)) {
+        setSlotCandidatePreview(resumed.session.appointmentCandidatePreview.slice(0, 3));
+      }
+      return resumed;
+    }
+
+    async function approveAttendedSubmit() {
+      const token = getAttendedToken();
+      if (!token) throw new Error('No HITL token available yet.');
+      const approved = await bookingApiRaw(`/api/government/appointments/attended/${encodeURIComponent(token)}/approve-submit`, {
+        method: 'POST',
+        body: { approvedBy: 'ui-user', reason: 'manual-hitl-approval' },
+      });
+      setHitlWaitState({
+        status: 'approved',
+        token,
+        message: 'Submit approval recorded. Use Submit now if the session is still paused.',
+        session: approved?.session || null,
+      }, false);
+      setResult({ ok: true, action: 'attended-approve-submit', token, session: approved?.session || null });
+      return approved;
+    }
+
+    async function submitAttendedNow() {
+      const token = getAttendedToken();
+      if (!token) throw new Error('No HITL token available yet.');
+      const submitted = await bookingApiRaw(`/api/government/appointments/attended/${encodeURIComponent(token)}/submit`, {
+        method: 'POST',
+        body: {},
+      });
+      setHitlWaitState({
+        status: 'submitted',
+        token,
+        message: 'The HITL step has been sent forward and is no longer waiting for a choice.',
+        session: submitted?.session || null,
+      }, false);
+      setResult({
+        ok: true,
+        action: 'attended-submit',
+        token,
+        submitted: Boolean(submitted?.session?.submitted),
+        formRequirements: Array.isArray(submitted?.session?.formRequirements) ? submitted.session.formRequirements : [],
+        selectedAppointmentOptions: submitted?.session?.selectedAppointmentOptions || [],
+        appointmentCandidatePreview: Array.isArray(submitted?.session?.appointmentCandidatePreview) ? submitted.session.appointmentCandidatePreview : [],
+        bookingConfirmation: submitted?.session?.confirmation || null,
+        session: submitted?.session || null,
+      });
+      if (Array.isArray(submitted?.session?.appointmentCandidatePreview)) {
+        setSlotCandidatePreview(submitted.session.appointmentCandidatePreview.slice(0, 3));
+      }
+      return submitted;
+    }
+
+    async function runAutoBridgeToHitl() {
+      try {
+        setBusy('Running full autonomous pipeline: token -> monitor -> bridge -> HITL');
+        const applicantState = await ensureApplicantProfileComplete();
+        const applicantProfile = applicantState.profile;
+        const missingApplicantFields = applicantState.missing;
+
+        if (missingApplicantFields.length > 0 && el('manualHitlMode')) {
+          el('manualHitlMode').checked = true;
+        }
+
+        const token = await ensureBookingToken();
+        if (!token) {
+          throw new Error('Failed to obtain booking token');
+        }
+
+        applyMonitorProfile(el('monitorProfileSelect').value);
+
+        const monitorStart = await bookingApiRaw('/api/government/appointments/monitor/start', {
+          method: 'POST',
+          body: getMonitorBody(),
+        });
+        renderMonitorStepsFromPayload(monitorStart);
+        if (Array.isArray(monitorStart?.monitor?.bookingState?.appointmentCandidatePreview)) {
+          setSlotCandidatePreview(monitorStart.monitor.bookingState.appointmentCandidatePreview.slice(0, 3));
+        }
+        const monitorId = monitorStart?.monitor?.id || latestMonitorId;
+        if (!monitorId) {
+          throw new Error('Monitor ID missing after monitor start');
+        }
+
+        const profileConfig = getSelectedProfileConfig();
+        const maxChecks = Math.max(1, Math.min(20, Number(profileConfig.autoBridgeChecks || 4)));
+        const pollMs = Math.max(5000, Number(profileConfig.autoBridgePollMs || 15000));
+        const snapshots = [];
+        let slotDetected = hasSlotsInMonitorStatus(monitorStart);
+
+        for (let i = 0; i < maxChecks && !slotDetected; i += 1) {
+          await sleep(pollMs);
+          const status = await bookingApiRaw(`/api/government/appointments/monitor/${encodeURIComponent(monitorId)}/status`, { method: 'GET' });
+          renderMonitorStepsFromPayload(status);
+          if (Array.isArray(status?.monitor?.bookingState?.appointmentCandidatePreview)) {
+            setSlotCandidatePreview(status.monitor.bookingState.appointmentCandidatePreview.slice(0, 3));
+          }
+          snapshots.push({
+            check: i + 1,
+            checkedAt: new Date().toISOString(),
+            bookingStatus: status?.monitor?.bookingState?.booking_status || null,
+            decision: status?.monitor?.bookingState?.decision || null,
+            availableSlots: Array.isArray(status?.monitor?.bookingState?.available_slots)
+              ? status.monitor.bookingState.available_slots.length
+              : 0,
+          });
+          slotDetected = hasSlotsInMonitorStatus(status);
+        }
+
+        if (slotDetected) {
+          setResult({
+            ok: true,
+            mode: 'auto-bridge',
+            action: 'monitor-only',
+            reason: 'slot detected before HITL fallback',
+            monitorId,
+            checks: snapshots,
+          });
+          return;
+        }
+
+        const hitl = await bookingApiRaw('/api/government/appointments/attended/start', {
+          method: 'POST',
+          body: buildAttendedStartBody(),
+        });
+
+        const hitlToken = String(hitl?.session?.token || '').trim();
+        if (hitlToken) {
+          setAttendedToken(hitlToken);
+        }
+        setHitlWaitState({
+          status: 'waiting-for-human',
+          token: hitlToken || null,
+          message: 'The workflow has entered HITL mode and is waiting for your choice.',
+          sessionState: hitl?.session?.state || null,
+          formRequirements: Array.isArray(hitl?.session?.formRequirements) ? hitl.session.formRequirements : [],
+        }, true);
+        let autoContinue = null;
+        if (hitlToken && !el('manualHitlMode').checked) {
+          autoContinue = await bookingApiRaw(`/api/government/appointments/attended/${encodeURIComponent(hitlToken)}/auto-continue`, {
+            method: 'POST',
+            body: {
+              maxRuntimeMs: 240000,
+              pollIntervalMs: 2500,
+            },
+          }).catch((err) => ({ ok: false, error: String(err?.message || err) }));
+        }
+
+        const autoSession = autoContinue?.session || null;
+        const finalState = autoSession?.state || hitl?.session?.state || null;
+        const bookingSubmitted = Boolean(autoContinue?.submitted || autoSession?.submitted || String(finalState || '').toLowerCase() === 'submitted');
+
+        setResult({
+          ok: true,
+          mode: 'full-autonomous-pipeline',
+          action: 'monitor-bridge-hitl',
+          missingApplicantFields,
+          reason: 'no slots detected in wait window; started HITL session automatically',
+          monitorId,
+          attendedToken: hitlToken || null,
+          manualHitlMode: Boolean(el('manualHitlMode').checked),
+          checks: snapshots,
+          hitlSessionState: hitl?.session?.state || null,
+          hitlAutoContinue: autoContinue,
+          bookingState: finalState,
+          bookingSubmitted,
+          selectedAppointmentOptions: Array.isArray(autoSession?.selectedAppointmentOptions) ? autoSession.selectedAppointmentOptions : [],
+          appointmentCandidatePreview: Array.isArray(autoSession?.appointmentCandidatePreview) ? autoSession.appointmentCandidatePreview : [],
+          bookingConfirmation: autoSession?.confirmation || null,
+          formRequirements: Array.isArray(autoSession?.formRequirements) ? autoSession.formRequirements : [],
+        });
+        if (Array.isArray(autoSession?.appointmentCandidatePreview)) {
+          setSlotCandidatePreview(autoSession.appointmentCandidatePreview.slice(0, 3));
+        }
+        if (bookingSubmitted) {
+          setHitlWaitState({
+            status: 'completed',
+            token: hitlToken || null,
+            message: 'The booking finished, so no human wait is active now.',
+            session: autoSession || hitl?.session || null,
+          }, false);
+        }
+      } catch (error) {
+        setResult(error.message, true);
+        setHitlWaitState({
+          status: 'error',
+          message: String(error?.message || error),
+        }, false);
+      }
+    }
+
+    function buildAttendedStartBody() {
+      const profileConfig = getSelectedProfileConfig();
+      return {
+        description: getMonitorIntentText(),
+        userId: el('userIdInput').value.trim() || 'ui-user',
+        notes: `autonomous profile=${el('monitorProfileSelect')?.value || 'ganey'}`,
+        bookingUrl: getMonitorBookingUrl(),
+        applicant: collectApplicantProfileFromUi(),
+        headless: false,
+      };
+    }
+
+    function getMonitorBody() {
+      const profileConfig = getSelectedProfileConfig();
+      return {
+        userId: el('userIdInput').value.trim() || 'ui-user',
+        intentText: getMonitorIntentText(),
+        bookingUrl: getMonitorBookingUrl(),
+        intervalMs: Number(profileConfig.intervalMs || 30000),
+        autonomousBrowse: true,
+        maxAutonomousSteps: Number(profileConfig.maxAutonomousSteps || 6),
+        autoBook: true,
+        allowHumanIntervention: true,
+        headlessBooking: true,
+        confirmationGranted: false,
+        selectedSlot: null,
+        preferredDate: '',
+        applicant: collectApplicantProfileFromUi(),
+      };
+    }
+
+    function applyMonitorProfile(profile) {
+      const normalized = String(profile || 'ganey').toLowerCase();
+      const allowed = ['ganey', 'ganey-fast', 'tel-aviv', 'custom'];
+      el('monitorProfileSelect').value = allowed.includes(normalized) ? normalized : 'ganey';
+      const cfg = getSelectedProfileConfig();
+      if (el('monitorBookingUrlInput') && !String(el('monitorBookingUrlInput').value || '').trim()) {
+        el('monitorBookingUrlInput').value = String(cfg.bookingUrl || '');
+      }
+      if (el('monitorIntentInput') && !String(el('monitorIntentInput').value || '').trim()) {
+        el('monitorIntentInput').value = String(cfg.intentText || 'Municipal appointment - detect slots and complete booking');
+      }
+      setMonitorSteps({
+        mode: 'profile-applied',
+        profile: el('monitorProfileSelect').value,
+        bookingUrl: getMonitorBookingUrl(),
+        intentText: getMonitorIntentText(),
+        defaults: {
+          intervalMs: cfg.intervalMs,
+          maxAutonomousSteps: cfg.maxAutonomousSteps,
+          autoBridgeChecks: cfg.autoBridgeChecks,
+          autoBridgePollMs: cfg.autoBridgePollMs,
+        },
+      });
+    }
+
+    function buildAskBody() {
+      const common = getCommonPayload();
+      return {
+        query: common.query,
+        userId: common.userId,
+        context: {
+          useRerank: el('useRerank').checked,
+          queryBuilder: {
+            enabled: el('queryBuilderEnabled').checked,
+            strategy: el('askStrategy').value,
+          },
+          sqlOptions: common.sqlOptions,
+        },
+      };
+    }
+
+    function buildAgentBody(includeTopK = true) {
+      const common = getCommonPayload();
+      return {
+        query: common.query,
+        userId: common.userId,
+        ...(includeTopK ? { topK: common.topK } : {}),
+        useRerank: el('useRerank').checked,
+        sqlOptions: common.sqlOptions,
+      };
+    }
+
+    el('askBtn').addEventListener('click', () => askEndpoint('/ask', buildAskBody(), 'Running Ask orchestrator'));
+    el('semanticRagBtn').addEventListener('click', () => askEndpoint('/api/agents/semantic-rag', buildAgentBody(true), 'Running semantic RAG'));
+    el('sqlRagBtn').addEventListener('click', () => askEndpoint('/api/agents/sql-rag', buildAgentBody(false), 'Running SQL RAG'));
+    el('htmlRagBoosterBtn').addEventListener('click', () => runHtmlRagBooster());
+    el('langgraphBtn').addEventListener('click', () => askEndpoint('/api/agents/langgraph-retrieval', {
+      query: getCommonPayload().query,
+      userId: getCommonPayload().userId,
+      evalMode: true,
+      sqlOptions: getCommonPayload().sqlOptions,
+    }, 'Running LangGraph retrieval'));
+
+    el('runFullPipelineBtn').addEventListener('click', () => runAutoBridgeToHitl());
+    el('refreshProfileContractBtn')?.addEventListener('click', () => {
+      fetchProfileContractFromBackend().catch((error) => setProfileContract(error.message, true));
+    });
+    el('hitlStatusBtn').addEventListener('click', () => fetchAttendedStatus().catch((error) => setResult(error.message, true)));
+    el('hitlResumeBtn').addEventListener('click', () => resumeAttended().catch((error) => setResult(error.message, true)));
+    el('hitlApproveBtn').addEventListener('click', () => approveAttendedSubmit().catch((error) => setResult(error.message, true)));
+    el('hitlSubmitBtn').addEventListener('click', () => submitAttendedNow().catch((error) => setResult(error.message, true)));
+
+    el('monitorProfileSelect').addEventListener('change', () => {
+      if (el('monitorBookingUrlInput')) {
+        el('monitorBookingUrlInput').value = '';
+      }
+      if (el('monitorIntentInput')) {
+        el('monitorIntentInput').value = '';
+      }
+      applyMonitorProfile(el('monitorProfileSelect').value);
+    });
+
+    ['apptFirstNameInput', 'apptLastNameInput', 'apptPhoneInput', 'apptEmailInput', 'apptAddressInput', 'apptIdInput', 'apptPreferredDateInput', 'apptPreferredTimeInput', 'apptPreferredTimesInput', 'apptPreferredTimeWindowInput', 'apptSlotSelectionPolicySelect'].forEach((id) => {
+      el(id)?.addEventListener('input', () => {
+        saveApplicantProfileLocally(collectApplicantProfileFromUi());
+        if (id === 'apptPreferredTimeInput' || id === 'apptPreferredTimesInput' || id === 'apptPreferredTimeWindowInput' || id === 'apptPreferredDateInput' || id === 'apptSlotSelectionPolicySelect') {
+          const preview = collectApplicantProfileFromUi();
+          const validationErrors = validateApplicantProfileInputs(preview);
+          if (validationErrors.length > 0) {
+            setMonitorSteps({ validationErrors });
+          }
+        }
+      });
+      el(id)?.addEventListener('change', () => {
+        saveApplicantProfileLocally(collectApplicantProfileFromUi());
+      });
+    });
+
+    hydrateApplicantProfileInputs({});
+    applyMonitorProfile('ganey');
+    fetchProfileContractFromBackend().catch((error) => setProfileContract(error.message, true));
+  </script>
+</body>
+</html>

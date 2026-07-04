@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Knowledge Graph DB Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    #mermaid { background: #f9f9f9; padding: 1em; border-radius: 8px; }
+    #error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Knowledge Graph DB Visualization</h1>
+  <div id="mermaid">Loading diagram...</div>
+  <div id="error"></div>
+  <script>
+    async function loadMermaid() {
+      try {
+        const res = await fetch('http://localhost:4100/mcp/schema-mermaid');
+        if (!res.ok) throw new Error('Failed to fetch Mermaid diagram');
+        const diagram = await res.text();
+        document.getElementById('mermaid').textContent = diagram;
+        mermaid.initialize({ startOnLoad: false });
+        mermaid.render('theGraph', diagram, (svg) => {
+          document.getElementById('mermaid').innerHTML = svg;
+        });
+      } catch (err) {
+        document.getElementById('error').textContent = err.message;
+      }
+    }
+    loadMermaid();
+  </script>
+</body>
+</html>

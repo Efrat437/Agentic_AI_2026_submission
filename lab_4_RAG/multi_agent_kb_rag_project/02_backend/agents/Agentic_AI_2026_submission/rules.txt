@@ -1,0 +1,89 @@
+# Insurance underwriting rule language — examples
+
+Use these patterns when designing your rule engine, UI, and RAG. Attributes are **capabilities** your core insurance platform exposes to carriers (driver, vehicle, geography, loss history, channel).
+
+## Atomic conditions
+
+- if driver_age in_range [18, 24] then increase_premium
+- if driver_age in_range [25, 70] then approve_standard
+- if driver_license_years is 0 then require_underwriting
+- if driver_license_years in_range [1, 2] then increase_premium
+- if driver_country is israel then approve_standard
+- if driver_country in [israel, spain] then increase_premium
+- if driver_region is europe then increase_premium
+- if driver_region in [europe, middle_east] then require_underwriting
+- if accident_count is 0 then apply_discount
+- if accident_count in [1, 2] then increase_premium
+- if accident_count in_range [10, 99] then decline
+- if months_since_last_accident in_range [0, 12] then increase_premium
+- if months_since_last_accident in_range [13, 999] then approve_standard
+- if vehicle_class is commercial then increase_premium
+- if vehicle_class in [sedan, hatchback] then approve_standard
+- if coverage_tier is comprehensive then increase_premium
+- if coverage_tier is third_party then approve_standard
+- if fraud_risk_level is high then decline
+- if fraud_risk_level is medium then require_underwriting
+- if fraud_risk_level is low then approve_standard
+- if distribution_channel is broker_api then require_underwriting
+- if distribution_channel in [direct_web, mobile_app] then approve_standard
+- if vehicle_id is veh_fleet_demo_01 then apply_discount
+- if vehicle_id in [veh_partner_a, veh_partner_b] then apply_discount
+- if risk_zone in_range [1, 3] then approve_standard
+- if risk_zone in_range [8, 10] then increase_premium
+- if driver_country in_array [portugal, greece, croatia] then increase_premium
+- if vehicle_id in_array [veh_temp_alpha, veh_temp_beta, veh_temp_gamma] then require_underwriting
+- if driver_country in_list eu_countries then approve_standard
+- if driver_country in_list countries_driving_bad then increase_premium
+- if driver_country in_list high_fraud_jurisdictions then decline
+- if vehicle_id in_list fleet_preferred_vehicle_ids then apply_discount
+- if vehicle_id in_list telematics_subscribed_vehicles then apply_discount
+
+## `in_array` (inline multi-value)
+
+Values are **inline** in the rule (comma-separated inside `[` `]`). Use for small explicit sets of countries, vehicle tokens, channels, etc.
+
+- if driver_country in_array [romania, bulgaria, serbia] then increase_premium
+- if vehicle_class in_array [suv, van, pickup] then increase_premium
+- if distribution_channel in_array [aggregator_x, comparison_site_y] then require_underwriting
+
+## `in_list` (named list)
+
+The right-hand side is a **list name**. At evaluation (or ingest) time, resolve it by loading `lists/<list_name>.json` (see `_Task_/lists/`). Each file has `list_name`, optional `description`, and `items` (array of strings).
+
+- if driver_country in_list eu_countries then approve_standard
+- if driver_country in_list countries_driving_bad then increase_premium
+- if vehicle_id in_list fleet_preferred_vehicle_ids then apply_discount
+- if vehicle_id in_list telematics_subscribed_vehicles then apply_discount
+- if distribution_channel in_list automated_underwriting_flags then require_underwriting
+
+Compound example:
+
+- if driver_country in_list eu_countries and distribution_channel in_list automated_underwriting_flags then require_underwriting
+
+## Compound conditions (AND / OR)
+
+- if driver_country in [israel, spain] then increase_premium
+- if driver_region is europe and fraud_risk_level is high then decline
+- if vehicle_class is sedan and coverage_tier in [third_party, comprehensive] then approve_standard
+- if accident_count in_range [3, 9] or months_since_last_accident in_range [0, 6] then require_underwriting
+- if risk_zone in_range [7, 10] and distribution_channel is broker_api then increase_premium
+- if distribution_channel in [direct_web, mobile_app] and vehicle_id in [veh_quarantine_01, veh_quarantine_02] then decline
+
+## Subsumption / overlap (for RAG + retrieval lab)
+
+A broader rule may already cover a narrower one the user types:
+
+- Corpus: `if driver_country in [israel, spain] then increase_premium`
+- New rule: `if driver_country is israel then increase_premium` → semantically included in the OR-list rule (same action).
+
+Students should implement **retrieval** (and optionally an LLM judge in LangGraph) to flag duplicates, near-duplicates, or **subsumed** rules.
+
+## Normalization hints (optional)
+
+- Lowercase country/region tokens in storage.
+- Expand `is X` to `in [X]` for set comparisons.
+- Canonicalize numeric ranges (driver_age, months_since_last_accident) before comparing rules.
+
+Full dummy corpus (**168** rules, including `in_array`, `in_list`, geo, channel, vehicle, and fraud) for indexing: see `insurance_rules_dummy_100.jsonl` in this folder.
+
+Named lists live in `lists/*.json` (one file per list).

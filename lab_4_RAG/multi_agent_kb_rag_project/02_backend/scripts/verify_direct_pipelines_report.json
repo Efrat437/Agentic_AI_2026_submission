@@ -1,0 +1,11 @@
+{
+  "semanticRag": {
+    "ok": false,
+    "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+  },
+  "sqlRag": {
+    "ok": false,
+    "error": ""
+  },
+  "timestamp": "2026-05-02T19:49:18.084Z"
+}

@@ -1,0 +1,148 @@
+{
+  "ok": true,
+  "mode": "circuit-breaker-threshold-cooldown-validation",
+  "generatedAt": "2026-04-25T13:34:33.234Z",
+  "baseUrl": "http://127.0.0.1:58846",
+  "explanation": {
+    "threshold": "Lower threshold opens the circuit breaker after fewer consecutive transient failures.",
+    "cooldown": "Longer cooldown keeps a failing endpoint skipped for longer before half-open retry is allowed.",
+    "impact": "These settings trade off recovery speed, retry pressure on unstable upstreams, and total booking latency."
+  },
+  "profiles": [
+    {
+      "profile": {
+        "name": "aggressive",
+        "failureThreshold": 1,
+        "cooldownMs": 250
+      },
+      "runs": [
+        {
+          "run": 1,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 2859,
+          "circuitBreakerOpenedCount": 1,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        },
+        {
+          "run": 2,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 2774,
+          "circuitBreakerOpenedCount": 1,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        },
+        {
+          "run": 3,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 2831,
+          "circuitBreakerOpenedCount": 1,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        }
+      ],
+      "successCount": 3,
+      "averageRetries": 0,
+      "averageElapsedMs": 2821,
+      "circuitBreakerOpenedCount": 3,
+      "circuitBreakerSkippedCount": 0,
+      "transientRecoveryCount": 3
+    },
+    {
+      "profile": {
+        "name": "balanced",
+        "failureThreshold": 2,
+        "cooldownMs": 350
+      },
+      "runs": [
+        {
+          "run": 1,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 3021,
+          "circuitBreakerOpenedCount": 0,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        },
+        {
+          "run": 2,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 2857,
+          "circuitBreakerOpenedCount": 0,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        },
+        {
+          "run": 3,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 2926,
+          "circuitBreakerOpenedCount": 0,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        }
+      ],
+      "successCount": 3,
+      "averageRetries": 0,
+      "averageElapsedMs": 2935,
+      "circuitBreakerOpenedCount": 0,
+      "circuitBreakerSkippedCount": 0,
+      "transientRecoveryCount": 3
+    },
+    {
+      "profile": {
+        "name": "conservative",
+        "failureThreshold": 3,
+        "cooldownMs": 900
+      },
+      "runs": [
+        {
+          "run": 1,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 3021,
+          "circuitBreakerOpenedCount": 0,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        },
+        {
+          "run": 2,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 2871,
+          "circuitBreakerOpenedCount": 0,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        },
+        {
+          "run": 3,
+          "success": true,
+          "bookingStatus": "booked",
+          "retries": 0,
+          "totalElapsedMs": 3054,
+          "circuitBreakerOpenedCount": 0,
+          "circuitBreakerSkippedCount": 0,
+          "transientRecoveryCount": 1
+        }
+      ],
+      "successCount": 3,
+      "averageRetries": 0,
+      "averageElapsedMs": 2982,
+      "circuitBreakerOpenedCount": 0,
+      "circuitBreakerSkippedCount": 0,
+      "transientRecoveryCount": 3
+    }
+  ]
+}

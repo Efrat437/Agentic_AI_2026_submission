@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Rule Intelligence Platform</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --ink: #16202a;
+      --muted: #5d7186;
+      --line: #dce5ed;
+      --primary: #0e7490;
+      --danger: #b42318;
+      --ok: #13795b;
+      --warn: #9a6700;
+      --font: "Space Grotesk", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at -20% -20%, #d9efff 0%, transparent 55%),
+        radial-gradient(900px 500px at 120% 10%, #d9ffe8 0%, transparent 45%),
+        var(--bg);
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .title { margin-bottom: 16px; }
+    .title h1 { margin: 0; font-size: 28px; }
+    .title p { margin: 6px 0 0; color: var(--muted); }
+    .grid { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(16, 32, 48, 0.06);
+      padding: 16px;
+    }
+    .card h2 { margin: 0 0 12px; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    select, input, button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font: inherit;
+    }
+    input, select { background: #fff; }
+    button { cursor: pointer; }
+    .btn-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .preview { background: #f8fbff; border: 1px dashed #b7d4eb; border-radius: 10px; padding: 12px; min-height: 50px; }
+    .status { font-weight: 600; }
+    .approve { color: var(--ok); }
+    .reject { color: var(--danger); }
+    .revise { color: var(--warn); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid var(--line); text-align: left; padding: 8px; font-size: 13px; vertical-align: top; }
+    th { color: var(--muted); }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">
+      <h1>AI Rule Intelligence Platform</h1>
+      <p>Frontend -> FastAPI -> LangGraph -> MCP Xenova Embeddings -> pgvector -> rerank -> recommendation</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Build Rule</h2>
+        <div id="clauses"></div>
+        <div class="row">
+          <button id="addClause">+ Add Clause</button>
+          <select id="action">
+            <option>approve_standard</option>
+            <option>increase_premium</option>
+            <option>apply_discount</option>
+            <option>require_underwriting</option>
+            <option>decline</option>
+          </select>
+          <button id="analyze" class="btn-primary">Analyze</button>
+          <button id="analyzeCreate">Analyze + Create if allowed</button>
+          <button id="runPipeline" class="btn-primary">Run Full Hierarchical Pipeline</button>
+          <button id="analyzeUpdate">Analyze + Update Table</button>
+        </div>
+        <div class="row">
+          <input id="updateRuleId" placeholder="existing rule_id for update (e.g. r009)" />
+          <input id="updatePriority" placeholder="priority override (optional)" />
+        </div>
+        <h2>Explicit Inputs</h2>
+        <div class="row">
+          <input id="driverCountryInput" placeholder="driver_country (e.g. israel)" />
+          <input id="driverAgeMinInput" placeholder="driver_age min" />
+          <input id="driverAgeMaxInput" placeholder="driver_age max" />
+        </div>
+        <div class="row">
+          <input id="accidentCountInput" placeholder="accident_count" />
+          <input id="monthsSinceLastAccidentInput" placeholder="months_since_last_accident" />
+          <input id="driverLicenseYearsInput" placeholder="driver_license_years" />
+        </div>
+        <div class="row">
+          <input id="coverageTierInput" placeholder="coverage_tier (basic/comprehensive)" />
+          <input id="fraudRiskInput" placeholder="fraud_risk_level (low/medium/high)" />
+          <input id="vehicleClassInput" placeholder="vehicle_class (car/motorcycle/...)" />
+        </div>
+        <div class="row">
+          <input id="customAttributeInput" placeholder="attribute (e.g. driver_country)" />
+          <select id="customOperatorInput">
+            <option>is</option>
+            <option>in</option>
+            <option>in_array</option>
+            <option>in_list</option>
+            <option>in_range</option>
+            <option>not_in</option>
+          </select>
+          <input id="customValueInput" placeholder="value (e.g. israel or [israel,spain])" />
+        </div>
+        <div class="row">
+          <input id="countryFilter" placeholder="country filter (optional)" />
+          <input id="insuranceTypeFilter" placeholder="insurance_type filter (optional)" />
+          <select id="activeFilter">
+            <option value="true">active=true</option>
+            <option value="false">active=false</option>
+            <option value="">active=any</option>
+          </select>
+        </div>
+        <h2>Rule Preview</h2>
+        <div class="preview" id="preview"></div>
+      </div>
+
+      <div class="card">
+        <h2>Recommendation</h2>
+        <div id="summary">No analysis yet.</div>
+        <div id="details" style="margin-top:8px;color:var(--muted);"></div>
+        <h2>AI Structured Output</h2>
+        <pre id="aiDecision" style="white-space: pre-wrap;"></pre>
+        <div id="hitl" style="margin-top:8px;color:var(--warn);font-weight:600;"></div>
+        <div id="decision" class="status"></div>
+        <h2>Parsed</h2>
+        <pre id="parsed" style="white-space: pre-wrap;"></pre>
+        <h2>Structured Rule JSON</h2>
+        <pre id="structured" style="white-space: pre-wrap;"></pre>
+        <h2>Retrieval Layers</h2>
+        <pre id="layers" style="white-space: pre-wrap;"></pre>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 16px;">
+      <h2>Retrieved Similar Rules (k=30 + threshold + rerank + hierarchy + conflict)</h2>
+      <table>
+        <thead>
+          <tr><th>Rule</th><th>Tag</th><th>Similarity</th><th>Rerank</th><th>Priority</th><th>Specificity</th><th>Final</th><th>Reason</th></tr>
+        </thead>
+        <tbody id="results"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <template id="clauseTpl">
+    <div class="row clause">
+      <select class="comb">
+        <option value="and">and</option>
+        <option value="or">or</option>
+      </select>
+      <select class="field">
+        <option>driver_age</option><option>driver_license_years</option><option>driver_country</option>
+        <option>driver_region</option><option>accident_count</option><option>months_since_last_accident</option>
+        <option>vehicle_id</option><option>vehicle_class</option><option>coverage_tier</option>
+        <option>fraud_risk_level</option><option>distribution_channel</option><option>risk_zone</option>
+      </select>
+      <select class="op">
+        <option>is</option><option>in</option><option>in_array</option><option>in_list</option><option>in_range</option><option>not_in</option>
+      </select>
+      <input class="val" placeholder="value or [a,b] or list_name" />
+      <button class="remove">x</button>
+    </div>
+  </template>
+
+  <script>
+    const API = "http://localhost:8000";
+    const clausesEl = document.getElementById("clauses");
+    const previewEl = document.getElementById("preview");
+
+    function addClause(first = false) {
+      const tpl = document.getElementById("clauseTpl");
+      const node = tpl.content.cloneNode(true);
+      const row = node.querySelector(".clause");
+      if (first) row.querySelector(".comb").style.visibility = "hidden";
+      row.querySelector(".remove").onclick = () => { row.remove(); renderPreview(); };
+      row.querySelectorAll("select,input").forEach((el) => el.onchange = renderPreview);
+      clausesEl.appendChild(node);
+      renderPreview();
+    }
+
+    function renderPreview() {
+      const rows = [...clausesEl.querySelectorAll(".clause")];
+      if (!rows.length) return previewEl.textContent = "";
+      const body = rows.map((r, i) => {
+        const comb = r.querySelector(".comb").value;
+        const field = r.querySelector(".field").value;
+        const op = r.querySelector(".op").value;
+        const val = r.querySelector(".val").value.trim() || "...";
+        return `${i > 0 ? comb + " " : ""}${field} ${op} ${val}`;
+      }).join(" ");
+      const action = document.getElementById("action").value;
+      previewEl.textContent = `if ${body} then ${action}`;
+    }
+
+    function buildRuleFromExplicitInputs() {
+      const conditions = [];
+      const driverCountry = document.getElementById("driverCountryInput").value.trim();
+      const ageMin = document.getElementById("driverAgeMinInput").value.trim();
+      const ageMax = document.getElementById("driverAgeMaxInput").value.trim();
+      const accidentCount = document.getElementById("accidentCountInput").value.trim();
+      const monthsSinceLastAccident = document.getElementById("monthsSinceLastAccidentInput").value.trim();
+      const driverLicenseYears = document.getElementById("driverLicenseYearsInput").value.trim();
+      const coverageTier = document.getElementById("coverageTierInput").value.trim();
+      const fraudRisk = document.getElementById("fraudRiskInput").value.trim();
+      const vehicleClass = document.getElementById("vehicleClassInput").value.trim();
+      const customAttribute = document.getElementById("customAttributeInput").value.trim();
+      const customOperator = document.getElementById("customOperatorInput").value.trim();
+      const customValue = document.getElementById("customValueInput").value.trim();
+
+      if (driverCountry) conditions.push(`driver_country is ${driverCountry}`);
+      if (ageMin && ageMax) {
+        conditions.push(`driver_age in_range [${ageMin},${ageMax}]`);
+      } else if (ageMin) {
+        conditions.push(`driver_age is ${ageMin}`);
+      }
+      if (accidentCount) conditions.push(`accident_count is ${accidentCount}`);
+      if (monthsSinceLastAccident) conditions.push(`months_since_last_accident is ${monthsSinceLastAccident}`);
+      if (driverLicenseYears) conditions.push(`driver_license_years is ${driverLicenseYears}`);
+      if (coverageTier) conditions.push(`coverage_tier is ${coverageTier}`);
+      if (fraudRisk) conditions.push(`fraud_risk_level is ${fraudRisk}`);
+      if (vehicleClass) conditions.push(`vehicle_class is ${vehicleClass}`);
+      if (customAttribute && customOperator && customValue) {
+        conditions.push(`${customAttribute} ${customOperator} ${customValue}`);
+      }
+
+      if (!conditions.length) return null;
+      const action = document.getElementById("action").value;
+      return `if ${conditions.join(" and ")} then ${action}`;
+    }
+
+    async function run(shouldCreate) {
+      const explicitRule = buildRuleFromExplicitInputs();
+      const rule = explicitRule || previewEl.textContent;
+      previewEl.textContent = rule;
+      if (!rule || !rule.startsWith("if ")) {
+        alert("Please add at least one explicit input or one clause before running analysis.");
+        return;
+      }
+      const country = document.getElementById("countryFilter").value.trim();
+      const insuranceType = document.getElementById("insuranceTypeFilter").value.trim();
+      const activeRaw = document.getElementById("activeFilter").value;
+      const active = activeRaw === "" ? null : activeRaw === "true";
+      const res = await fetch(`${API}/api/rules/analyze`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          rule_text: rule,
+          should_create: shouldCreate,
+          top_k: 30,
+          country: country || null,
+          insurance_type: insuranceType || null,
+          active: active,
+        })
+      });
+      const data = await res.json();
+
+      const decision = document.getElementById("decision");
+      decision.className = `status ${data.recommendation}`;
+      decision.textContent = `Decision: ${data.recommendation.toUpperCase()}${data.create_indexed ? " (indexed)" : ""}`;
+      document.getElementById("summary").textContent = data.summary;
+      document.getElementById("details").textContent = data.recommendation_details || "";
+      document.getElementById("aiDecision").textContent = JSON.stringify({
+        recommendation: data.recommendation,
+        summary: data.summary,
+        relationship_found: data.relationship_found,
+        top_match_rule_id: data.top_match_rule_id,
+        top_match_similarity: data.top_match_similarity,
+        action_recommendation: data.action_recommendation,
+        reasoning: data.reasoning,
+      }, null, 2);
+      const hitlText = data.hitl_required
+        ? `HITL required: ${data.hitl_reason || "manual review"} (review id: ${data.hitl_review_id || "n/a"})`
+        : "";
+      document.getElementById("hitl").textContent = hitlText;
+      document.getElementById("parsed").textContent = JSON.stringify(data.parsed_rule, null, 2);
+      document.getElementById("structured").textContent = JSON.stringify(data.structured_rule || {}, null, 2);
+      document.getElementById("layers").textContent = JSON.stringify(data.retrieval_layers || {}, null, 2);
+
+      const tbody = document.getElementById("results");
+      tbody.innerHTML = "";
+      for (const c of data.candidates) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${c.rule_text}</td><td>${c.tag}</td><td>${c.similarity.toFixed(4)}</td><td>${c.rerank_score.toFixed(4)}</td><td>${c.priority}</td><td>${c.specificity_score.toFixed(4)}</td><td>${c.final_score.toFixed(4)}</td><td>${c.reason}</td>`;
+        tbody.appendChild(tr);
+      }
+
+      return { data, rule };
+    }
+
+    async function analyzeAndUpdate() {
+      const result = await run(false);
+      if (!result) return;
+
+      const ruleId = document.getElementById("updateRuleId").value.trim();
+      if (!ruleId) {
+        alert("Please enter an existing rule_id to update.");
+        return;
+      }
+
+      const updatePriorityRaw = document.getElementById("updatePriority").value.trim();
+      const updatePriority = updatePriorityRaw === "" ? null : Number(updatePriorityRaw);
+
+      const updateRes = await fetch(`${API}/api/rules/update`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          rule_id: ruleId,
+          rule_text: result.rule,
+          priority_override: Number.isFinite(updatePriority) ? updatePriority : null,
+        }),
+      });
+
+      const updateData = await updateRes.json();
+      if (!updateRes.ok) {
+        alert(`Update failed: ${updateData.detail || "unknown error"}`);
+        return;
+      }
+      alert(`Update success: ${updateData.rule_id} updated in rules table.`);
+    }
+
+    document.getElementById("addClause").onclick = () => addClause(false);
+    document.getElementById("analyze").onclick = () => run(false);
+    document.getElementById("analyzeCreate").onclick = () => run(true);
+    document.getElementById("runPipeline").onclick = () => run(false);
+    document.getElementById("analyzeUpdate").onclick = () => analyzeAndUpdate();
+    document.getElementById("action").onchange = renderPreview;
+
+    addClause(true);
+  </script>
+</body>
+</html>

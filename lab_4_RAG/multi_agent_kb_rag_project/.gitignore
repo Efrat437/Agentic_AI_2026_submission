@@ -1,0 +1,20 @@
+tmp/browser-booking-attended/
+tmp/secure_api_test.mjs
+# Node dependencies
+node_modules/
+# Environment files
+.env
+# OS and editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+# Build and temp
+*.log
+tmp/
+package-lock.json
+# Ignore data and output
+*.sqlite
+*.db
+*.bak
+*.pyc
+__pycache__/

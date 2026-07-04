@@ -1,0 +1,22 @@
+{
+  "name": "receipt-pipeline",
+  "type": "module",
+  "main": "api/upload.js",
+  "scripts": {
+    "start:mcp": "node mcp/mcp_server.js",
+    "start:api": "node api/upload.js",
+    "frontend:dev": "cd ../client && npm run dev",
+    "frontend:build": "cd ../client && npm run build",
+    "frontend:preview": "cd ../client && npm run preview",
+    "frontend:lint": "cd ../client && npm run lint",
+    "add-currency-column": "node ./db/add_currency_column.js",
+    "mcp-client": "node ./mcp_client.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.11.1",
+    "tesseract.js": "^7.0.0"
+  }
+}

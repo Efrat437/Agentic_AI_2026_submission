@@ -1,0 +1,75 @@
+erDiagram
+  actions {
+    ...
+  }
+  allowed_tables {
+    ...
+  }
+  attributes {
+    ...
+  }
+  audit_login {
+    ...
+  }
+  booking_applicant_profiles {
+    ...
+  }
+  government_requests {
+    ...
+  }
+  memories {
+    ...
+  }
+  node_embedding_blob {
+    ...
+  }
+  nodes {
+    ...
+  }
+  permissions {
+    ...
+  }
+  query_log {
+    ...
+  }
+  rag_documents {
+    ...
+  }
+  relationships {
+    ...
+  }
+  resources_booking {
+    ...
+  }
+  secure_agent_permissions {
+    ...
+  }
+  secure_query_logs {
+    ...
+  }
+  secure_role_permissions {
+    ...
+  }
+  secure_roles {
+    ...
+  }
+  secure_users {
+    ...
+  }
+  user_permissions {
+    ...
+  }
+  users {
+    ...
+  }
+  secure_users }o--|| secure_roles : FK
+  secure_role_permissions }o--|| secure_roles : FK
+  user_permissions }o--|| users : FK
+  user_permissions }o--|| permissions : FK
+  allowed_tables }o--|| permissions : FK
+  query_log }o--|| users : FK
+  audit_login }o--|| users : FK
+  resources_booking }o--|| users : FK
+  relationships }o--|| nodes : FK
+  relationships }o--|| nodes : FK
+  attributes }o--|| nodes : FK

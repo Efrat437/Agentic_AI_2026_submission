@@ -1,0 +1,9 @@
+{
+  "list_name": "telematics_subscribed_vehicles",
+  "description": "Vehicles enrolled in usage-based insurance / telematics programs.",
+  "items": [
+    "veh_field_tablet_m7",
+    "veh_telematics_enrolled_88",
+    "veh_allow_kiosk_01"
+  ]
+}

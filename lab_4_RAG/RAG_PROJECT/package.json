@@ -1,0 +1,43 @@
+{
+  "name": "rag_project",
+  "version": "1.0.0",
+  "description": "RAG project workspace",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "server:start": "node ./04_server/server.js",
+    "server:start:db": "set SKIP_SEMANTIC_HANDOFF=false&& node ./04_server/server.js",
+    "server:start:local-hybrid": "set SKIP_SEMANTIC_HANDOFF=true&& node ./04_server/server.js",
+    "ui:open": "powershell -NoProfile -Command \"Start-Process http://127.0.0.1:3000\"",
+    "agent:enhanced": "node ./01_agent/agent_enhanced.js",
+    "agent:enhanced:pdf": "node ./01_agent/agent_enhanced.js ./03_data/the-modern-guide-to-oauth.pdf",
+    "agent:enhanced:receipt": "node ./01_agent/agent_enhanced.js ./receipt_pipeline/03_data/common-gas-receipt-writer-supports-for-usa-east-canada-uk.png",
+    "agent:enhanced:verify": "npm run agent:enhanced:pdf && npm run agent:enhanced:receipt",
+    "eval:enhanced": "node ./02_scripts/eval_enhanced.js",
+    "frontend:dev": "cd client && npm run dev",
+    "frontend:build": "cd client && npm run build",
+    "frontend:preview": "cd client && npm run preview",
+    "frontend:lint": "cd client && npm run lint"
+  },
+  "dependencies": {
+    "@langchain/community": "^1.1.20",
+    "@langchain/core": "^1.1.17",
+    "@langchain/langgraph": "^1.1.3",
+    "@langchain/openai": "^1.2.3",
+    "@langchain/tavily": "^1.2.0",
+    "@xenova/transformers": "^2.17.2",
+    "chromadb": "^3.3.0",
+    "dotenv": "^16.6.1",
+    "langchain": "^1.2.24",
+    "llama-parse": "^0.1.0",
+    "llamaindex": "^0.12.1",
+    "pdf-parse": "1.1.4",
+    "pdfjs-dist": "^5.4.624",
+    "pg": "^8.11.0",
+    "tesseract.js": "^7.0.0",
+    "wink-bm25-text-search": "^3.1.2"
+  },
+  "overrides": {
+    "pdf-parse": "1.1.4"
+  }
+}

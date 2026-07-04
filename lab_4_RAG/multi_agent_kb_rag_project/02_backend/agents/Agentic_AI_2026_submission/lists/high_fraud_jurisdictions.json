@@ -1,0 +1,13 @@
+{
+  "list_name": "high_fraud_jurisdictions",
+  "description": "Fictional high-fraud geography list for decline rules (lab only).",
+  "items": [
+    "iran",
+    "north_korea",
+    "syria",
+    "belarus",
+    "russia",
+    "china",
+    "pakistan"
+  ]
+}

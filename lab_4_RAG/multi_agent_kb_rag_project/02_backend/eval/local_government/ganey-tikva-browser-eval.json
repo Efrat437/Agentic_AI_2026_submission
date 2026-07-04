@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "mode": "real-public-site-eval",
+  "site": "Ganey Tikva",
+  "generatedAt": "2026-04-25T12:51:01.505Z",
+  "outputPath": "C:\\Users\\ADMIN\\Desktop\\Agentic_AI_2026\\lab_4_RAG\\multi_agent_kb_rag_project\\02_backend\\eval\\local_government\\ganey-tikva-browser-eval.json",
+  "result": {
+    "ok": true,
+    "stage": "human-verification-required",
+    "requiresHuman": true,
+    "reason": "otp-detected",
+    "bookingUrl": "https://www.ganeytikva.org.il/appointments/?schedule=1&departmentId=67&date=2026-04-27&time=08%3A30%3A00",
+    "finalUrl": "https://www.ganeytikva.org.il/appointments/?schedule=1&departmentId=67&date=2026-04-27&time=08%3A30%3A00",
+    "pageTitle": "זימון תורים | עיריית גני תקווה",
+    "formsDiscovered": 4,
+    "prefilledFields": 5,
+    "navigationHint": null,
+    "scrapeSignals": {
+      "keptItems": 17,
+      "droppedItems": 169,
+      "hasAppointmentSignal": true,
+      "hasArnonaSignal": true
+    },
+    "screenshots": [
+      "C:\\Users\\ADMIN\\Desktop\\Agentic_AI_2026\\lab_4_RAG\\multi_agent_kb_rag_project\\tmp\\browser-booking\\landing-1777121459912.png",
+      "C:\\Users\\ADMIN\\Desktop\\Agentic_AI_2026\\lab_4_RAG\\multi_agent_kb_rag_project\\tmp\\browser-booking\\prefilled-1777121460860.png"
+    ],
+    "elapsedMs": 7109
+  }
+}

@@ -1,0 +1,12 @@
+graph TD
+  Orchestrator -->|routes| Router
+  Router -->|intent: read| ReadAgent
+  Router -->|intent: write| WriteAgent
+  Router -->|intent: stats| StatsAgent
+  Router -->|intent: manage| ManagerPlanner
+  ReadAgent -->|guarded SQL| DB
+  WriteAgent -->|guarded SQL| DB
+  StatsAgent -->|guarded SQL| DB
+  ManagerPlanner --> ManagerExecutor
+  ManagerExecutor -->|user ops| DB
+  DB[(PostgreSQL)]

@@ -1,0 +1,2341 @@
+{
+  "ok": true,
+  "mode": "tel-aviv-payments-discovery-eval",
+  "site": "Tel Aviv payments",
+  "generatedAt": "2026-04-25T13:34:52.328Z",
+  "inspection": {
+    "ok": false,
+    "bookingUrl": "https://www.tel-aviv.gov.il/About/Pages/Payments.aspx",
+    "error": "page.evaluate: Execution context was destroyed, most likely because of a navigation",
+    "networkRequests": [
+      {
+        "ts": "2026-04-25T13:34:38.747Z",
+        "method": "POST",
+        "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&scrsrc=www.googletagmanager.com&rnd=194662340.1777124079&dt=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&auid=606402951.1777124079&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He64m2v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~118463261&apve=1&apvf=f&apvc=1&tft=1777124078744&tfd=1580",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:38.806Z",
+        "method": "GET",
+        "url": "https://amplify.outbrain.com/topics",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:38.806Z",
+        "method": "GET",
+        "url": "https://tr.outbrain.com/unifiedPixel?au=false&bust=031493907468756266&referrer=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&pRef=&marketerId=0069a7b290a9781207927f8e5402850568&name=PAGE_VIEW&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&g=1&zone=all&pld=1638&obApiVersion=1.1&obtpVersion=d5f9a5ab53a4_2026-04-13",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.127Z",
+        "method": "POST",
+        "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&scrsrc=www.googletagmanager.com&rnd=194662340.1777124079&dt=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&auid=606402951.1777124079&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He64m2v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~118463261&apve=1&apvf=f&apvc=1&tft=1777124078744&tfd=1580",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.130Z",
+        "method": "GET",
+        "url": "https://tr.outbrain.com/unifiedPixel?au=false&bust=031493907468756266&referrer=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&pRef=&marketerId=0069a7b290a9781207927f8e5402850568&name=PAGE_VIEW&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&g=1&zone=all&pld=1638&obApiVersion=1.1&obtpVersion=d5f9a5ab53a4_2026-04-13",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.266Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/1033/styles/Themable/corev15.css?rev=mDUzGfgO2aHnLoh30SeNyw%3D%3DTAG0",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.266Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/dist/vendors.dist.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.266Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/dist/masterpage.dist.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.266Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/styles/innerPage.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.267Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/1033/styles/Themable/portal.css?rev=oY700RvaC64Wmctt7wxA5g%3D%3DTAG0",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.267Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_CONTROLTEMPLATES/15/TlvSP2013PublicSite/LinksWP/css/linksWithIcon.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.287Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/1033/styles/Themable/corev15.css?rev=mDUzGfgO2aHnLoh30SeNyw%3D%3DTAG0",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.288Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/dist/vendors.dist.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.295Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/About/_api/SP.Web.GetContextWebThemeData?lcid=1033",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.304Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/dist/masterpage.dist.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.304Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/styles/innerPage.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.305Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/1033/styles/Themable/portal.css?rev=oY700RvaC64Wmctt7wxA5g%3D%3DTAG0",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.305Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_CONTROLTEMPLATES/15/TlvSP2013PublicSite/LinksWP/css/linksWithIcon.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.416Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.416Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.417Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.417Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetTables",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetTables",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetLinks",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.419Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetLinks",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.420Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.420Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.420Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.420Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.420Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.420Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.467Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.467Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.469Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.469Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.469Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.469Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.570Z",
+        "method": "GET",
+        "url": "https://apimtlvprd.tel-aviv.gov.il/TelmaWebChat/recaptcha",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.694Z",
+        "method": "POST",
+        "url": "https://www.google.com/measurement/conversion?random=1777124079652&cv=11&tid=G-6F0EMM7WGF&fst=1777124079652&fmt=8&en=page_view&gtm=45je64m2v889007235z8811112836za20gzb811112836zd811112836xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~117512543~117884344~118167059&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&gacid=1903397736.1777124080&frm=0&tiba=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&rcb=13",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.694Z",
+        "method": "POST",
+        "url": "https://analytics.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235z8811112836za20gzb811112836zd811112836&_p=1777124077947&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGA&_prs=ok&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=0~115938466~115938468~117266400~117512543~117884344~118167059&sid=1777124079&sct=1&seg=0&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&en=page_view&_fv=1&_nsi=1&_ss=1&_c=1&tfd=2526",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.787Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.789Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.799Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.801Z",
+        "method": "POST",
+        "url": "https://www.google.com/measurement/conversion?random=1777124079652&cv=11&tid=G-6F0EMM7WGF&fst=1777124079652&fmt=8&en=page_view&gtm=45je64m2v889007235z8811112836za20gzb811112836zd811112836xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266400~117512543~117884344~118167059&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&gacid=1903397736.1777124080&frm=0&tiba=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&rcb=13",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.810Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetLinks",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.814Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.823Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.829Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.836Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.840Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.851Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.862Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.864Z",
+        "method": "POST",
+        "url": "https://analytics.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235z8811112836za20gzb811112836zd811112836&_p=1777124077947&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGA&_prs=ok&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=0~115938466~115938468~117266400~117512543~117884344~118167059&sid=1777124079&sct=1&seg=0&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&en=page_view&_fv=1&_nsi=1&_ss=1&_c=1&tfd=2526",
+        "resourceType": "fetch",
+        "status": 204,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.870Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.955Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.955Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.955Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:39.955Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.119Z",
+        "method": "POST",
+        "url": "https://www.google.com/rmkt/collect/1007107377/?random=1777124080070&cv=11&fst=1777124080070&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be64m2z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266401~118463261&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&rcb=6&label=Hlc1CIium5cBELH6nOAD&frm=0&tiba=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&gcp=5",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.119Z",
+        "method": "POST",
+        "url": "https://www.google.com/ccm/collect?rcb=6&frm=0&ae=g&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&scrsrc=www.googletagmanager.com&rnd=194662340.1777124079&dt=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&auid=606402951.1777124079&navt=n&npa=0&_tu=CA&gtm=45be64m2z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266401~118463261&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1777124080117&tfd=2953",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.132Z",
+        "method": "GET",
+        "url": "https://pips.taboola.com/",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.157Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.157Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.158Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.189Z",
+        "method": "POST",
+        "url": "https://www.google.com/ccm/collect?rcb=6&frm=0&ae=g&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&scrsrc=www.googletagmanager.com&rnd=194662340.1777124079&dt=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&auid=606402951.1777124079&navt=n&npa=0&_tu=CA&gtm=45be64m2z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266401~118463261&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1777124080117&tfd=2953",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.190Z",
+        "method": "POST",
+        "url": "https://www.google.com/rmkt/collect/1007107377/?random=1777124080070&cv=11&fst=1777124080070&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be64m2z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938468~117266401~118463261&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&rcb=6&label=Hlc1CIium5cBELH6nOAD&frm=0&tiba=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&gcp=5",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.192Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/About/_api/SP.Web.GetContextWebThemeData?lcid=1033",
+        "resourceType": "xhr",
+        "status": 301,
+        "ok": false,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.193Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/About/?lcid=1033",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.214Z",
+        "method": "GET",
+        "url": "https://apimtlvprd.tel-aviv.gov.il/TelmaWebChat/recaptcha",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.237Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.310Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.472Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetTables",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.553Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/About/?lcid=1033",
+        "resourceType": "xhr",
+        "status": 301,
+        "ok": false,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.553Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/About?lcid=1033",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.665Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.921Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/About?lcid=1033",
+        "resourceType": "xhr",
+        "status": 302,
+        "ok": false,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:40.921Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/About/Pages/about.aspx?lcid=1033",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:41.253Z",
+        "method": "GET",
+        "url": "https://pips.taboola.com/",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:41.253Z",
+        "method": "GET",
+        "url": "https://cds.taboola.com/?uid=a1a68efd-8dbe-4741-a2bf-48e0fdb588ad-tuct10e64870&uad=55eadeb61781c28841bd44ee9a0290690ba4b4f532e4ed8f5d9bce6d0c5789a4&ptf=V2luZG93cw==&ptfv=MTAuMA==&ufv=MTQ1LjAuNzYzMi42&bnd=Tm90OkEtQnJhbmQ=&bndv=OTk=&bnd=SGVhZGxlc3NDaHJvbWU=&bndv=MTQ1&bnd=Q2hyb21pdW0=&bndv=MTQ1&mbl=ZmFsc2U=&dc=il",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:41.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/About/Pages/about.aspx?lcid=1033",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:42.660Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:42.660Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:42.886Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.181Z",
+        "method": "POST",
+        "url": "https://analytics.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235za20gzb811112836zd811112836&_p=1777124077947&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQ&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=0~115938466~115938468~117266400~117512543~117884344~118167059&sid=1777124079&sct=1&seg=0&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&_tu=CA&en=user_engagement&_et=3482&tfd=6011",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.181Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/inter",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.181Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/inter",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.182Z",
+        "method": "POST",
+        "url": "https://www.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235za20gzb811112836zd811112836&_p=1777124077947&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQ&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=3&_s=2&tag_exp=0%7E115938466%7E115938468%7E117266400%7E117512543%7E117884344%7E118167059&sid=1777124079&sct=1&seg=0&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D+%D7%9E%D7%A7%D7%95%D7%95%D7%A0%D7%99%D7%9D&_tu=CA&en=user_engagement&_et=3482&tfd=6011",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.263Z",
+        "method": "POST",
+        "url": "https://www.google.com/ccm/collect?rcb=6&frm=0&ae=g&en=page_view&dr=www.tel-aviv.gov.il&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=840575556.1777124083&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=606402951.1777124079&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He64m2v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~116363098~117266401&apve=1&apvf=f&apvc=1&tft=1777124083261&tfd=601",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.307Z",
+        "method": "POST",
+        "url": "https://www.google.com/measurement/conversion?random=1777124083284&cv=11&tid=G-6F0EMM7WGF&fst=1777124083284&fmt=8&en=page_view&gtm=45je64m2v889007235z8811112836za20gzb811112836zd811112836xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&ref=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&gacid=1903397736.1777124080&frm=0&tiba=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&rcb=13",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.307Z",
+        "method": "POST",
+        "url": "https://analytics.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235z8811112836za20gzb811112836zd811112836&_p=1777124083195&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQ&_prs=ok&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&sid=1777124079&sct=1&seg=1&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&dr=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&en=page_view&_c=1&tfd=634",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.319Z",
+        "method": "POST",
+        "url": "https://www.google.com/measurement/conversion?random=1777124083309&cv=11&tid=G-6F0EMM7WGF&fst=1777124083309&fmt=8&en=scroll&gtm=45je64m2v889007235za20gzb811112836zd811112836xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&ref=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&gacid=1903397736.1777124080&ae=a&frm=0&tiba=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&rcb=13",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.319Z",
+        "method": "POST",
+        "url": "https://analytics.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235za20gzb811112836zd811112836&_p=1777124083195&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EEAAAGQ&_prs=ok&ae=a&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&sid=1777124079&sct=1&seg=1&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&dr=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&en=scroll&_c=1&epn.percent_scrolled=90&_et=15&tfd=658",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.342Z",
+        "method": "POST",
+        "url": "https://www.google.com/ccm/collect?rcb=6&frm=0&ae=g&en=page_view&dr=www.tel-aviv.gov.il&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=840575556.1777124083&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=606402951.1777124079&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He64m2v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~116363098~117266401&apve=1&apvf=f&apvc=1&tft=1777124083261&tfd=601",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.369Z",
+        "method": "POST",
+        "url": "https://analytics.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235z8811112836za20gzb811112836zd811112836&_p=1777124083195&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQ&_prs=ok&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&sid=1777124079&sct=1&seg=1&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&dr=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&en=page_view&_c=1&tfd=634",
+        "resourceType": "fetch",
+        "status": 204,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.394Z",
+        "method": "POST",
+        "url": "https://www.google.com/measurement/conversion?random=1777124083284&cv=11&tid=G-6F0EMM7WGF&fst=1777124083284&fmt=8&en=page_view&gtm=45je64m2v889007235z8811112836za20gzb811112836zd811112836xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&ref=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&gacid=1903397736.1777124080&frm=0&tiba=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&rcb=13",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.399Z",
+        "method": "POST",
+        "url": "https://analytics.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235za20gzb811112836zd811112836&_p=1777124083195&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EEAAAGQ&_prs=ok&ae=a&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&sid=1777124079&sct=1&seg=1&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&dr=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&en=scroll&_c=1&epn.percent_scrolled=90&_et=15&tfd=658",
+        "resourceType": "fetch",
+        "status": 204,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.399Z",
+        "method": "POST",
+        "url": "https://www.google.com/measurement/conversion?random=1777124083309&cv=11&tid=G-6F0EMM7WGF&fst=1777124083309&fmt=8&en=scroll&gtm=45je64m2v889007235za20gzb811112836zd811112836xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&ref=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&gacid=1903397736.1777124080&ae=a&frm=0&tiba=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&rcb=13",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.399Z",
+        "method": "GET",
+        "url": "https://amplify.outbrain.com/topics",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.399Z",
+        "method": "GET",
+        "url": "https://tr.outbrain.com/unifiedPixel?au=false&bust=08084272562878018&referrer=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&pRef=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&marketerId=0069a7b290a9781207927f8e5402850568&name=PAGE_VIEW&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&g=1&zone=all&pld=730&obApiVersion=1.1&obtpVersion=d5f9a5ab53a4_2026-04-13",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.413Z",
+        "method": "POST",
+        "url": "https://www.google.com/rmkt/collect/1007107377/?random=1777124083402&cv=11&fst=1777124083402&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be64m2z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468~116363098~117266400~117884344&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&ref=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&rcb=2&label=Hlc1CIium5cBELH6nOAD&frm=0&tiba=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&gcp=5",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.413Z",
+        "method": "POST",
+        "url": "https://www.google.com/ccm/collect?rcb=2&frm=0&ae=g&dr=www.tel-aviv.gov.il&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=840575556.1777124083&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=606402951.1777124079&navt=n&npa=0&_tu=CA&gtm=45be64m2z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468~116363098~117266400~117884344&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1777124083407&tfd=747",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.471Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/1033/styles/Themable/corev15.css?rev=mDUzGfgO2aHnLoh30SeNyw%3D%3DTAG0",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.471Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/dist/vendors.dist.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.471Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/dist/masterpage.dist.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.471Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/styles/innerPage.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.471Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/1033/styles/Themable/portal.css?rev=oY700RvaC64Wmctt7wxA5g%3D%3DTAG0",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.471Z",
+        "method": "GET",
+        "url": "https://tr.outbrain.com/unifiedPixel?au=false&bust=08084272562878018&referrer=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&pRef=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&marketerId=0069a7b290a9781207927f8e5402850568&name=PAGE_VIEW&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&g=1&zone=all&pld=730&obApiVersion=1.1&obtpVersion=d5f9a5ab53a4_2026-04-13",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.476Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/1033/styles/Themable/corev15.css?rev=mDUzGfgO2aHnLoh30SeNyw%3D%3DTAG0",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.484Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/Contact/_api/SP.Web.GetContextWebThemeData?lcid=1033",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.486Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/dist/vendors.dist.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.486Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/dist/masterpage.dist.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.486Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/TlvSP2013PublicSite/styles/innerPage.css?rev=8.12.4.2",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.486Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_layouts/15/1033/styles/Themable/portal.css?rev=oY700RvaC64Wmctt7wxA5g%3D%3DTAG0",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.503Z",
+        "method": "POST",
+        "url": "https://www.google.com/ccm/collect?rcb=2&frm=0&ae=g&dr=www.tel-aviv.gov.il&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=840575556.1777124083&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=606402951.1777124079&navt=n&npa=0&_tu=CA&gtm=45be64m2z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468~116363098~117266400~117884344&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1777124083407&tfd=747",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.503Z",
+        "method": "POST",
+        "url": "https://www.google.com/rmkt/collect/1007107377/?random=1777124083402&cv=11&fst=1777124083402&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be64m2z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468~116363098~117266400~117884344&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&ref=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&rcb=2&label=Hlc1CIium5cBELH6nOAD&frm=0&tiba=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=606402951.1777124079&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&gcp=5",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.574Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.575Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetList",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.575Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetList",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.575Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.575Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.575Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.575Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.575Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.575Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.586Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.586Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.586Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.586Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.587Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.587Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.635Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.635Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.635Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.635Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.637Z",
+        "method": "GET",
+        "url": "https://pips.taboola.com/",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.670Z",
+        "method": "GET",
+        "url": "https://apimtlvprd.tel-aviv.gov.il/TelmaWebChat/recaptcha",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.761Z",
+        "method": "GET",
+        "url": "https://pips.taboola.com/",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.761Z",
+        "method": "GET",
+        "url": "https://cds.taboola.com/?uid=a1a68efd-8dbe-4741-a2bf-48e0fdb588ad-tuct10e64870&uad=55eadeb61781c28841bd44ee9a0290690ba4b4f532e4ed8f5d9bce6d0c5789a4&ptf=V2luZG93cw==&ptfv=MTAuMA==&ufv=MTQ1LjAuNzYzMi42&bnd=Tm90OkEtQnJhbmQ=&bndv=OTk=&bnd=SGVhZGxlc3NDaHJvbWU=&bndv=MTQ1&bnd=Q2hyb21pdW0=&bndv=MTQ1&mbl=ZmFsc2U=&dc=il",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.761Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/Contact/_api/SP.Web.GetContextWebThemeData?lcid=1033",
+        "resourceType": "xhr",
+        "status": 301,
+        "ok": false,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.761Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/Contact/?lcid=1033",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.856Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.857Z",
+        "method": "GET",
+        "url": "https://apimtlvprd.tel-aviv.gov.il/TelmaWebChat/recaptcha",
+        "resourceType": "fetch",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.874Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.882Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.885Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.885Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.892Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.909Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.948Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.976Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetList",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.976Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookNotes",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.976Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookNotes",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.977Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookOnlineServices",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.977Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookOnlineServices",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.982Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.985Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.985Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "resourceType": "ping",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.988Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.994Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:43.998Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.023Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/Contact/?lcid=1033",
+        "resourceType": "xhr",
+        "status": 301,
+        "ok": false,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.023Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/Contact?lcid=1033",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.082Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.149Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.180Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.319Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookOnlineServices",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.371Z",
+        "method": "POST",
+        "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookNotes",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.387Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/Contact?lcid=1033",
+        "resourceType": "xhr",
+        "status": 302,
+        "ok": false,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.387Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/Contact/Pages/Contact.aspx?lcid=1033",
+        "resourceType": "xhr",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.494Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.494Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.716Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+        "resourceType": "ping",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:44.790Z",
+        "method": "GET",
+        "url": "https://www.tel-aviv.gov.il/Contact/Pages/Contact.aspx?lcid=1033",
+        "resourceType": "xhr",
+        "status": 200,
+        "ok": true,
+        "from": "response"
+      },
+      {
+        "ts": "2026-04-25T13:34:45.084Z",
+        "method": "POST",
+        "url": "https://analytics.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235za20gzb811112836zd811112836&_p=1777124083195&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQ&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=3&tag_exp=0~115616985~115938465~115938469~116363098~117266400~117512543&sid=1777124079&sct=1&seg=1&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&dr=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&en=user_engagement&_et=1743&tfd=2412",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:45.084Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/inter",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      },
+      {
+        "ts": "2026-04-25T13:34:45.084Z",
+        "method": "POST",
+        "url": "https://analytics.tiktok.com/api/v2/pixel/inter",
+        "resourceType": "ping",
+        "status": null,
+        "ok": null,
+        "from": "request",
+        "matchedBy": "api-request-listener"
+      },
+      {
+        "ts": "2026-04-25T13:34:45.085Z",
+        "method": "POST",
+        "url": "https://www.google.com/g/collect?v=2&tid=G-6F0EMM7WGF&gtm=45je64m2v889007235za20gzb811112836zd811112836&_p=1777124083195&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQ&are=1&cid=1903397736.1777124080&frm=0&ir=1&pscdl=noapi&rcb=13&sr=1440x900&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=3&_s=3&tag_exp=0%7E115616985%7E115938465%7E115938469%7E116363098%7E117266400%7E117512543&sid=1777124079&sct=1&seg=1&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&dr=https%3A%2F%2Fwww.tel-aviv.gov.il%2FAbout%2FPages%2FPayments.aspx&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F+%D7%AA%D7%95%D7%A8%D7%99%D7%9D+%D7%95%D7%9E%D7%99%D7%93%D7%A2+%D7%9E%D7%A7%D7%95%D7%95%D7%9F+%7C+%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&en=user_engagement&_et=1743&tfd=2412",
+        "resourceType": "fetch",
+        "status": null,
+        "ok": null,
+        "from": "request"
+      }
+    ],
+    "networkCount": 197,
+    "elapsedMs": 8158
+  },
+  "discovery": {
+    "ok": true,
+    "flow": [
+      "User request",
+      "Intent detection",
+      "API discovery",
+      "Action execution"
+    ],
+    "verification": {
+      "networkInspection": true,
+      "websiteSourceSearch": false,
+      "urlPatternExploration": false,
+      "apiResponseInspection": false,
+      "automatedNetworkLogging": false,
+      "browserAgentAnalysis": false,
+      "javascriptApiScan": false,
+      "htmlScriptExtractionRegex": false,
+      "webWorkerDiscovery": false,
+      "serviceWorkerIdentification": false,
+      "discoverAPIWebWorkers": false,
+      "systemGoalUnderMinute": false,
+      "systemGoalUnderTwentySeconds": false,
+      "endpointHarvesting": false,
+      "selfLearningMechanism": true
+    },
+    "orchestration": {
+      "browserAgentFlow": [
+        "User request",
+        "Agent opens website",
+        "Agent analyzes page",
+        "Agent finds form/API",
+        "Agent performs action"
+      ],
+      "agentLayers": [
+        "LLM",
+        "planner",
+        "browser controller",
+        "action executor"
+      ],
+      "systemGoalFlow": [
+        "system goal: user question",
+        "agent reasoning",
+        "data query OR action",
+        "browser automation",
+        "find javascript files",
+        "scan for api paths",
+        "print endpoints"
+      ],
+      "llm": {
+        "role": "intent detection and reasoning",
+        "userRequest": "Discover payment-related endpoints and navigational actions, but do not execute a real payment.",
+        "outputAction": "discover",
+        "methodHint": "GET",
+        "reasoning": "No clear scheduling intent terms; running broad API discovery and selecting highest-confidence endpoint."
+      },
+      "planner": {
+        "goal": "Discover payment-related endpoints and navigational actions, but do not execute a real payment.",
+        "chosenPath": "data query OR action",
+        "plan": [
+          "open website",
+          "analyze page",
+          "inspect forms and buttons",
+          "inspect network",
+          "find javascript files",
+          "scan API paths",
+          "print endpoints"
+        ]
+      },
+      "browserController": {
+        "autonomousBrowse": true,
+        "maxAutonomousSteps": 4,
+        "finalUrl": "https://www.tel-aviv.gov.il/About/Pages/Payments.aspx"
+      },
+      "actionExecutor": {
+        "executeAction": false,
+        "selectedEndpoint": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+        "executionStatus": null
+      },
+      "endpointHarvesting": null
+    },
+    "selfLearning": {
+      "enabled": true,
+      "preferredScanFocus": "schedule",
+      "learnedRuns": 7,
+      "model": {
+        "runs": 7,
+        "lastAction": "discover",
+        "lastRunAt": "2026-04-25T13:34:52.325Z",
+        "preferredScanFocus": "schedule",
+        "byFocus": {
+          "schedule": {
+            "runs": 7,
+            "success": 7
+          }
+        },
+        "byAction": {
+          "schedule": {
+            "runs": 6,
+            "success": 6
+          },
+          "discover": {
+            "runs": 1,
+            "success": 1
+          }
+        }
+      }
+    },
+    "userRequest": "Discover payment-related endpoints and navigational actions, but do not execute a real payment.",
+    "websiteUrl": "https://www.tel-aviv.gov.il/About/Pages/Payments.aspx",
+    "intent": {
+      "action": "discover",
+      "methodHint": "GET",
+      "confidence": 0.55,
+      "keywords": [
+        "discover",
+        "payment",
+        "related",
+        "endpoints",
+        "and",
+        "navigational",
+        "actions",
+        "but",
+        "not",
+        "execute",
+        "real"
+      ],
+      "llmStyleReasoning": "No clear scheduling intent terms; running broad API discovery and selecting highest-confidence endpoint."
+    },
+    "discovery": {
+      "ok": false,
+      "finalUrl": null,
+      "pageTitle": null,
+      "networkCount": 192,
+      "discoveredCount": 87,
+      "traversal": null,
+      "pageAnalysis": null,
+      "urlPatternExploration": [],
+      "apiResponsePreviews": [],
+      "automatedNetworkLogging": {
+        "enabled": false,
+        "apiLikeEntries": []
+      },
+      "javascriptScan": {
+        "ok": false,
+        "scannedCount": 0,
+        "endpoints": []
+      },
+      "selfHealing": {
+        "enabled": false,
+        "attemptedSelectors": [],
+        "successfulHits": []
+      },
+      "endpointHarvesting": null,
+      "systemGoal": null
+    },
+    "catalog": {
+      "host": "www.tel-aviv.gov.il",
+      "total": 24,
+      "apis": [
+        {
+          "id": "a41d784b-ddc6-4df9-af26-776176ec575f",
+          "key": "POST|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookNotes",
+          "method": "POST",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookNotes",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookNotes",
+          "kind": "schedule",
+          "score": 54,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 19
+        },
+        {
+          "id": "3cd2be3e-e8c7-435b-8f18-59bed33bb559",
+          "key": "POST|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookOnlineServices",
+          "method": "POST",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookOnlineServices",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetPhoneBookOnlineServices",
+          "kind": "schedule",
+          "score": 54,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 19
+        },
+        {
+          "id": "a8c797fb-fd21-446d-a2be-5b6d4ac2b762",
+          "key": "POST|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+          "method": "POST",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvListUtils.svc/getNews",
+          "kind": "unknown",
+          "score": 24,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 24
+        },
+        {
+          "id": "240ba6f8-2741-4e8f-8d62-3023c1875bd1",
+          "key": "POST|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetList",
+          "method": "POST",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetList",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetList",
+          "kind": "unknown",
+          "score": 24,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 15
+        },
+        {
+          "id": "d82042c6-4676-43b8-86c4-52fa3f3fe7a5",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.033Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "b7e0af3c-4f79-4a17-8756-ec79a79bd96c",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "702ff757-731a-4511-9bbb-e905bc4d4d74",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%97%D7%91%D7%A8%D7%AA%D7%99",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "496e5f20-1164-4335-9e47-f073674293cf",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ShowInSearch/null/True/null",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "362d96d4-94f4-4285-a547-89713aeb6acd",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/FeaturedItems/FeaturedSearch/null/True/null",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "7d704105-5515-4515-a4f8-51b2110bc131",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetFooterLinks",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "570c0663-2197-4eee-823f-44199ddb0e00",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8%20-%20%D7%93%D7%99%D7%92%D7%99%D7%AA%D7%9C",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "c5092e27-d447-48f5-880d-7633759e8205",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A4%D7%95%D7%98%D7%A8",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "d5941ebc-e086-4e6e-a83a-8c1304794f90",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Logo/null/null/null",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "fc6bd239-2d6d-4b58-b008-00d36ff374b3",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/SiteDesignImages/Footer/null/null/720",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "9a4419d4-565a-47a3-a2d1-c1b9c849ed81",
+          "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+          "method": "GET",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetListItemsByFieldFilterString/https;3A;2F;2Fwww.tel-aviv.gov.il/DictionarySearch/ForAutocomplite/null/True/null",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:00:57.034Z",
+          "lastSeenAt": "2026-04-25T13:34:52.324Z",
+          "hits": 18
+        },
+        {
+          "id": "bd00b4b0-a7a0-4951-bb4f-86e334474c81",
+          "key": "POST|https://www.google.com/ccm/collect?frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=1380408532.1773954282&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1544538233.1773954282&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He63h0v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616985~115938466~115938468~116024733~117484252~118104771&apve=1&apvf=f&apvc=1&tft=1773954281705&tfd=1776",
+          "method": "POST",
+          "url": "https://www.google.com/ccm/collect?frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=1380408532.1773954282&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1544538233.1773954282&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He63h0v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616985~115938466~115938468~116024733~117484252~118104771&apve=1&apvf=f&apvc=1&tft=1773954281705&tfd=1776",
+          "host": "www.google.com",
+          "path": "/ccm/collect",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:04:46.405Z",
+          "lastSeenAt": "2026-03-19T21:04:46.405Z",
+          "hits": 2
+        },
+        {
+          "id": "755259ed-8e01-49f3-b0b1-f53002f76cf5",
+          "key": "POST|https://www.google.com/ccm/collect?frm=0&ae=g&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=1380408532.1773954282&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1544538233.1773954282&navt=n&npa=0&_tu=CA&gtm=45be63h0z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115938466~115938468~116024733~117170490~117484252~118128922&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1773954282476&tfd=2546",
+          "method": "POST",
+          "url": "https://www.google.com/ccm/collect?frm=0&ae=g&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=1380408532.1773954282&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1544538233.1773954282&navt=n&npa=0&_tu=CA&gtm=45be63h0z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115938466~115938468~116024733~117170490~117484252~118128922&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1773954282476&tfd=2546",
+          "host": "www.google.com",
+          "path": "/ccm/collect",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:04:46.405Z",
+          "lastSeenAt": "2026-03-19T21:04:46.405Z",
+          "hits": 2
+        },
+        {
+          "id": "620ddab3-2d2c-4e17-afc8-9379a3f504a6",
+          "key": "POST|https://www.google.com/ccm/collect?frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=1716245751.1773954374&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1976352093.1773954374&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He63h0v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616986~115938466~115938469~116024733~117484252&apve=1&apvf=f&apvc=1&tft=1773954374311&tfd=5463",
+          "method": "POST",
+          "url": "https://www.google.com/ccm/collect?frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=1716245751.1773954374&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1976352093.1773954374&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He63h0v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616986~115938466~115938469~116024733~117484252&apve=1&apvf=f&apvc=1&tft=1773954374311&tfd=5463",
+          "host": "www.google.com",
+          "path": "/ccm/collect",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:06:19.674Z",
+          "lastSeenAt": "2026-03-19T21:06:19.674Z",
+          "hits": 2
+        },
+        {
+          "id": "584f0c9b-143b-4d7a-b041-c09922d201a8",
+          "key": "POST|https://www.google.com/ccm/collect?frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=165725019.1773954694&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1306079453.1773954694&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He63h0v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115938465~115938468~116024733~117170490~117484252~118128923&apve=1&apvf=f&apvc=1&tft=1773954693817&tfd=1657",
+          "method": "POST",
+          "url": "https://www.google.com/ccm/collect?frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=165725019.1773954694&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1306079453.1773954694&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He63h0v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115938465~115938468~116024733~117170490~117484252~118128923&apve=1&apvf=f&apvc=1&tft=1773954693817&tfd=1657",
+          "host": "www.google.com",
+          "path": "/ccm/collect",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:11:38.792Z",
+          "lastSeenAt": "2026-03-19T21:11:38.792Z",
+          "hits": 2
+        },
+        {
+          "id": "053e6864-d63d-41c1-8c0d-50debbab9946",
+          "key": "POST|https://www.google.com/ccm/collect?frm=0&ae=g&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=165725019.1773954694&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1306079453.1773954694&navt=n&npa=0&_tu=CA&gtm=45be63h0z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616986~115938465~115938469~116024733~117384406~117484252&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1773954694397&tfd=2237",
+          "method": "POST",
+          "url": "https://www.google.com/ccm/collect?frm=0&ae=g&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=165725019.1773954694&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=1306079453.1773954694&navt=n&npa=0&_tu=CA&gtm=45be63h0z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616986~115938465~115938469~116024733~117384406~117484252&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1773954694397&tfd=2237",
+          "host": "www.google.com",
+          "path": "/ccm/collect",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:11:38.793Z",
+          "lastSeenAt": "2026-03-19T21:11:38.793Z",
+          "hits": 2
+        },
+        {
+          "id": "e2ac8a11-cdf8-4eac-8d46-ed4a5b6e2ae0",
+          "key": "POST|https://www.google.com/ccm/collect?frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=881830928.1773955264&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=603636650.1773955264&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He63h0v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616986~115938466~115938468~116024733~117266401~117484252&apve=1&apvf=f&apvc=1&tft=1773955264057&tfd=1737",
+          "method": "POST",
+          "url": "https://www.google.com/ccm/collect?frm=0&ae=g&en=page_view&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=881830928.1773955264&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=603636650.1773955264&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He63h0v811112836za200zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616986~115938466~115938468~116024733~117266401~117484252&apve=1&apvf=f&apvc=1&tft=1773955264057&tfd=1737",
+          "host": "www.google.com",
+          "path": "/ccm/collect",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:21:08.497Z",
+          "lastSeenAt": "2026-03-19T21:21:08.497Z",
+          "hits": 2
+        },
+        {
+          "id": "3c7ee5b0-0e86-438f-b5a5-9b7d675b95e7",
+          "key": "POST|https://www.google.com/ccm/collect?frm=0&ae=g&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=881830928.1773955264&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=603636650.1773955264&navt=n&npa=0&_tu=CA&gtm=45be63h0z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616985~115938466~115938468~116024733~117484252&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1773955264587&tfd=2266",
+          "method": "POST",
+          "url": "https://www.google.com/ccm/collect?frm=0&ae=g&dl=https%3A%2F%2Fwww.tel-aviv.gov.il%2FContact%2FPages%2FApointments.aspx&scrsrc=www.googletagmanager.com&rnd=881830928.1773955264&dt=%D7%96%D7%99%D7%9E%D7%95%D7%9F%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%95%D7%9E%D7%99%D7%93%D7%A2%20%D7%9E%D7%A7%D7%95%D7%95%D7%9F%20%7C%20%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95&auid=603636650.1773955264&navt=n&npa=0&_tu=CA&gtm=45be63h0z8811112836za20gzb811112836zd811112836xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=103116026~103200004~115616985~115938466~115938468~116024733~117484252&apve=1&apvf=f&apvc=0&tids=AW-1007107377&tid=AW-1007107377&tft=1773955264587&tfd=2266",
+          "host": "www.google.com",
+          "path": "/ccm/collect",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-03-19T21:21:08.498Z",
+          "lastSeenAt": "2026-03-19T21:21:08.498Z",
+          "hits": 2
+        },
+        {
+          "id": "c00c3fd2-2850-4c02-93fd-0fe301850a2d",
+          "key": "POST|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetTables",
+          "method": "POST",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetTables",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetTables",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-04-25T13:34:52.323Z",
+          "lastSeenAt": "2026-04-25T13:34:52.323Z",
+          "hits": 3
+        },
+        {
+          "id": "c288b4d3-c8de-4514-a942-2d5c305934a0",
+          "key": "POST|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetLinks",
+          "method": "POST",
+          "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetLinks",
+          "host": "www.tel-aviv.gov.il",
+          "path": "/_vti_bin/TlvSP2013PublicSite/TlvList.svc/GetLinks",
+          "kind": "unknown",
+          "score": 12,
+          "lastStatus": 200,
+          "firstSeenAt": "2026-04-25T13:34:52.323Z",
+          "lastSeenAt": "2026-04-25T13:34:52.323Z",
+          "hits": 3
+        }
+      ]
+    },
+    "selectedEndpoint": {
+      "id": "d82042c6-4676-43b8-86c4-52fa3f3fe7a5",
+      "key": "GET|https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+      "method": "GET",
+      "url": "https://www.tel-aviv.gov.il/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+      "host": "www.tel-aviv.gov.il",
+      "path": "/_vti_bin/TlvSP2013PublicSite/TlvMegaMenu.svc/GetExtraNav/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+      "kind": "unknown",
+      "score": 12,
+      "lastStatus": 200,
+      "firstSeenAt": "2026-03-19T21:00:57.033Z",
+      "lastSeenAt": "2026-04-25T13:34:52.324Z",
+      "hits": 18,
+      "finalScore": 60
+    },
+    "execution": null
+  }
+}

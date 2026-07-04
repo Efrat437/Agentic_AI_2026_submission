@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "mode": "public-booking-api-validation",
+  "provider": "restful-booker",
+  "generatedAt": "2026-04-25T12:50:06.819Z",
+  "outputPath": "C:\\Users\\ADMIN\\Desktop\\Agentic_AI_2026\\lab_4_RAG\\multi_agent_kb_rag_project\\02_backend\\eval\\local_government\\public-booking-api-validation.json",
+  "ping": "Created",
+  "bookingId": 4955,
+  "created": {
+    "firstname": "Eval",
+    "lastname": "Runner",
+    "totalprice": 123,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2026-05-10",
+      "checkout": "2026-05-11"
+    },
+    "additionalneeds": "evaluation only"
+  },
+  "retrieved": {
+    "firstname": "Eval",
+    "lastname": "Runner",
+    "totalprice": 123,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2026-05-10",
+      "checkout": "2026-05-11"
+    },
+    "additionalneeds": "evaluation only"
+  }
+}

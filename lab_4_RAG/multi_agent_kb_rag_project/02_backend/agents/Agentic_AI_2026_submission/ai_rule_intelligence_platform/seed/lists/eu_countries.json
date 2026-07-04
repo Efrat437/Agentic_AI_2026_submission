@@ -1,0 +1,23 @@
+{
+  "list_name": "eu_countries",
+  "description": "Example EU member states for standard approval paths (teaching data only).",
+  "items": [
+    "france",
+    "germany",
+    "italy",
+    "spain",
+    "netherlands",
+    "belgium",
+    "austria",
+    "portugal",
+    "ireland",
+    "sweden",
+    "denmark",
+    "finland",
+    "poland",
+    "czech_republic",
+    "romania",
+    "hungary",
+    "greece"
+  ]
+}

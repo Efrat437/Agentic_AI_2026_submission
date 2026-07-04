@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RAG Agent — OAuth Guide</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f0f2f5; min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; padding: 40px 20px;
+    }
+    h1 { font-size: 24px; color: #1a1a2e; margin-bottom: 8px; }
+    .subtitle { color: #666; font-size: 14px; margin-bottom: 30px; }
+    .status-bar {
+      width: 100%; max-width: 700px; padding: 10px 16px;
+      border-radius: 8px; font-size: 13px; margin-bottom: 20px; text-align: center;
+    }
+    .status-ready   { background: #d4edda; color: #155724; }
+    .status-loading { background: #fff3cd; color: #856404; }
+    .status-error   { background: #f8d7da; color: #721c24; }
+    .card {
+      background: white; border-radius: 12px; padding: 24px;
+      width: 100%; max-width: 700px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 20px;
+    }
+    label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: #444; margin-bottom: 8px;
+    }
+    textarea {
+      width: 100%; padding: 12px; border: 1px solid #ddd;
+      border-radius: 8px; font-size: 15px; resize: vertical;
+      font-family: inherit; outline: none; transition: border 0.2s;
+    }
+    textarea:focus { border-color: #4a90d9; }
+    .button-row { display: flex; gap: 10px; margin-top: 14px; }
+    button {
+      padding: 10px 24px; border: none; border-radius: 8px;
+      font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity 0.2s;
+    }
+    button:hover    { opacity: 0.85; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-ask   { background: #4a90d9; color: white; }
+    .btn-debug { background: #6c757d; color: white; }
+    .btn-clear { background: #e9ecef; color: #495057; }
+    .answer-card {
+      background: white; border-radius: 12px; padding: 24px;
+      width: 100%; max-width: 700px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      display: none; margin-bottom: 20px;
+    }
+    .answer-header {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 14px;
+    }
+    .answer-title { font-size: 14px; font-weight: 600; color: #444; }
+    .answer-meta  { font-size: 12px; color: #999; }
+    .answer-text  {
+      font-size: 15px; line-height: 1.7; color: #222;
+      white-space: pre-wrap; word-break: break-word;
+    }
+    .chunks-section {
+      margin-top: 20px; padding-top: 16px; border-top: 1px solid #eee;
+    }
+    .chunks-title {
+      font-size: 12px; font-weight: 600; color: #888;
+      margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .chunk-item {
+      background: #f8f9fa; border-radius: 8px; padding: 12px;
+      margin-bottom: 10px; border-left: 3px solid #4a90d9; font-size: 13px;
+    }
+    .chunk-heading { font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+    .chunk-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .meta-tag {
+      background: #e8f0fe; color: #1a73e8;
+      border-radius: 4px; padding: 2px 8px; font-size: 11px;
+    }
+    .meta-tag-green {
+      background: #d4edda; color: #155724;
+      border-radius: 4px; padding: 2px 8px; font-size: 11px;
+    }
+    .chunk-preview { color: #555; line-height: 1.5; }
+    .spinner {
+      display: none; width: 20px; height: 20px;
+      border: 2px solid #ddd; border-top-color: #4a90d9;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+      margin: 10px auto 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .history-card {
+      background: white; border-radius: 12px; padding: 16px 24px;
+      width: 100%; max-width: 700px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 20px;
+    }
+    .history-title {
+      font-size: 13px; font-weight: 600; color: #666; margin-bottom: 10px;
+    }
+    .history-item {
+      padding: 8px 0; border-bottom: 1px solid #f0f0f0;
+      font-size: 13px; color: #444; cursor: pointer;
+    }
+    .history-item:hover { color: #4a90d9; }
+    .history-item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <h1>RAG Agent</h1>
+  <p class="subtitle">OAuth 2.0 Guide — Hybrid Search + Claude</p>
+
+  <div id="statusBar" class="status-bar status-loading">
+    Checking system status...
+  </div>
+
+  <div class="card">
+    <label for="question">Your Question</label>
+    <textarea
+      id="question"
+      rows="3"
+      placeholder="e.g. What is PKCE in OAuth? How does the state parameter work?"
+    ></textarea>
+    <div class="button-row">
+      <button class="btn-ask"   id="btnAsk"   disabled onclick="askQuestion(false)">Ask</button>
+      <button class="btn-debug" id="btnDebug" disabled onclick="askQuestion(true)">Debug Mode</button>
+      <button class="btn-clear" onclick="clearAll()">Clear</button>
+    </div>
+    <div class="spinner" id="spinner"></div>
+  </div>
+
+  <div class="answer-card" id="answerCard">
+    <div class="answer-header">
+      <span class="answer-title">Answer</span>
+      <span class="answer-meta" id="answerMeta"></span>
+    </div>
+    <div class="answer-text" id="answerText"></div>
+    <div class="chunks-section" id="chunksSection" style="display:none">
+      <div class="chunks-title">Retrieved Chunks — Full Metadata</div>
+      <div id="chunksList"></div>
+    </div>
+  </div>
+
+  <div class="history-card" id="historyCard" style="display:none">
+    <div class="history-title">Recent Questions</div>
+    <div id="historyList"></div>
+  </div>
+
+  <script>
+    var questionHistory = [];
+
+    function checkStatus() {
+      var bar = document.getElementById('statusBar');
+      fetch('/health')
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.status === 'ready') {
+            bar.className   = 'status-bar status-ready';
+            bar.textContent = 'System ready — RAG pipeline loaded';
+            document.getElementById('btnAsk').disabled   = false;
+            document.getElementById('btnDebug').disabled = false;
+          } else if (data.status === 'initializing') {
+            bar.className   = 'status-bar status-loading';
+            bar.textContent = 'RAG pipeline initializing... please wait';
+            setTimeout(checkStatus, 2000);
+          } else {
+            bar.className   = 'status-bar status-error';
+            bar.textContent = 'Error: ' + (data.message || 'Unknown error');
+            setTimeout(checkStatus, 3000);
+          }
+        })
+        .catch(function() {
+          bar.className   = 'status-bar status-loading';
+          bar.textContent = 'Connecting to server...';
+          setTimeout(checkStatus, 2000);
+        });
+    }
+
+    function askQuestion(debugMode) {
+      var question = document.getElementById('question').value.trim();
+      if (!question) return;
+
+      var btnAsk        = document.getElementById('btnAsk');
+      var btnDebug      = document.getElementById('btnDebug');
+      var spinner       = document.getElementById('spinner');
+      var card          = document.getElementById('answerCard');
+      var text          = document.getElementById('answerText');
+      var meta          = document.getElementById('answerMeta');
+      var chunksSection = document.getElementById('chunksSection');
+      var chunksList    = document.getElementById('chunksList');
+
+      btnAsk.disabled             = true;
+      btnDebug.disabled           = true;
+      spinner.style.display       = 'block';
+      card.style.display          = 'none';
+      chunksSection.style.display = 'none';
+
+      var startTime = Date.now();
+      var endpoint  = debugMode ? '/debug' : '/ask';
+
+      fetch(endpoint, {
+        method  : 'POST',
+        headers : { 'Content-Type': 'application/json' },
+        body    : JSON.stringify({ question: question })
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        var elapsed        = ((Date.now() - startTime) / 1000).toFixed(1);
+        text.textContent   = data.answer || data.error || 'No response received';
+        meta.textContent   = elapsed + 's' + (debugMode ? ' — debug mode' : '');
+        card.style.display = 'block';
+
+        if (data.chunks && data.chunks.length > 0) {
+          var html = '';
+          for (var i = 0; i < data.chunks.length; i++) {
+            var c = data.chunks[i];
+            html += '<div class="chunk-item">';
+            html += '<div class="chunk-heading">Chunk ' + c.rank + ': ' + c.heading + '</div>';
+            html += '<div class="chunk-meta">';
+            html += '<span class="meta-tag">Page ' + c.page + '</span>';
+            html += '<span class="meta-tag">Index ' + c.chunkIndex + '</span>';
+            html += '<span class="meta-tag">Type: ' + c.type + '</span>';
+            html += '<span class="meta-tag">' + c.length + ' chars</span>';
+            if (c.hasTables) { html += '<span class="meta-tag-green">Has Tables</span>'; }
+            if (c.hasImages) { html += '<span class="meta-tag-green">Has Images</span>'; }
+            html += '</div>';
+            html += '<div class="chunk-preview">' + c.preview + '</div>';
+            html += '</div>';
+          }
+          chunksList.innerHTML        = html;
+          chunksSection.style.display = 'block';
+        }
+
+        questionHistory.unshift(question);
+        if (questionHistory.length > 5) { questionHistory.pop(); }
+        renderHistory();
+      })
+      .catch(function(e) {
+        text.textContent   = 'Error: ' + e.message;
+        card.style.display = 'block';
+      })
+      .finally(function() {
+        btnAsk.disabled       = false;
+        btnDebug.disabled     = false;
+        spinner.style.display = 'none';
+      });
+    }
+
+    function clearAll() {
+      document.getElementById('question').value           = '';
+      document.getElementById('answerCard').style.display = 'none';
+    }
+
+    function renderHistory() {
+      var card = document.getElementById('historyCard');
+      var list = document.getElementById('historyList');
+      if (questionHistory.length === 0) {
+        card.style.display = 'none';
+        return;
+      }
+      card.style.display = 'block';
+      var html = '';
+      for (var i = 0; i < questionHistory.length; i++) {
+        var q = questionHistory[i];
+        html += '<div class="history-item" onclick="document.getElementById(\'question\').value=\'' +
+                q.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + '\'">' + q + '</div>';
+      }
+      list.innerHTML = html;
+    }
+
+    document.getElementById('question').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        askQuestion(false);
+      }
+    });
+
+    checkStatus();
+  </script>
+
+</body>
+</html>

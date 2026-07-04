@@ -1,0 +1,102 @@
+version: "3.8"
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: pgvector-postgres
+    environment:
+      POSTGRES_USER: langchain
+      POSTGRES_PASSWORD: langchain
+      POSTGRES_DB: langchain
+    ports:
+      - "5444:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./db/init_receipts.sql:/docker-entrypoint-initdb.d/init_receipts.sql:ro
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  mcp_server:
+    build:
+      context: .
+    container_name: mcp-server
+    environment:
+      DB_USER: langchain
+      DB_PASSWORD: langchain
+      DB_NAME: langchain
+      DB_HOST: postgres
+      DB_PORT: 5432
+      NODE_ENV: production
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  read_agent:
+    build: .
+    container_name: rag-read-agent
+    environment:
+      DB_USER: langchain
+      DB_PASSWORD: langchain
+      DB_NAME: langchain
+      DB_HOST: postgres
+      DB_PORT: 5432
+      NODE_ENV: production
+      AGENT_ROLE: read
+    ports:
+      - "3001:3000"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  write_agent:
+    build: .
+    container_name: rag-write-agent
+    environment:
+      DB_USER: langchain
+      DB_PASSWORD: langchain
+      DB_NAME: langchain
+      DB_HOST: postgres
+      DB_PORT: 5432
+      NODE_ENV: production
+      AGENT_ROLE: write
+    ports:
+      - "3002:3000"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  app:
+    build: .
+    container_name: rag-app
+    environment:
+      DB_USER: langchain
+      DB_PASSWORD: langchain
+      DB_NAME: langchain
+      DB_HOST: postgres
+      DB_PORT: 5432
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    # volumes:
+    #   - ./:/usr/src/app
+
+volumes:
+  pg_data:
+  pgadmin_data:

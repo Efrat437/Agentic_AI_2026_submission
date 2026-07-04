@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Orchestration Flow Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    #mermaid { background: #f9f9f9; padding: 1em; border-radius: 8px; margin-top: 1em; }
+    #error { color: red; }
+    label, input, button { font-size: 1em; }
+    input { width: 400px; }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Orchestration Flow Visualization</h1>
+  <form id="flowForm" onsubmit="return false;">
+    <label for="userQuery">User Question:</label>
+    <input type="text" id="userQuery" placeholder="e.g. Show all users with active status" required />
+    <button type="submit">Show Flow</button>
+  </form>
+  <div id="mermaid">Enter a question and click Show Flow.</div>
+  <div id="error"></div>
+  <script>
+    document.getElementById('flowForm').onsubmit = async function() {
+      const query = document.getElementById('userQuery').value.trim();
+      if (!query) return;
+      document.getElementById('mermaid').textContent = 'Loading...';
+      document.getElementById('error').textContent = '';
+      try {
+        const res = await fetch('http://localhost:4100/mcp/flow-mermaid', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query })
+        });
+        if (!res.ok) throw new Error('Failed to fetch flow diagram');
+        const diagram = await res.text();
+        document.getElementById('mermaid').textContent = diagram;
+        mermaid.initialize({ startOnLoad: false });
+        mermaid.render('theFlow', diagram, (svg) => {
+          document.getElementById('mermaid').innerHTML = svg;
+        });
+      } catch (err) {
+        document.getElementById('error').textContent = err.message;
+      }
+    };
+  </script>
+</body>
+</html>

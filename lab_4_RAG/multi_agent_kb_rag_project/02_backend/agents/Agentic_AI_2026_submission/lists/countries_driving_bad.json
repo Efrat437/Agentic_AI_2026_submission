@@ -1,0 +1,16 @@
+{
+  "list_name": "countries_driving_bad",
+  "description": "Example list of driver-license / residence countries used for surcharge rules in the lab only (not real actuarial rankings).",
+  "items": [
+    "israel",
+    "italy",
+    "greece",
+    "romania",
+    "bulgaria",
+    "poland",
+    "turkey",
+    "lebanon",
+    "serbia",
+    "albania"
+  ]
+}

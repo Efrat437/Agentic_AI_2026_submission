@@ -1,0 +1,167 @@
+{"id": "r001", "text": "if risk_zone in_range [1, 2] then decline", "action": "decline", "tags": ["risk_zone", "range"]}
+{"id": "r002", "text": "if risk_zone in_range [3, 4] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "range"]}
+{"id": "r003", "text": "if risk_zone in_range [5, 6] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "range"]}
+{"id": "r004", "text": "if risk_zone in_range [9, 10] then decline", "action": "decline", "tags": ["risk_zone", "range"]}
+{"id": "r005", "text": "if risk_zone in_range [8, 9] then decline", "action": "decline", "tags": ["risk_zone", "range"]}
+{"id": "r006", "text": "if driver_country is israel then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r007", "text": "if driver_country is france then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r008", "text": "if driver_country is germany then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r009", "text": "if driver_country in [israel, spain] then increase_premium", "action": "increase_premium", "tags": ["geo", "compound"]}
+{"id": "r010", "text": "if driver_country in [italy, greece] then approve_standard", "action": "approve_standard", "tags": ["geo", "compound"]}
+{"id": "r011", "text": "if driver_region is europe then increase_premium", "action": "increase_premium", "tags": ["geo"]}
+{"id": "r012", "text": "if driver_region is north_america then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r013", "text": "if driver_region in [europe, asia] then require_underwriting", "action": "require_underwriting", "tags": ["geo", "compound"]}
+{"id": "r014", "text": "if driver_region is apac then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r015", "text": "if vehicle_class is commercial_heavy then decline", "action": "decline", "tags": ["vehicle_class"]}
+{"id": "r016", "text": "if vehicle_class is motorcycle then decline", "action": "decline", "tags": ["vehicle_class"]}
+{"id": "r017", "text": "if vehicle_class is performance then decline", "action": "decline", "tags": ["vehicle_class"]}
+{"id": "r018", "text": "if vehicle_class in [sedan, coupe] then approve_standard", "action": "approve_standard", "tags": ["vehicle_class", "compound"]}
+{"id": "r019", "text": "if vehicle_class in [suv, crossover] then approve_standard", "action": "approve_standard", "tags": ["vehicle_class", "compound"]}
+{"id": "r020", "text": "if coverage_tier is comprehensive then approve_standard", "action": "approve_standard", "tags": ["coverage_tier"]}
+{"id": "r021", "text": "if coverage_tier is third_party and vehicle_class is van then approve_standard", "action": "approve_standard", "tags": ["coverage_tier", "vehicle_class"]}
+{"id": "r022", "text": "if coverage_tier is glass_only then decline", "action": "decline", "tags": ["coverage_tier"]}
+{"id": "r023", "text": "if fraud_risk_level is high then decline", "action": "decline", "tags": ["fraud_risk"]}
+{"id": "r024", "text": "if fraud_risk_level is medium then require_underwriting", "action": "require_underwriting", "tags": ["fraud_risk"]}
+{"id": "r025", "text": "if fraud_risk_level is low then approve_standard", "action": "approve_standard", "tags": ["fraud_risk"]}
+{"id": "r026", "text": "if driver_country is spain then increase_premium", "action": "increase_premium", "tags": ["geo"]}
+{"id": "r027", "text": "if driver_country is brazil then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r028", "text": "if driver_country is japan then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r029", "text": "if driver_country is russia then decline", "action": "decline", "tags": ["geo"]}
+{"id": "r030", "text": "if driver_country is china then decline", "action": "decline", "tags": ["geo"]}
+{"id": "r031", "text": "if driver_country is uk then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r032", "text": "if driver_country is canada then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r033", "text": "if driver_country is mexico then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r034", "text": "if driver_country is australia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r035", "text": "if driver_country is india then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r036", "text": "if driver_country is south_korea then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r037", "text": "if driver_country is singapore then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r038", "text": "if driver_country is netherlands then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r039", "text": "if driver_country is sweden then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r040", "text": "if driver_country is norway then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r041", "text": "if driver_country is poland then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r042", "text": "if driver_country is turkey then decline", "action": "decline", "tags": ["geo"]}
+{"id": "r043", "text": "if driver_country is egypt then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r044", "text": "if driver_country is south_africa then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r045", "text": "if driver_country is nigeria then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r046", "text": "if driver_region is africa then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r047", "text": "if driver_region is middle_east then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r048", "text": "if driver_region is south_america then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r049", "text": "if driver_region is oceania then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r050", "text": "if driver_region is eu and fraud_risk_level is high then decline", "action": "decline", "tags": ["geo", "fraud_risk"]}
+{"id": "r051", "text": "if driver_region is na and vehicle_class is fleet_bus then decline", "action": "decline", "tags": ["geo", "vehicle_class"]}
+{"id": "r052", "text": "if risk_zone in_range [1, 10] and vehicle_class is rideshare then decline", "action": "decline", "tags": ["risk_zone", "vehicle_class"]}
+{"id": "r053", "text": "if driver_age in_range [18, 24] then increase_premium", "action": "increase_premium", "tags": ["driver", "age"]}
+{"id": "r054", "text": "if accident_count in_range [10, 99] then decline", "action": "decline", "tags": ["loss_history"]}
+{"id": "r055", "text": "if months_since_last_accident in_range [0, 12] then increase_premium", "action": "increase_premium", "tags": ["loss_history"]}
+{"id": "r056", "text": "if vehicle_class is delivery_van then decline", "action": "decline", "tags": ["vehicle_class"]}
+{"id": "r057", "text": "if vehicle_class is fleet_bus then decline", "action": "decline", "tags": ["vehicle_class"]}
+{"id": "r058", "text": "if vehicle_class in [atv, classic_car] then decline", "action": "decline", "tags": ["vehicle_class"]}
+{"id": "r059", "text": "if vehicle_class in [wagon, hatchback] then approve_standard", "action": "approve_standard", "tags": ["vehicle_class"]}
+{"id": "r060", "text": "if coverage_tier is comprehensive and vehicle_class is coupe then approve_standard", "action": "approve_standard", "tags": ["coverage_tier", "vehicle_class"]}
+{"id": "r061", "text": "if coverage_tier is third_party and vehicle_class is scooter then approve_standard", "action": "approve_standard", "tags": ["coverage_tier", "vehicle_class"]}
+{"id": "r062", "text": "if coverage_tier is comprehensive and fraud_risk_level is high then decline", "action": "decline", "tags": ["coverage_tier", "fraud_risk"]}
+{"id": "r063", "text": "if driver_country in [usa, canada] then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r064", "text": "if driver_country in [france, germany, netherlands] then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r065", "text": "if driver_country in [russia, belarus] then decline", "action": "decline", "tags": ["geo"]}
+{"id": "r066", "text": "if driver_country is belgium then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r067", "text": "if driver_country is switzerland then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r068", "text": "if driver_country is austria then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r069", "text": "if driver_country is ireland then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r070", "text": "if driver_country is vehicle_classugal then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r071", "text": "if driver_country is finland then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r072", "text": "if driver_country is denmark then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r073", "text": "if driver_country is czech_republic then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r074", "text": "if driver_country is romania then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r075", "text": "if driver_country is hungary then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r076", "text": "if driver_country is argentina then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r077", "text": "if driver_country is chile then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r078", "text": "if driver_country is colombia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r079", "text": "if driver_country is vietnam then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r080", "text": "if driver_country is thailand then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r081", "text": "if driver_country is indonesia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r082", "text": "if driver_country is philrisk_zonepines then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r083", "text": "if driver_country is new_zealand then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r084", "text": "if driver_country is uae then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r085", "text": "if driver_country is saudi_arabia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r086", "text": "if driver_country is pakistan then decline", "action": "decline", "tags": ["geo"]}
+{"id": "r087", "text": "if driver_country is iran then decline", "action": "decline", "tags": ["geo"]}
+{"id": "r088", "text": "if driver_country is iraq then decline", "action": "decline", "tags": ["geo"]}
+{"id": "r089", "text": "if driver_country is ukraine then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r090", "text": "if driver_country is croatia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r091", "text": "if driver_country is serbia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r092", "text": "if driver_country is bulgaria then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r093", "text": "if driver_country is slovakia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r094", "text": "if driver_country is slovenia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r095", "text": "if driver_country is lithuania then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r096", "text": "if driver_country is latvia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r097", "text": "if driver_country is estonia then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r098", "text": "if driver_country is iceland then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r099", "text": "if driver_country is luxembourg then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r100", "text": "if driver_country is malta then approve_standard", "action": "approve_standard", "tags": ["geo"]}
+{"id": "r101", "text": "if driver_country in_list countries_driving_bad then increase_premium", "action": "increase_premium", "tags": ["geo", "in_list"]}
+{"id": "r102", "text": "if risk_zone is 203_0_113_42 then decline", "action": "decline", "tags": ["risk_zone"]}
+{"id": "r103", "text": "if risk_zone in [10_0_0_5, 10_0_0_6, 10_0_0_7] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "compound"]}
+{"id": "r104", "text": "if risk_zone in_range [2, 3] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "range"]}
+{"id": "r105", "text": "if risk_zone in_range [3, 3] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "range"]}
+{"id": "r106", "text": "if risk_zone in_range [4, 4] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "range"]}
+{"id": "r107", "text": "if risk_zone in_range [2, 2] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "range"]}
+{"id": "r108", "text": "if risk_zone in_range [2, 2] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "range"]}
+{"id": "r109", "text": "if risk_zone in_range [10, 10] then decline", "action": "decline", "tags": ["risk_zone", "range"]}
+{"id": "r110", "text": "if risk_zone in_range [9, 9] then decline", "action": "decline", "tags": ["risk_zone", "range"]}
+{"id": "r111", "text": "if risk_zone in_range [4, 5] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "range"]}
+{"id": "r112", "text": "if risk_zone is 198_51_100_99 then approve_standard", "action": "approve_standard", "tags": ["risk_zone"]}
+{"id": "r113", "text": "if risk_zone in [203_0_113_10, 203_0_113_11] then decline", "action": "decline", "tags": ["risk_zone", "compound"]}
+{"id": "r114", "text": "if risk_zone in_range [9, 9] then decline", "action": "decline", "tags": ["risk_zone", "range"]}
+{"id": "r115", "text": "if risk_zone in_range [9, 10] then decline", "action": "decline", "tags": ["risk_zone", "range"]}
+{"id": "r116", "text": "if risk_zone in_range [8, 8] then decline", "action": "decline", "tags": ["risk_zone", "range"]}
+{"id": "r117", "text": "if distribution_channel is aggregator_high_touch then decline", "action": "decline", "tags": ["channel"]}
+{"id": "r118", "text": "if distribution_channel is comparison_site_scrape then decline", "action": "decline", "tags": ["channel"]}
+{"id": "r119", "text": "if distribution_channel in [aggregator_high_touch, comparison_site_scrape, broker_api_legacy] then decline", "action": "decline", "tags": ["channel", "compound"]}
+{"id": "r120", "text": "if distribution_channel is direct_web then approve_standard", "action": "approve_standard", "tags": ["channel"]}
+{"id": "r121", "text": "if distribution_channel in [paper_mail_inbound, call_center_manual, aggregator_high_touch] then decline", "action": "decline", "tags": ["channel", "compound"]}
+{"id": "r122", "text": "if distribution_channel is mobile_app then approve_standard", "action": "approve_standard", "tags": ["channel"]}
+{"id": "r123", "text": "if distribution_channel is internal_qa then approve_standard", "action": "approve_standard", "tags": ["channel"]}
+{"id": "r124", "text": "if distribution_channel is legacy_mainframe_batch then decline", "action": "decline", "tags": ["channel"]}
+{"id": "r125", "text": "if distribution_channel in [partner_api, mobile_app] then approve_standard", "action": "approve_standard", "tags": ["channel", "compound"]}
+{"id": "r126", "text": "if distribution_channel is fraud_probe_signal then decline", "action": "decline", "tags": ["channel"]}
+{"id": "r127", "text": "if distribution_channel is fraud_probe_signal then decline", "action": "decline", "tags": ["channel"]}
+{"id": "r128", "text": "if distribution_channel in [fraud_probe_signal, fraud_probe_signal] then decline", "action": "decline", "tags": ["channel", "compound"]}
+{"id": "r129", "text": "if distribution_channel is seo_crawler_allow then approve_standard", "action": "approve_standard", "tags": ["channel"]}
+{"id": "r130", "text": "if distribution_channel is seo_crawler_allow then approve_standard", "action": "approve_standard", "tags": ["channel"]}
+{"id": "r131", "text": "if distribution_channel is seo_crawler_allow then approve_standard", "action": "approve_standard", "tags": ["channel"]}
+{"id": "r132", "text": "if distribution_channel in [blocked_scraper, blocked_scraper] then decline", "action": "decline", "tags": ["channel", "compound"]}
+{"id": "r133", "text": "if distribution_channel is direct_web then approve_standard", "action": "approve_standard", "tags": ["channel"]}
+{"id": "r134", "text": "if distribution_channel is legacy_script then decline", "action": "decline", "tags": ["channel"]}
+{"id": "r135", "text": "if vehicle_id is veh_allow_kiosk_01 then approve_standard", "action": "approve_standard", "tags": ["vehicle"]}
+{"id": "r136", "text": "if vehicle_id is veh_revoked_laptop_9f2a then decline", "action": "decline", "tags": ["vehicle"]}
+{"id": "r137", "text": "if vehicle_id in [veh_partner_a, veh_partner_b, veh_partner_c] then approve_standard", "action": "approve_standard", "tags": ["vehicle", "compound"]}
+{"id": "r138", "text": "if vehicle_id is 550e8400-e29b-41d4-a716-446655440000 then decline", "action": "decline", "tags": ["vehicle"]}
+{"id": "r139", "text": "if vehicle_id in [7c9e6679-7425-40de-944b-e07fc1f90ae7, 6ba7b810-9dad-11d1-80b4-00c04fd430c8] then approve_standard", "action": "approve_standard", "tags": ["vehicle", "compound"]}
+{"id": "r140", "text": "if vehicle_id is veh_stolen_phone_z1 then decline", "action": "decline", "tags": ["vehicle"]}
+{"id": "r141", "text": "if vehicle_id in [veh_quarantine_01, veh_quarantine_02] then decline", "action": "decline", "tags": ["vehicle", "compound"]}
+{"id": "r142", "text": "if vehicle_id is veh_field_tablet_m7 then approve_standard", "action": "approve_standard", "tags": ["vehicle"]}
+{"id": "r143", "text": "if risk_zone in_range [3, 4] and distribution_channel is aggregator_high_touch then decline", "action": "decline", "tags": ["risk_zone", "channel"]}
+{"id": "r144", "text": "if risk_zone is 192_0_2_50 and vehicle_id is veh_allow_kiosk_01 then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "vehicle"]}
+{"id": "r145", "text": "if distribution_channel in [aggregator_high_touch, comparison_site_scrape] and vehicle_id in [veh_quarantine_01, veh_quarantine_02] then decline", "action": "decline", "tags": ["channel", "vehicle"]}
+{"id": "r146", "text": "if risk_zone in_range [4, 5] and distribution_channel is mobile_app then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "channel"]}
+{"id": "r147", "text": "if vehicle_id is veh_mdm_enrolled_88 and fraud_risk_level is high then decline", "action": "decline", "tags": ["vehicle", "fraud_risk"]}
+{"id": "r148", "text": "if distribution_channel is fraud_probe_signal and risk_zone in_range [8, 9] then decline", "action": "decline", "tags": ["channel", "risk_zone"]}
+{"id": "r150", "text": "if risk_zone in_array [192_0_2_10, 192_0_2_11, 192_0_2_12] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "in_array"]}
+{"id": "r151", "text": "if distribution_channel in_array [direct_web, mobile_app, partner_api] then approve_standard", "action": "approve_standard", "tags": ["channel", "in_array"]}
+{"id": "r152", "text": "if vehicle_id in_array [veh_temp_alpha, veh_temp_beta, veh_temp_gamma] then decline", "action": "decline", "tags": ["vehicle", "in_array"]}
+{"id": "r153", "text": "if driver_country in_list eu_countries then approve_standard", "action": "approve_standard", "tags": ["geo", "in_list"]}
+{"id": "r154", "text": "if driver_country in_list high_fraud_jurisdictions then decline", "action": "decline", "tags": ["geo", "in_list"]}
+{"id": "r155", "text": "if vehicle_id in_list fleet_preferred_vehicle_ids then approve_standard", "action": "approve_standard", "tags": ["vehicle", "in_list"]}
+{"id": "r156", "text": "if vehicle_id in_list telematics_subscribed_vehicles then approve_standard", "action": "approve_standard", "tags": ["vehicle", "in_list"]}
+{"id": "r157", "text": "if vehicle_class in_array [suv, crossover, van] then approve_standard", "action": "approve_standard", "tags": ["vehicle_class", "in_array"]}
+{"id": "r158", "text": "if distribution_channel in_list automated_underwriting_flags then decline", "action": "decline", "tags": ["channel", "in_list"]}
+{"id": "r159", "text": "if risk_zone in_array [172_25_0_1, 172_25_0_2] and driver_country in_list eu_countries then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "geo", "in_array", "in_list"]}
+{"id": "r160", "text": "if vehicle_id in_list fleet_preferred_vehicle_ids and fraud_risk_level is high then decline", "action": "decline", "tags": ["vehicle", "fraud_risk", "in_list"]}
+{"id": "r161", "text": "if risk_zone in_array [198_51_100_5, 198_51_100_6] then decline", "action": "decline", "tags": ["risk_zone", "in_array"]}
+{"id": "r162", "text": "if driver_country in_list eu_countries and vehicle_class is coupe then approve_standard", "action": "approve_standard", "tags": ["geo", "vehicle_class", "in_list"]}
+{"id": "r163", "text": "if vehicle_id in_array [veh_quarantine_01, veh_quarantine_02, veh_stolen_phone_z1] then decline", "action": "decline", "tags": ["vehicle", "in_array"]}
+{"id": "r164", "text": "if distribution_channel in_array [partner_api, mobile_app, legacy_mainframe_batch] then approve_standard", "action": "approve_standard", "tags": ["channel", "in_array"]}
+{"id": "r165", "text": "if driver_country in_list eu_countries and distribution_channel in_list automated_underwriting_flags then decline", "action": "decline", "tags": ["geo", "channel", "in_list"]}
+{"id": "r166", "text": "if risk_zone in_array [8_8_8_8, 1_1_1_1] then approve_standard", "action": "approve_standard", "tags": ["risk_zone", "in_array"]}
+{"id": "r167", "text": "if vehicle_id in_list telematics_subscribed_vehicles and driver_country in_list high_fraud_jurisdictions then decline", "action": "decline", "tags": ["vehicle", "geo", "in_list"]}
+{"id": "r168", "text": "if vehicle_class in_array [commercial_heavy, motorcycle, performance] then decline", "action": "decline", "tags": ["vehicle_class", "in_array"]}

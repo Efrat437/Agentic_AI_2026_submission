@@ -1,0 +1,9 @@
+{
+  "list_name": "fleet_preferred_vehicle_ids",
+  "description": "Registered fleet and partner vehicle identifiers eligible for discounts.",
+  "items": [
+    "veh_partner_a",
+    "veh_partner_b",
+    "veh_partner_c"
+  ]
+}

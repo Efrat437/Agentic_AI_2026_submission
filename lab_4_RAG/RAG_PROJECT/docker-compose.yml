@@ -1,0 +1,57 @@
+    mcp_server:
+      build:
+        context: ../../lab_13_mcp/mcp-server
+      container_name: mcp-server
+      environment:
+        DB_USER: langchain
+        DB_PASSWORD: langchain
+        DB_NAME: langchain
+        DB_HOST: postgres
+        DB_PORT: 5432
+        NODE_ENV: production
+      ports:
+        - "4000:4000"
+      depends_on:
+        - postgres
+      restart: unless-stopped
+  read_agent:
+    build: .
+    container_name: rag-read-agent
+    environment:
+      DB_USER: langchain
+      DB_PASSWORD: langchain
+      DB_NAME: langchain
+      DB_HOST: postgres
+      DB_PORT: 5432
+      NODE_ENV: production
+      AGENT_ROLE: read
+    ports:
+      - "3001:3000"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    # Optionally mount code for hot reload
+    # volumes:
+    #   - ./:/usr/src/app
+
+  write_agent:
+    build: .
+    container_name: rag-write-agent
+    environment:
+      DB_USER: langchain
+      DB_PASSWORD: langchain
+      DB_NAME: langchain
+      DB_HOST: postgres
+      DB_PORT: 5432
+      NODE_ENV: production
+      AGENT_ROLE: write
+    ports:
+      - "3002:3000"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    # Optionally mount code for hot reload
+    # volumes:
+    #   - ./:/usr/src/app
+version: "3.8"
+

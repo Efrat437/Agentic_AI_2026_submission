@@ -1,0 +1,55 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: langchain
+      POSTGRES_PASSWORD: langchain
+      POSTGRES_DB: langchain
+    ports:
+      - "5434:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  embedding-server:
+    build:
+      context: ./mcp-embedding-server
+    ports:
+      - "3005:3005"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: postgresql://langchain:langchain@postgres:5432/langchain
+      EMBEDDING_SERVER_URL: http://embedding-server:3005
+      EMBEDDING_MODEL: Xenova/all-MiniLM-L6-v2
+      EMBEDDING_DIM: 384
+      TOP_K: 30
+      LLM_TOP_N: 5
+      SIMILARITY_THRESHOLD: 0.5
+      UNION_SIMILARITY_THRESHOLD: 0.9
+      EMBEDDING_RETRIES: 3
+      EMBEDDING_RETRY_BACKOFF_MS: 250
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - embedding-server
+    volumes:
+      - ./seed:/app/seed:ro
+    restart: unless-stopped
+
+  frontend:
+    image: nginx:1.27-alpine
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  pg_data:

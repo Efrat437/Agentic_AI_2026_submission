@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insurance rule builder (mockup for screenshots)</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2332;
+      --border: #2d3a4f;
+      --text: #e8eef4;
+      --muted: #8b9cb3;
+      --accent: #3d8bfd;
+      --danger: #f85149;
+      --ok: #3fb950;
+      --font: "DM Sans", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+    header {
+      margin-bottom: 1.75rem;
+    }
+    header h1 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 1rem;
+    }
+    .card h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: flex-end;
+      margin-bottom: 0.75rem;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    select, input[type="text"], input[type="number"] {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 0.5rem 0.65rem;
+      min-width: 140px;
+      font: inherit;
+    }
+    input[type="text"] { min-width: 200px; }
+    .btn {
+      font: inherit;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 0.55rem 1rem;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.92; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .clause-list { margin: 0; padding: 0; list-style: none; }
+    .clause {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.65rem;
+      background: var(--bg);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      border: 1px solid var(--border);
+    }
+    .preview {
+      font-family: ui-monospace, "Cascadia Code", monospace;
+      font-size: 0.88rem;
+      padding: 1rem;
+      background: var(--bg);
+      border-radius: 8px;
+      border: 1px dashed var(--border);
+      word-break: break-word;
+      color: #7ee787;
+    }
+    .preview.empty { color: var(--muted); font-style: italic; }
+    .actions-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .hint {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+    .rag-box {
+      margin-top: 0.75rem;
+      padding: 0.85rem;
+      border-radius: 8px;
+      background: rgba(248, 81, 73, 0.08);
+      border: 1px solid rgba(248, 81, 73, 0.35);
+      font-size: 0.85rem;
+      display: none;
+    }
+    .rag-box.show { display: block; }
+    .rag-box.ok {
+      background: rgba(63, 185, 80, 0.08);
+      border-color: rgba(63, 185, 80, 0.35);
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Insurance rule builder</h1>
+      
+    </header>
+
+    <div class="card">
+      <h2>Clauses</h2>
+      <ul class="clause-list" id="clauses"></ul>
+      <div class="row" style="margin-top: 0.5rem;">
+        <button type="button" class="btn btn-ghost" id="addClause">+ Add clause</button>
+      </div>
+      <p class="hint">First clause has no combinator. Later clauses use AND or OR from the clause row.</p>
+    </div>
+
+    <div class="card">
+      <h2>Then (action)</h2>
+      <div class="row">
+        <label>Action
+          <select id="action">
+            <option value="approve_standard">approve_standard</option>
+            <option value="increase_premium">increase_premium</option>
+            <option value="apply_discount">apply_discount</option>
+            <option value="require_underwriting">require_underwriting</option>
+            <option value="decline">decline</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Live preview</h2>
+      <div id="preview" class="preview empty">Build a rule to see the string…</div>
+      <div class="actions-bar">
+        <button type="button" class="btn btn-primary" id="mockRag">Simulate RAG check (demo)</button>
+        <button type="button" class="btn btn-ghost" id="copyRule">Copy rule text</button>
+      </div>
+      <div id="ragResult" class="rag-box" role="status"></div>
+    </div>
+  </div>
+
+  <template id="clauseTpl">
+    <li class="clause">
+      <label>Combinator
+        <select data-combinator>
+          <option value="and">and</option>
+          <option value="or">or</option>
+        </select>
+      </label>
+      <label>Attribute
+        <select data-attr>
+          <option value="driver_age">driver_age</option>
+          <option value="driver_license_years">driver_license_years</option>
+          <option value="driver_country">driver_country</option>
+          <option value="driver_region">driver_region</option>
+          <option value="accident_count">accident_count</option>
+          <option value="months_since_last_accident">months_since_last_accident</option>
+          <option value="vehicle_id">vehicle_id</option>
+          <option value="vehicle_class">vehicle_class</option>
+          <option value="coverage_tier">coverage_tier</option>
+          <option value="fraud_risk_level">fraud_risk_level</option>
+          <option value="distribution_channel">distribution_channel</option>
+          <option value="risk_zone">risk_zone</option>
+        </select>
+      </label>
+      <label>Operator
+        <select data-op>
+          <option value="is">is</option>
+          <option value="in">in</option>
+          <option value="in_array">in_array</option>
+          <option value="in_list">in_list</option>
+          <option value="in_range">in_range</option>
+          <option value="not_in">not_in</option>
+        </select>
+      </label>
+      <label>Value
+        <input type="text" data-val placeholder="value; [a, b] for in / in_array; [min, max] for in_range; list name for in_list" />
+      </label>
+      <button type="button" class="btn btn-ghost" data-remove style="min-width: auto; padding: 0.45rem 0.65rem;">✕</button>
+    </li>
+  </template>
+
+  <script>
+    (function () {
+      const list = document.getElementById("clauses");
+      const tpl = document.getElementById("clauseTpl");
+      const preview = document.getElementById("preview");
+      const actionSel = document.getElementById("action");
+      const ragBox = document.getElementById("ragResult");
+
+      function formatValue(op, raw) {
+        const s = (raw || "").trim();
+        if (!s) return "…";
+        if (op === "in_range") return "[" + s + "]";
+        if (op === "in_array" || op === "in" || op === "not_in") {
+          if (s.startsWith("[")) return s;
+          return "[" + s + "]";
+        }
+        if (op === "in_list") return s.replace(/\s+/g, "_");
+        return s;
+      }
+
+      function clauseToString(li, isFirst) {
+        const comb = li.querySelector("[data-combinator]").value;
+        const attr = li.querySelector("[data-attr]").value;
+        const op = li.querySelector("[data-op]").value;
+        const val = formatValue(op, li.querySelector("[data-val]").value);
+        const part = attr + " " + op + " " + val;
+        if (isFirst) return part;
+        return comb + " " + part;
+      }
+
+      function buildRuleString() {
+        const items = list.querySelectorAll(".clause");
+        if (!items.length) return "";
+        const parts = [];
+        items.forEach((li, i) => {
+          parts.push(clauseToString(li, i === 0));
+        });
+        return "if " + parts.join(" ") + " then " + actionSel.value;
+      }
+
+      function refreshPreview() {
+        const s = buildRuleString();
+        if (!s || s.includes("…")) {
+          preview.textContent = "Complete all clause values…";
+          preview.classList.add("empty");
+          return;
+        }
+        preview.textContent = s;
+        preview.classList.remove("empty");
+      }
+
+      function addClause() {
+        const node = tpl.content.cloneNode(true);
+        const li = node.querySelector(".clause");
+        const isFirst = list.children.length === 0;
+        li.querySelector("[data-combinator]").closest("label").style.visibility = isFirst
+          ? "hidden"
+          : "visible";
+        if (isFirst) {
+          li.querySelector("[data-combinator]").value = "and";
+        }
+        li.querySelector("[data-remove]").addEventListener("click", () => {
+          li.remove();
+          renumberClauses();
+          refreshPreview();
+        });
+        ["[data-combinator]", "[data-attr]", "[data-op]", "[data-val]"].forEach((sel) => {
+          li.querySelector(sel).addEventListener("input", refreshPreview);
+          li.querySelector(sel).addEventListener("change", refreshPreview);
+        });
+        list.appendChild(li);
+        renumberClauses();
+        refreshPreview();
+      }
+
+      function renumberClauses() {
+        const items = list.querySelectorAll(".clause");
+        items.forEach((li, i) => {
+          const lab = li.querySelector("[data-combinator]").closest("label");
+          lab.style.visibility = i === 0 ? "hidden" : "visible";
+        });
+      }
+
+      document.getElementById("addClause").addEventListener("click", addClause);
+      actionSel.addEventListener("change", refreshPreview);
+
+      document.getElementById("copyRule").addEventListener("click", () => {
+        const s = buildRuleString();
+        if (s && !s.includes("…")) {
+          navigator.clipboard.writeText(s).catch(() => {});
+        }
+      });
+
+      /** Demo-only: mimics subsumption when text matches lab scenario */
+      document.getElementById("mockRag").addEventListener("click", () => {
+        const s = buildRuleString().toLowerCase();
+        ragBox.classList.remove("ok");
+        ragBox.classList.remove("show");
+        if (!s || s.includes("…")) {
+          ragBox.textContent = "Complete the rule first.";
+          ragBox.classList.add("show");
+          return;
+        }
+        const hasIsrael = s.includes("israel");
+        const surcharge = s.includes("increase_premium");
+        const singleCountry =
+          s.includes("driver_country") &&
+          s.includes(" is ") &&
+          !s.includes("[israel, spain]");
+        if (hasIsrael && surcharge && singleCountry) {
+          ragBox.classList.add("show");
+          ragBox.classList.remove("ok");
+          ragBox.innerHTML =
+            "<strong>Possible overlap (demo)</strong><br/>" +
+            "Corpus may already contain: <code>if driver_country in [israel, spain] then increase_premium</code> (id r009). " +
+            "Your rule is subsumed if the action matches.";
+          return;
+        }
+        ragBox.classList.add("show");
+        ragBox.classList.add("ok");
+        ragBox.textContent =
+          "Demo: no hardcoded match. In the real lab, run pgvector retrieval + LangGraph validation.";
+      });
+
+      addClause();
+    })();
+  </script>
+</body>
+</html>
